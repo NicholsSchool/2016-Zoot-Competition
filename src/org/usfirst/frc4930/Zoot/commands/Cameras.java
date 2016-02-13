@@ -11,7 +11,7 @@ import org.usfirst.frc4930.Zoot.Robot;
 
 public class Cameras {
 	
-	static boolean _cam0 = true; 
+	public static boolean _cam0 = true; 
 	
 	static public int frontCam;
 	static public int backCam;
