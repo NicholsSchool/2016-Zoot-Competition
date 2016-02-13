@@ -43,6 +43,14 @@ public class IntakeMotors extends Subsystem {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
     }
-    
+    public void intake(){
+    	RobotMap.intakeMotorsMaster.set(.9);
+    }
+    public void shoot(){
+    	RobotMap.intakeMotorsMaster.set(1.0);
+    }
+    public void drop(){
+    	RobotMap.intakeMotorsMaster.set(.5);
+    }
 }
 
