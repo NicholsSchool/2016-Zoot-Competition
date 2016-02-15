@@ -28,7 +28,7 @@ public class DriveTrain extends Subsystem {
 
 	public void takeJoystickInputs(Joystick joystick0, Joystick joystick1) {
 
-		masterMotors.tankDrive(joystick0.getY() , joystick1.getY());
+		masterMotors.tankDrive(-joystick0.getY() , joystick1.getY());
 		
 		
 	}
