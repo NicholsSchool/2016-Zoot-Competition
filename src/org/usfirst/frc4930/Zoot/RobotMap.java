@@ -28,18 +28,18 @@ public class RobotMap {
     
     
     public static void init() {
-
-        driveTrainLeftMaster = new CANTalon(0);
-        driveTrainLeftSlave1 = new CANTalon(1);
-        driveTrainLeftSlave2 = new CANTalon(2);
-        driveTrainRightMaster = new CANTalon(3);
-        driveTrainRightSlave1 = new CANTalon(4);   
-        driveTrainRightSlave2 = new CANTalon(5);
-        armDart = new CANTalon(6);
-        hookDart = new CANTalon(7);
-        intakeMotorsMaster = new CANTalon(8);
-        intakeMotorsSlave = new CANTalon(9);
-
+       
+        driveTrainRightMaster = new CANTalon(11);
+        driveTrainRightSlave1 = new CANTalon(12);   
+        driveTrainRightSlave2 = new CANTalon(13);
+        hookDart = new CANTalon(14);
+        intakeMotorsSlave = new CANTalon(15);
+        intakeMotorsMaster = new CANTalon(16);
+        armDart = new CANTalon(17);
+        driveTrainLeftMaster = new CANTalon(18);
+        driveTrainLeftSlave1 = new CANTalon(19);
+        driveTrainLeftSlave2 = new CANTalon(20);
+        
         // setup slaves and masters
         driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
         driveTrainLeftSlave1.set(driveTrainLeftMaster.getDeviceID());
