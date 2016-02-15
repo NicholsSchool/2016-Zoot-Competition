@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
+import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
 import org.usfirst.frc4930.Zoot.commands.*;
 import edu.wpi.first.wpilibj.CANTalon;
@@ -25,16 +26,18 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
         setDefaultCommand(new TankDrive());
     }
+    
+    public static void move(double left, double right) {
+    	if (Robot.orientation) {
+        	RobotMap.driveTrainLeftMaster.set(left);
+        	RobotMap.driveTrainRightMaster.set(-right);
+    	} else {
+    		RobotMap.driveTrainLeftMaster.set(-right);
+    		RobotMap.driveTrainRightMaster.set(left);
+    	}
 
-	public void takeJoystickInputs(Joystick joystick0, Joystick joystick1) {
-
-		masterMotors.tankDrive(-joystick0.getY() , joystick1.getY());
-		
-		
-	}
-	public void runMotors(double joystick0 , double joystick1){
-		masterMotors.tankDrive( joystick0 , joystick1);
-	}
+    }
+    
 	public void stop() {
 		masterMotors.tankDrive(0, 0);
 		

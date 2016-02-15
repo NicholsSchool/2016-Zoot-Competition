@@ -25,8 +25,8 @@ public class Autonomous extends Command {
 //    	RobotMap.driveTrainRightSlave1.set(0.75);//Ran Right Side Forwards
 //    	RobotMap.driveTrainLeftSlave2.set(0.75);//Ran Left Side Backwards
 //    	RobotMap.driveTrainRightSlave2.set(0.75);//Ran Right Side Forwards
-//    	RobotMap.hookDart.set(0.2);//Ran Hook Down
-//    	RobotMap.armDart.set(0.2);//Ran Arm Up
+//	    RobotMap.hookDart.set(-0.2);//Ran Hook Down
+//  	RobotMap.armDart.set(0.2);//Ran Arm Up
 //    	RobotMap.intakeMotorsSlave.set(0.2);//Ran Counter CLockwise
 //    	RobotMap.intakeMotorsMaster.set(0.2);//Ran Counter Clockwise
     }

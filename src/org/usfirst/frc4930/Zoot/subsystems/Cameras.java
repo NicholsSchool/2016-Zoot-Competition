@@ -2,16 +2,12 @@ package org.usfirst.frc4930.Zoot.subsystems;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
-
 import edu.wpi.first.wpilibj.CameraServer;
 
 /**
  * Cameras
  */
-
 public class Cameras {
-	
-	public static boolean _cam0 = true; 
 	
 	static public int frontCam;
 	static public int backCam;
@@ -27,16 +23,13 @@ public class Cameras {
         frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
         server = CameraServer.getInstance();
         server.setQuality(50);
-
 	}
 	
 	public static void changeCam(int newId) {
-
 		NIVision.IMAQdxStopAcquisition(curCam);
 		curCam = newId;
 		NIVision.IMAQdxConfigureGrab(newId);
     	NIVision.IMAQdxStartAcquisition(newId);
-    	
     }
 	
 	public void updateCam() {
@@ -49,14 +42,6 @@ public class Cameras {
 		changeCam(frontCam);
 	}
 	public void execute() {
-		
-//		if(Robot.button3IsPressed){
-//			changeCam(frontCam);
-//		
-//		}
-//		if(Robot.button4IsPressed){
-//			changeCam(backCam);
-//		}
 		updateCam();
 	}
 }
