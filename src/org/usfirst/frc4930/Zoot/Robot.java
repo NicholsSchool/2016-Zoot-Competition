@@ -28,11 +28,14 @@ public class Robot extends IterativeRobot {
     
     public static boolean orientation;
     
+    public static boolean gearShift;
+    
     public void robotInit() {
    
     	RobotMap.init();
  
     	orientation = true;
+        gearShift = false;
     	
     	// subsystems
         armLifter = new ArmLifter();
