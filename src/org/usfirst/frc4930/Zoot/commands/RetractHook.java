@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
 /**
- * Autonomous - lasts 15 seconds
+ * RetractHook - retracts the hook
  */
-public class Autonomous extends Command {
+public class RetractHook extends Command {
 
-    public Autonomous() {
-        requires(Robot.driveTrain);
+    public RetractHook() {
+        requires(Robot.hookExtender);
     }
     
     // called once

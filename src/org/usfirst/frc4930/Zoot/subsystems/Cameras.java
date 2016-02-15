@@ -1,13 +1,13 @@
-package org.usfirst.frc4930.Zoot.commands;
-
+package org.usfirst.frc4930.Zoot.subsystems;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
 
 import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc4930.Zoot.OI;
-import org.usfirst.frc4930.Zoot.Robot;
+
+/**
+ * Cameras
+ */
 
 public class Cameras {
 	
@@ -59,10 +59,4 @@ public class Cameras {
 //		}
 		updateCam();
 	}
-
-
-
-
-
-	
 }

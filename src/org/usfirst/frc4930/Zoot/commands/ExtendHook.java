@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
 /**
- * Autonomous - lasts 15 seconds
+ *  ExtendHook - controls the length of the hook arm
  */
-public class Autonomous extends Command {
+public class ExtendHook extends Command {
 
-    public Autonomous() {
-        requires(Robot.driveTrain);
+    public ExtendHook() {
+        requires(Robot.hookExtender);
     }
     
     // called once

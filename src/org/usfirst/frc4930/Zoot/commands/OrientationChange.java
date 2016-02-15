@@ -4,31 +4,24 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.OI;
+import org.usfirst.frc4930.Zoot.subsystems.Cameras;
 import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
-import org.usfirst.frc4930.Zoot.commands.Cameras;
 
 /**
- *
+ * OrientationChange - switches orientation of drive train and cameras
  */
 public class OrientationChange extends Command {
 
-
-    public OrientationChange() {
-    	
+    public OrientationChange() {  	
     	requires(Robot.driveTrain);
-
-
     }
-
 
     protected void initialize() {
     }
 
-
     protected void execute() {
     	takeJoystickInputs(OI.joystick0, OI.joystick1);
     }
-
 
     protected boolean isFinished() {
         return false;
@@ -46,7 +39,6 @@ public class OrientationChange extends Command {
 
     protected void end() {
     }
-
 
     protected void interrupted() {
     }

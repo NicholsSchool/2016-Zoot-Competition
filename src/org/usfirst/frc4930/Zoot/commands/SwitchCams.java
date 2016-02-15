@@ -1,14 +1,16 @@
 package org.usfirst.frc4930.Zoot.commands;
 
+import org.usfirst.frc4930.Zoot.subsystems.Cameras;
+
 import edu.wpi.first.wpilibj.command.Command;
+/**
+ * SwitchCams - switches between the two cameras
+ */
 
 public class SwitchCams extends Command {
 
-	
 //	public CANTalon motor1 = new CANTalon(2);
 
-	
-	
     public SwitchCams() {
     	
     }
@@ -30,7 +32,6 @@ public class SwitchCams extends Command {
     		Cameras._cam0 = true;
     	}
     }
-
 
 	// Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
