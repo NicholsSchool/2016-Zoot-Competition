@@ -13,29 +13,28 @@ import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
 public class OrientationChange extends Command {
 
     public OrientationChange() {  	
-    	requires(Robot.driveTrain);
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
-    	takeJoystickInputs(OI.joystick0, OI.joystick1);
+    	if (Robot.orientation) {
+    		Cameras.changeCam(Cameras.backCam);
+    		Robot.orientation = false;
+    		
+    	} else {
+    		Cameras.changeCam(Cameras.frontCam);
+    		Robot.orientation = true;
+    	}
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
+    	
+    
 
-   //Needs to be Tested!!!!
-    public void takeJoystickInputs(Joystick joystick0, Joystick joystick1){
-    	if(Cameras._cam0){
-    		DriveTrain.masterMotors.tankDrive(joystick0.getY(), joystick1.getY());
-    	}
-    	else if(Cameras._cam0 == false){
-    		DriveTrain.masterMotors.tankDrive(-joystick0.getY(), -joystick1.getY());
-    	}
-    }
 
     protected void end() {
     }

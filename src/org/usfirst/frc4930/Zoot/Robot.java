@@ -26,13 +26,17 @@ public class Robot extends IterativeRobot {
     public static IntakeMotors intakeMotors;
     public static Pneumatics pneumatics;
     
+    public static boolean orientation;
+    
     public void robotInit() {
    
     	RobotMap.init();
  
+    	orientation = true;
+    	
     	// subsystems
         armLifter = new ArmLifter();
-        //cameras = new Cameras();
+        cameras = new Cameras();
         driveTrain = new DriveTrain();
         hookExtender = new HookExtender();
         intakeMotors = new IntakeMotors();
@@ -69,12 +73,12 @@ public class Robot extends IterativeRobot {
         if (autonomous != null) {
         	autonomous.cancel();
         }
-        //cameras.initialize();
+        cameras.initialize();
     }
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        //cameras.execute();
+        cameras.execute();
     }
 
     public void testPeriodic() {

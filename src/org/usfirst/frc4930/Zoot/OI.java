@@ -35,14 +35,11 @@ public class OI {
         
         joystick0Button1 = new JoystickButton(joystick0, 1);
         joystick0Button1.whenReleased(new ShiftUp());
-        
-        joystick0Button3 = new JoystickButton(joystick0, 3);
-        joystick0Button3.whenPressed(new SwitchCams());
                 
         joystick1Button1 = new JoystickButton(joystick1, 1);
         joystick1Button1.whenReleased(new ShiftDown());
         
-        joystick1Button3 = new JoystickButton(joystick1, 3);
+        joystick1Button3 = new JoystickButton(joystick0, 3);
         joystick1Button3.whenReleased(new OrientationChange());
         
         joystick2Button1 = new JoystickButton(joystick2, 1);
