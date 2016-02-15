@@ -1,7 +1,9 @@
 package org.usfirst.frc4930.Zoot.commands;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.subsystems.Pneumatics;
 
 /**
  * ShiftDown - shifts the gear down
@@ -18,11 +20,15 @@ public class ShiftDown extends Command {
     
     // called repeatedly
     protected void execute() {
+    	if (Robot.gearShift) {
+    		Pneumatics.doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+    		Robot.gearShift = false;
+    	}
     }
     
     // called repeatedly
     protected boolean isFinished() {
-        return false;
+        return true;
     }
     
     // called after isFinished() returns true
