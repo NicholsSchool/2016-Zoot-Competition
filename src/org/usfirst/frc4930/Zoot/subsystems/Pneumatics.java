@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Pneumatics extends Subsystem {
      
-	public static DoubleSolenoid doubleSolenoid = new DoubleSolenoid(1, 2);
+	public static DoubleSolenoid doubleSolenoid = new DoubleSolenoid(0, 1);
 	
     public void initDefaultCommand() {
 
