@@ -53,6 +53,7 @@ public class RobotMap {
         driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
         driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
         
+        intakeMotorsMaster.reverseOutput(true);
         intakeMotorsSlave.changeControlMode(TalonControlMode.Follower);
         intakeMotorsSlave.set(intakeMotorsMaster.getDeviceID());
         
