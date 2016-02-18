@@ -2,6 +2,7 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.subsystems.ArmLifter;
 
 /**
  * MoveArm - lifts the arm
@@ -18,6 +19,7 @@ public class MoveArm extends Command {
     
     // called repeatedly
     protected void execute() {
+    	ArmLifter.move(Robot.oi.joystick2.getY());
     }
     
     // called repeatedly
@@ -27,6 +29,7 @@ public class MoveArm extends Command {
     
     // called after isFinished() returns true
     protected void end() {
+    	Robot.armLifter.stop();
     }
     
     // called when another command requires some subsystem(s)

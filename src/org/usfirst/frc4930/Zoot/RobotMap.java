@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot;
 
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -26,6 +27,7 @@ public class RobotMap {
     public static CANTalon intakeMotorsMaster;
     public static CANTalon intakeMotorsSlave;
     
+    public static AnalogPotentiometer armPot;
     
     public static void init() {
        
@@ -39,7 +41,8 @@ public class RobotMap {
         driveTrainLeftMaster = new CANTalon(18);
         driveTrainLeftSlave1 = new CANTalon(19);
         driveTrainLeftSlave2 = new CANTalon(20);
-        
+        armPot = new AnalogPotentiometer(3, 1.0, 1.0);
+                
         // setup slaves and masters
         driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
         driveTrainLeftSlave1.set(driveTrainLeftMaster.getDeviceID());
