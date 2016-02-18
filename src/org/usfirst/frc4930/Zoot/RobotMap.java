@@ -2,6 +2,7 @@ package org.usfirst.frc4930.Zoot;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -26,6 +27,8 @@ public class RobotMap {
     public static CANTalon intakeMotorsMaster;
     public static CANTalon intakeMotorsSlave;
     
+	public static DigitalInput hookHighExtremeLimitSwitch;
+	public static DigitalInput hookLowExtremeLimitSwitch; 
     
     public static void init() {
        
@@ -39,6 +42,9 @@ public class RobotMap {
         driveTrainLeftMaster = new CANTalon(18);
         driveTrainLeftSlave1 = new CANTalon(19);
         driveTrainLeftSlave2 = new CANTalon(20);
+        
+    	hookHighExtremeLimitSwitch = new DigitalInput(1);
+        hookLowExtremeLimitSwitch = new DigitalInput(2);
         
         // setup slaves and masters
         driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
@@ -64,5 +70,12 @@ public class RobotMap {
         driveTrainMasterMotors.setExpiration(0.1);
         driveTrainMasterMotors.setSensitivity(0.5);
         driveTrainMasterMotors.setMaxOutput(1.0);
+    }
+    
+    public static DigitalInput getHookHighExtremeLimitSwitch(){
+    	return hookHighExtremeLimitSwitch;
+    }
+    public static DigitalInput getHookLowExtremeLimitSwitch(){
+    	return hookLowExtremeLimitSwitch;
     }
 }

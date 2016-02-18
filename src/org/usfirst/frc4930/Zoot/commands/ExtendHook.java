@@ -2,6 +2,8 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.RobotMap;
+import org.usfirst.frc4930.Zoot.subsystems.HookExtender;
 
 /**
  *  ExtendHook - controls the length of the hook arm
