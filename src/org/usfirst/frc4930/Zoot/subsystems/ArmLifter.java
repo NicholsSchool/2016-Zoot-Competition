@@ -15,14 +15,8 @@ public class ArmLifter extends Subsystem {
 //	private static double lowPotVal = 0.25;
 //	private static double armPotVal;
 //	
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-
     public void initDefaultCommand() {
     	setDefaultCommand(new MoveArm());
-    	
-        // Set the default command for a subsystem here.
-        // setDefaultCommand(new MySpecialCommand()); 	
     }
     
 //    public void up( double yAxis ) {

@@ -24,6 +24,7 @@ public class RobotMap {
     public static CANTalon armDart;
     public static CANTalon hookDart;
 
+    public static CANTalon roller;
     public static CANTalon intakeMotorsMaster;
     public static CANTalon intakeMotorsSlave;
     
@@ -31,6 +32,7 @@ public class RobotMap {
     
     public static void init() {
        
+    	roller = new CANTalon(10);
         driveTrainRightMaster = new CANTalon(11);
         driveTrainRightSlave1 = new CANTalon(12);   
         driveTrainRightSlave2 = new CANTalon(13);
