@@ -41,7 +41,7 @@ public class RobotMap {
         driveTrainLeftMaster = new CANTalon(18);
         driveTrainLeftSlave1 = new CANTalon(19);
         driveTrainLeftSlave2 = new CANTalon(20);
-        armPot = new AnalogPotentiometer(3, 1.0, 1.0);
+        armPot = new AnalogPotentiometer(1, 1.0, 1.0);
                 
         // setup slaves and masters
         driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);

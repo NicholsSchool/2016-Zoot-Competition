@@ -1,6 +1,7 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
+import org.usfirst.frc4930.Zoot.commands.MoveArm;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -18,6 +19,7 @@ public class ArmLifter extends Subsystem {
     // here. Call these from Commands.
 
     public void initDefaultCommand() {
+    	setDefaultCommand(new MoveArm());
     	
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand()); 	
