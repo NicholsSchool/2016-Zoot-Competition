@@ -34,5 +34,6 @@ public class MoveArm extends Command {
     
     // called when another command requires some subsystem(s)
     protected void interrupted() {
+    	Robot.armLifter.stop();
     }
 }
