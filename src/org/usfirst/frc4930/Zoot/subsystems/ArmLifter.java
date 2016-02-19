@@ -29,7 +29,7 @@ public class ArmLifter extends Subsystem {
 //    	RobotMap.armDart.set( yAxis );
 //    }
     
-    public static void move(double yAxis ) {
+    public static void move(double yAxis) {
     	RobotMap.armDart.set( yAxis );
     }
     

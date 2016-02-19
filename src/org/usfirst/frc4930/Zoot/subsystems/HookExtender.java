@@ -12,18 +12,16 @@ public class HookExtender extends Subsystem {
     public void initDefaultCommand() {
     }
     
-    public void extend( double extendVoltage ) {
-    	RobotMap.hookDart.set( extendVoltage );
-    	
+    public void extend() {
+    	RobotMap.hookDart.set(.4);
     }
     
-    public void retract( double retractVoltage ) {
-    	RobotMap.hookDart.set( retractVoltage );
-    	
+    public void retract() {
+    	RobotMap.hookDart.set(-.4);   	
     }
     
-    public void move( double extenderVoltage ) {
-    	RobotMap.hookDart.set( extenderVoltage );
+    public void stop() {
+    	RobotMap.hookDart.set(0.0);
     }
 }
 
