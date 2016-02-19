@@ -1,5 +1,7 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
+import org.usfirst.frc4930.Zoot.Robot;
+
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,6 +17,10 @@ public class Pneumatics extends Subsystem {
 	
     public void initDefaultCommand() {
 
+    }
+    
+    public void stop() {
+    	Robot.gearShift = false;
     }
 }
 
