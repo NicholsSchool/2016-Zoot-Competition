@@ -25,8 +25,6 @@ public class OI {
     public JoystickButton joystick2Button6;
     public JoystickButton joystick2Button7;
     public JoystickButton joystick2Button9;
-   
- 
 
     public OI() {
 

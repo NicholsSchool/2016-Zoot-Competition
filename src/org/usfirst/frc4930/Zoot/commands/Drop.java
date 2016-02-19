@@ -18,6 +18,7 @@ public class Drop extends Command {
     
     // called repeatedly
     protected void execute() {
+    	Robot.intakeMotors.drop();
     }
     
     // called repeatedly
@@ -27,9 +28,11 @@ public class Drop extends Command {
     
     // called after isFinished() returns true
     protected void end() {
+    	Robot.intakeMotors.stop();
     }
     
     // called when another command requires some subsystem(s)
     protected void interrupted() {
+    	Robot.intakeMotors.stop();
     }
 }
