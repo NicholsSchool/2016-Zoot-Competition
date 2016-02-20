@@ -17,16 +17,14 @@ public class OI {
     public JoystickButton joystick0Button3;
     
     public JoystickButton joystick1Button1;
+    public JoystickButton joystick1Button2;
     public JoystickButton joystick1Button3;
 
     public JoystickButton joystick2Button1;
-    public JoystickButton joystick2Button2;
     public JoystickButton joystick2Button3;
     public JoystickButton joystick2Button6;
     public JoystickButton joystick2Button7;
     public JoystickButton joystick2Button9;
-   
- 
 
     public OI() {
 
@@ -40,8 +38,8 @@ public class OI {
         joystick1Button1 = new JoystickButton(joystick1, 1);
         joystick1Button1.whenReleased(new ShiftDown());
         
-        joystick2Button2 = new JoystickButton(joystick1, 2);
-        joystick2Button2.whenReleased(new Intake());
+        joystick1Button2 = new JoystickButton(joystick1, 2);
+        joystick1Button2.whenReleased(new Intake());
         
         joystick1Button3 = new JoystickButton(joystick0, 3);
         joystick1Button3.whenReleased(new OrientationChange());
