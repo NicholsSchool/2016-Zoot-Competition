@@ -13,15 +13,17 @@ public class Intake extends Command {
 	}
 
 	protected void execute() {
-		if (RobotMap.boulderIntakeSwitch.get()) {
 			Robot.intakeMotors.moveLeft(0.3);
 			Robot.intakeMotors.moveRight(0.3);
 			Robot.roller.move(-0.3);
-		}
 	}
 
 	protected boolean isFinished() {
-		return false;
+		if(RobotMap.boulderIntakeSwitch.get()) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	protected void end() {
