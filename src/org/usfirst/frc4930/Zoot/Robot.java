@@ -16,6 +16,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static boolean zoot;
+	public static boolean orientation;
 
 	// commands
 	public static Command autonomous;
@@ -27,8 +28,6 @@ public class Robot extends IterativeRobot {
 	public static HookExtender hookExtender;
 	public static IntakeMotors intakeMotors;
 	public static Pneumatics pneumatics;
-
-	public static boolean orientation;
 
 	public void robotInit() {
 
