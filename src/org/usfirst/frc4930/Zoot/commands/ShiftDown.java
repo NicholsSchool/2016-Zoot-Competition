@@ -1,6 +1,5 @@
 package org.usfirst.frc4930.Zoot.commands;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
@@ -19,7 +18,7 @@ public class ShiftDown extends Command {
 
 	// called repeatedly
 	protected void execute() {
-		Robot.pneumatics.doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+		Robot.pneumatics.reverse();
 	}
 
 	// called repeatedly

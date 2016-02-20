@@ -14,7 +14,24 @@ public class Pneumatics extends Subsystem {
 
 	public void initDefaultCommand() {
 	}
+	
+	public void forward() {
+		doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+	}
+	
+	public void reverse() {
+		doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+	}
 
+	public void startCompressing() {
+		c.setClosedLoopControl(true);
+	}
+	
+	public void endCompressing() {
+		c.setClosedLoopControl(false);
+	}
+	
 	public void stop() {
+		
 	}
 }
