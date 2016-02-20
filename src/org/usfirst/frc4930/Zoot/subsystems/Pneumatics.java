@@ -1,5 +1,7 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
+import org.usfirst.frc4930.Zoot.Robot;
+
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,12 +17,24 @@ public class Pneumatics extends Subsystem {
 	public void initDefaultCommand() {
 	}
 	
-	public void forward() {
-		doubleSolenoid.set(DoubleSolenoid.Value.kForward);
-	}
+//	public void enableHighGear() {
+//		doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+//		
+//	}
+//	
+//	public void enableLowGear() {
+//		doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+//	}
 	
-	public void reverse() {
-		doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+	public void changeGear() {
+		if (Robot.gearShift) {
+			doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+			Robot.gearShift=false;	
+		}
+		else {
+			doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+			Robot.gearShift=true;
+		}
 	}
 
 	public void startCompressing() {

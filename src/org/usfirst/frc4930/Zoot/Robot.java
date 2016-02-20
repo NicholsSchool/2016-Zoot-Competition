@@ -18,6 +18,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static boolean zoot;
 	public static boolean orientation;
+	public static boolean gearShift;
 
 	// commands
 	public static Command autonomous;
@@ -37,6 +38,7 @@ public class Robot extends IterativeRobot {
 		// true = Zoo && false = Tooz
 		zoot = false;
 		orientation = true;
+		gearShift = true;
 
 		// subsystems
 		armLifter = new ArmLifter();
