@@ -13,7 +13,7 @@ public class Roller extends Subsystem {
 	}
 
 	public void move(double x) {
-		RobotMap.roller.set(x);
+		RobotMap.roller.set(-x);
 	}
 
 	public void stop() {

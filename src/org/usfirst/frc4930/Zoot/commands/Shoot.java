@@ -14,7 +14,7 @@ public class Shoot extends Command {
 
 	protected void execute() {
 		Robot.intakeMotors.moveLeft(0.8);
-		Robot.intakeMotors.moveRight(-0.8);
+		Robot.intakeMotors.moveRight(0.8);
 		Timer.delay(2.0);
 		Robot.roller.move(0.8);
 		Timer.delay(2.0);
