@@ -34,10 +34,11 @@ public class ShiftUp extends Command {
     
     // called after isFinished() returns true
     protected void end() {
-    	
+    	Robot.pneumatics.stop();
     }
     
     // called when another command requires some subsystem(s)
     protected void interrupted() {
+    	Robot.pneumatics.stop();
     }
 }
