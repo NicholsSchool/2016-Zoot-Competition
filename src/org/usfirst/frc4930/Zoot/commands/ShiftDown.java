@@ -12,7 +12,7 @@ public class ShiftDown extends Command {
 	}
 
 	protected void execute() {
-		Robot.pneumatics.reverse();
+		Robot.pneumatics.changeGear();
 	}
 
 	protected boolean isFinished() {

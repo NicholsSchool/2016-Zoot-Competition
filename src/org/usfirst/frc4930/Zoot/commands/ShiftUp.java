@@ -12,7 +12,7 @@ public class ShiftUp extends Command {
 	}
 
 	protected void execute() {
-		Robot.pneumatics.forward();
+		Robot.pneumatics.changeGear();
 	}
 
 	protected boolean isFinished() {
