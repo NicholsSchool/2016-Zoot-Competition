@@ -20,7 +20,7 @@ public class MoveArm extends Command {
 	}
 
 	protected void execute() {
-		Robot.armLifter.move(Robot.oi.getJoystick2());
+		Robot.armLifter.move(0.6 * Robot.oi.getJoystick2());
 	}
 
 	protected boolean isFinished() {
