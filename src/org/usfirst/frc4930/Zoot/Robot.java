@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
@@ -31,12 +30,10 @@ public class Robot extends IterativeRobot {
 	public static Roller roller;
 
 	public void robotInit() {
-
 		RobotMap.init();
 
-		// true is Zoot & false is Tooz
+		// true = Zoo && false = Tooz
 		zoot = false;
-
 		orientation = true;
 
 		// subsystems
@@ -53,11 +50,9 @@ public class Robot extends IterativeRobot {
 
 		// autonomous must be instantiated after OI
 		autonomous = new Autonomous();
-
 	}
 
 	public void disabledInit() {
-
 	}
 
 	public void disabledPeriodic() {
@@ -72,7 +67,6 @@ public class Robot extends IterativeRobot {
 
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
-
 	}
 
 	public void teleopInit() {

@@ -1,6 +1,5 @@
 package org.usfirst.frc4930.Zoot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
@@ -10,16 +9,11 @@ import org.usfirst.frc4930.Zoot.RobotMap;
  */
 public class Intake extends Command {
 
-	public Intake() {
-		requires(Robot.intakeMotors);
-		requires(Robot.roller);
-	}
-
 	protected void initialize() {
 	}
 
 	protected void execute() {
-		if(RobotMap.boulderIntakeSwitch.get()){
+		if (RobotMap.boulderIntakeSwitch.get()) {
 			Robot.intakeMotors.move(0.3);
 			Robot.roller.move(-0.3);
 		}
