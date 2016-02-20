@@ -16,7 +16,7 @@ public class Shoot extends Command {
 		Robot.intakeMotors.moveLeft(-1.0);
 		Robot.intakeMotors.moveRight(-1.0);
 		Timer.delay(2.0);
-		Robot.roller.move(0.5);
+		Robot.roller.move(1.0);
 		Timer.delay(2.0);
 	}
 
