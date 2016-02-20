@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
@@ -75,6 +77,13 @@ public class Robot extends IterativeRobot {
 			autonomous.cancel();
 		}
 		cameras.initialize();
+
+		// put values to dashboard
+		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
+		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
 	}
 
 	public void teleopPeriodic() {
