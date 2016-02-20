@@ -1,6 +1,5 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.ButtonTester;
 import org.usfirst.frc4930.Zoot.commands.CompressorOn;
 import org.usfirst.frc4930.Zoot.commands.Drop;
 import org.usfirst.frc4930.Zoot.commands.ExtendHook;
@@ -10,7 +9,6 @@ import org.usfirst.frc4930.Zoot.commands.RetractHook;
 import org.usfirst.frc4930.Zoot.commands.ShiftDown;
 import org.usfirst.frc4930.Zoot.commands.ShiftUp;
 import org.usfirst.frc4930.Zoot.commands.Shoot;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -41,7 +39,6 @@ public class OI {
 	public JoystickButton joystick2Button11;
 
 	public OI() {
-
 		joystick0 = new Joystick(0);
 		joystick1 = new Joystick(1);
 		joystick2 = new Joystick(2);
@@ -72,16 +69,6 @@ public class OI {
 
 		joystick2Button9 = new JoystickButton(joystick2, 9);
 		joystick2Button9.whileHeld(new CompressorOn());
-
-		joystick2Button10 = new JoystickButton(joystick2, 8);
-		joystick2Button10.whenPressed(new ButtonTester());
-
-		joystick2Button10 = new JoystickButton(joystick2, 10);
-		joystick2Button10.whileHeld(new ButtonTester());
-
-		joystick2Button10 = new JoystickButton(joystick2, 11);
-		joystick2Button10.whenReleased(new ButtonTester());
-
 	}
 
 	public double getJoystick0() {
@@ -95,5 +82,4 @@ public class OI {
 	public double getJoystick2() {
 		return joystick2.getY();
 	}
-
 }

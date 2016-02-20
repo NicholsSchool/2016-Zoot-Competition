@@ -39,15 +39,14 @@ public class RobotMap {
 	public static AnalogGyro robotGyro;
 
 	public static void init() {
-
-		//DIO Sensors
+		// DIO Sensors
 		hookHighExtremeSwitch = new DigitalInput(0);
 		boulderIntakeSwitch = new DigitalInput(1);
 		hookLowExtremeSwitch = new DigitalInput(2);
 		armHighExtremeSwitch = new DigitalInput(3);
 		armLowExtremeSwitch = new DigitalInput(4);
-		
-		//Analog Sensors
+
+		// Analog Sensors
 		robotGyro = new AnalogGyro(0);
 		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
 
@@ -83,25 +82,27 @@ public class RobotMap {
 		intakeMotorsSlave.changeControlMode(TalonControlMode.Follower);
 		intakeMotorsSlave.set(intakeMotorsMaster.getDeviceID());
 		intakeMotorsSlave.reverseOutput(true);
-		
-		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
-		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
-		
+
 		// specific preset robot drive settings (do not change)
 		driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 
-		driveTrainMasterMotors.setSafetyEnabled(false);
+		driveTrainMasterMotors.setSafetyEnabled(true);
 		driveTrainMasterMotors.setExpiration(0.1);
 		driveTrainMasterMotors.setSensitivity(0.5);
 		driveTrainMasterMotors.setMaxOutput(1.0);
+
 		driveTrainLeftMaster.enableBrakeMode(true);
 		driveTrainLeftSlave1.enableBrakeMode(true);
 		driveTrainLeftSlave2.enableBrakeMode(true);
 		driveTrainRightMaster.enableBrakeMode(true);
 		driveTrainRightSlave1.enableBrakeMode(true);
 		driveTrainRightSlave2.enableBrakeMode(true);
+
+		// Use SmartDashboard
+		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
+		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
 	}
 }

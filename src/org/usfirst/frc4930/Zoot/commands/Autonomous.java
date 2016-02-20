@@ -8,15 +8,9 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class Autonomous extends Command {
 
-	public Autonomous() {
-		requires(Robot.driveTrain);
-	}
-
-	// called once
 	protected void initialize() {
 	}
 
-	// called repeatedly
 	protected void execute() {
 		// @todo I like the comments below, but add a space after semi-colon
 		// RobotMap.driveTrainLeftMaster.set(0.75); //Ran Left Side Backwards
@@ -34,18 +28,15 @@ public class Autonomous extends Command {
 		Robot.armLifter.move(0.0);
 	}
 
-	// called repeatedly
 	protected boolean isFinished() {
 		return true;
 	}
 
-	// called after isFinished() returns true
 	protected void end() {
 		Robot.armLifter.stop();
 		// @todo any motors set during execute need to be stopped here
 	}
 
-	// called when another command requires some subsystem(s)
 	protected void interrupted() {
 		Robot.armLifter.stop();
 		// @todo typically this should contain same logic as end()

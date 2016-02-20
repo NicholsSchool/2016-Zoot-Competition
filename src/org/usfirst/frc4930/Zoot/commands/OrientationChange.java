@@ -9,9 +9,6 @@ import org.usfirst.frc4930.Zoot.subsystems.Cameras;
  */
 public class OrientationChange extends Command {
 
-	public OrientationChange() {
-	}
-
 	protected void initialize() {
 	}
 
