@@ -4,3 +4,4 @@
 /build/
 sysProps.xml
 /dist/
+/dist/*
