@@ -13,8 +13,8 @@ public class Drop extends Command {
 	}
 
 	protected void execute() {
-		Robot.intakeMotors.moveLeft(0.3);
-		Robot.intakeMotors.moveRight(-0.3);
+		Robot.intakeMotors.moveLeft(-0.3);
+		Robot.intakeMotors.moveRight(0.3);
 		Robot.roller.move(0.3);
 		Timer.delay(2.0);
 	}
