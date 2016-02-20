@@ -1,8 +1,18 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.*;
+import org.usfirst.frc4930.Zoot.commands.ButtonTester;
+import org.usfirst.frc4930.Zoot.commands.CompressorOn;
+import org.usfirst.frc4930.Zoot.commands.Drop;
+import org.usfirst.frc4930.Zoot.commands.ExtendHook;
+import org.usfirst.frc4930.Zoot.commands.Intake;
+import org.usfirst.frc4930.Zoot.commands.OrientationChange;
+import org.usfirst.frc4930.Zoot.commands.RetractHook;
+import org.usfirst.frc4930.Zoot.commands.ShiftDown;
+import org.usfirst.frc4930.Zoot.commands.ShiftUp;
+import org.usfirst.frc4930.Zoot.commands.Shoot;
+
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.*;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * Binds operator interface controls to commands.
@@ -39,11 +49,11 @@ public class OI {
 		joystick0Button1 = new JoystickButton(joystick0, 1);
 		joystick0Button1.whenReleased(new ShiftUp());
 
-		joystick1Button1 = new JoystickButton(joystick1, 1);
-		joystick1Button1.whenReleased(new ShiftDown());
-
 		joystick0Button3 = new JoystickButton(joystick0, 3);
 		joystick0Button3.whenReleased(new OrientationChange());
+
+		joystick1Button1 = new JoystickButton(joystick1, 1);
+		joystick1Button1.whenReleased(new ShiftDown());
 
 		joystick1Button2 = new JoystickButton(joystick1, 2);
 		joystick1Button2.whileHeld(new Intake());
@@ -74,16 +84,16 @@ public class OI {
 
 	}
 
-	public Joystick getJoystick0() {
-		return joystick0;
+	public double getJoystick0() {
+		return joystick0.getY();
 	}
 
-	public Joystick getJoystick1() {
-		return joystick1;
+	public double getJoystick1() {
+		return joystick1.getY();
 	}
 
-	public Joystick getJoystick2() {
-		return joystick2;
+	public double getJoystick2() {
+		return joystick2.getY();
 	}
 
 }

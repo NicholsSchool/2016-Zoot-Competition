@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc4930.Zoot.commands.*;
+
+import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
 /**
@@ -13,8 +14,8 @@ import org.usfirst.frc4930.Zoot.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
-	// @todo put static booleans up here
 	public static OI oi;
+	public static boolean zoot;
 
 	// commands
 	public static Command autonomous;
@@ -29,14 +30,14 @@ public class Robot extends IterativeRobot {
 
 	public static boolean orientation;
 
-	public static boolean gearShift;
-
 	public void robotInit() {
 
 		RobotMap.init();
 
+		// true is Zoot & false is Tooz
+		zoot = false;
+
 		orientation = true;
-		gearShift = false;
 
 		// subsystems
 		armLifter = new ArmLifter();
@@ -63,9 +64,9 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void autonomousInit() {
-		// @todo break this out to multi-line if
-		if (autonomous != null)
+		if (autonomous != null) {
 			autonomous.start();
+		}
 	}
 
 	public void autonomousPeriodic() {

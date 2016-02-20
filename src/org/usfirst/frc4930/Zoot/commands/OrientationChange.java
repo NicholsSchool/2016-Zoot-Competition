@@ -1,16 +1,8 @@
 package org.usfirst.frc4930.Zoot.commands;
 
-//@todo remove unused import
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-//@todo remove unused import
-import org.usfirst.frc4930.Zoot.OI;
 import org.usfirst.frc4930.Zoot.subsystems.Cameras;
-//@todo remove unused import
-import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
-
-// @todo missing comments (see drop for example)
 
 /**
  * OrientationChange - switches orientation of drive train and cameras

@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.RobotDrive;
-// @todo remove unused import
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
@@ -34,6 +32,9 @@ public class RobotMap {
 	public static void init() {
 
 		// sensors
+		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
+		// encoders Left: 6 & 7
+		// encoders Right: 8 & 9
 
 		// motor controllers
 		roller = new CANTalon(10);
@@ -47,8 +48,6 @@ public class RobotMap {
 		driveTrainLeftMaster = new CANTalon(18);
 		driveTrainLeftSlave1 = new CANTalon(19);
 		driveTrainLeftSlave2 = new CANTalon(20);
-		// @todo move this to sensor list above
-		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
 
 		// setup slaves and masters
 		driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
@@ -70,7 +69,7 @@ public class RobotMap {
 		// specific preset robot drive settings (do not change)
 		driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 
-		driveTrainMasterMotors.setSafetyEnabled(true);
+		driveTrainMasterMotors.setSafetyEnabled(false);
 		driveTrainMasterMotors.setExpiration(0.1);
 		driveTrainMasterMotors.setSensitivity(0.5);
 		driveTrainMasterMotors.setMaxOutput(1.0);

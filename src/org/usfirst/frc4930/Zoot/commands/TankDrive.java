@@ -2,7 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
 
 /**
  * TankDrive - driving command during tele-op
@@ -19,8 +18,7 @@ public class TankDrive extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		// @todo joysticks are static use getter methods instead
-		DriveTrain.move(Robot.oi.joystick0.getY(), Robot.oi.joystick1.getY());
+		Robot.driveTrain.move(Robot.oi.getJoystick0(), Robot.oi.getJoystick1());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -36,7 +34,6 @@ public class TankDrive extends Command {
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
-		// @todo pretty sure this is wrong
-		end();
+		Robot.driveTrain.stop();
 	}
 }

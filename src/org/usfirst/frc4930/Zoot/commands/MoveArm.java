@@ -2,7 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.subsystems.ArmLifter;
 
 /**
  * MoveArm - lifts the arm
@@ -19,8 +18,7 @@ public class MoveArm extends Command {
 
 	// called repeatedly
 	protected void execute() {
-		// @todo joysticks are static use getter methods
-		ArmLifter.move(Robot.oi.joystick2.getY());
+		Robot.armLifter.move(Robot.oi.getJoystick2());
 	}
 
 	// called repeatedly
