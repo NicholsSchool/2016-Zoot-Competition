@@ -15,11 +15,11 @@ public class HookExtender extends Subsystem {
     }
     
     public void extend() {
-    	RobotMap.hookDart.set(.4);
+    	RobotMap.hookDart.set(-.4);
     }
     
     public void retract() {
-    	RobotMap.hookDart.set(-.4);   	
+    	RobotMap.hookDart.set(.4);   	
     }
     
     public void stop() {
