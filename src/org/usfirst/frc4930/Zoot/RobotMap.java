@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
@@ -93,12 +92,5 @@ public class RobotMap {
 		driveTrainRightMaster.enableBrakeMode(true);
 		driveTrainRightSlave1.enableBrakeMode(true);
 		driveTrainRightSlave2.enableBrakeMode(true);
-
-		// Use SmartDashboard
-		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
-		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
 	}
 }
