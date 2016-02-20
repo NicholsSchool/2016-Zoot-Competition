@@ -19,12 +19,12 @@ public class ExtendHook extends Command {
     
     // called repeatedly
     protected void execute() {
-    	Robot.hookExtender.extend();
+    	Robot.hookExtender.move(-0.7);
     }
     
     // called repeatedly
     protected boolean isFinished() {
-    	if(RobotMap.hookHighExtremeSwitch.get()) {
+    	if(!RobotMap.hookHighExtremeSwitch.get()) {
     		return true;
     	} else {
     		return false;

@@ -9,6 +9,11 @@ import org.usfirst.frc4930.Zoot.RobotMap;
  */
 public class MoveArm extends Command {
 
+	// private static double highPotVal = 0.75;
+	// private static double lowPotVal = 0.25;
+	// private static double armPotVal;
+	//
+	
 	public MoveArm() {
 		requires(Robot.armLifter);
 	}
@@ -24,7 +29,7 @@ public class MoveArm extends Command {
 
 	// called repeatedly
 	protected boolean isFinished() {
-		if(RobotMap.armHighExtremeSwitch.get() || RobotMap.armLowExtremeSwitch.get()) {
+		if(!RobotMap.armHighExtremeSwitch.get() || !RobotMap.armLowExtremeSwitch.get()) {
 			return true;
 		} else {
 			return false;

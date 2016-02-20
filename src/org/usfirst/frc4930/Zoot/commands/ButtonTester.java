@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ButtonTester extends Command {
 
 	protected void initialize() {
-
+		System.out.println("Initiated");
 	}
 
 	protected void execute() {

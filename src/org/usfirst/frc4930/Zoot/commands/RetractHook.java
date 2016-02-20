@@ -19,12 +19,12 @@ public class RetractHook extends Command {
     
     // called repeatedly
     protected void execute() {
-    	Robot.hookExtender.retract();
+    	Robot.hookExtender.move(0.7);
     }
     
     // called repeatedly
     protected boolean isFinished() {
-        if(RobotMap.hookLowExtremeSwitch.get()){
+        if(!RobotMap.hookLowExtremeSwitch.get()){
         	return true;
         } else {
         	return false;

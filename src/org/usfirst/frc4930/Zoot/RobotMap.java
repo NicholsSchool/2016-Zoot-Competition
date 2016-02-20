@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
@@ -34,16 +35,21 @@ public class RobotMap {
 	public static DigitalInput armHighExtremeSwitch;
 	public static DigitalInput hookLowExtremeSwitch;
 	public static DigitalInput hookHighExtremeSwitch;
+	public static AnalogGyro robotGyro;
 
 	public static void init() {
 
-		// sensors
+		//DIO Sensors
 		hookHighExtremeSwitch = new DigitalInput(0);
 		boulderIntakeSwitch = new DigitalInput(1);
 		hookLowExtremeSwitch = new DigitalInput(2);
 		armHighExtremeSwitch = new DigitalInput(3);
 		armLowExtremeSwitch = new DigitalInput(4);
+		
+		//Analog Sensors
+		robotGyro = new AnalogGyro(0);
 		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
+
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
 
