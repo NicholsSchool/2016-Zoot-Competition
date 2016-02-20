@@ -2,10 +2,7 @@ package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
 import org.usfirst.frc4930.Zoot.commands.MoveArm;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
-
-// @todo this needs some work
 
 /**
  * ArmLifter

@@ -15,7 +15,7 @@ public class DriveTrain extends Subsystem {
 		setDefaultCommand(new TankDrive());
 	}
 
-	public static void move(double left, double right) {
+	public void move(double left, double right) {
 		if (Robot.orientation) {
 			RobotMap.driveTrainMasterMotors.tankDrive(left, -right);
 		} else {
