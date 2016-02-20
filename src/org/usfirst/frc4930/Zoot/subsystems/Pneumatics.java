@@ -10,11 +10,28 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Pneumatics extends Subsystem {
 
 	public DoubleSolenoid doubleSolenoid = new DoubleSolenoid(0, 1);
-	public Compressor c = new Compressor(0);
+	public Compressor c = new Compressor(50);
 
 	public void initDefaultCommand() {
 	}
+	
+	public void forward() {
+		doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+	}
+	
+	public void reverse() {
+		doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+	}
 
+	public void startCompressing() {
+		c.setClosedLoopControl(true);
+	}
+	
+	public void endCompressing() {
+		c.setClosedLoopControl(false);
+	}
+	
 	public void stop() {
+		
 	}
 }

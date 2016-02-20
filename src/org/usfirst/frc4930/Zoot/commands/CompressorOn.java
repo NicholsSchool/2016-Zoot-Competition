@@ -16,7 +16,7 @@ public class CompressorOn extends Command {
 	}
 
 	protected void execute() {
-		Robot.pneumatics.c.setClosedLoopControl(true);
+		Robot.pneumatics.startCompressing();
 	}
 
 	protected boolean isFinished() {
@@ -24,10 +24,10 @@ public class CompressorOn extends Command {
 	}
 
 	protected void end() {
-		Robot.pneumatics.c.setClosedLoopControl(false);
+		Robot.pneumatics.endCompressing();
 	}
 
 	protected void interrupted() {
-		Robot.pneumatics.c.setClosedLoopControl(false);
+		Robot.pneumatics.endCompressing();
 	}
 }
