@@ -14,7 +14,8 @@ public class Intake extends Command {
 
 	protected void execute() {
 		if (RobotMap.boulderIntakeSwitch.get()) {
-			Robot.intakeMotors.move(0.3);
+			Robot.intakeMotors.moveLeft(0.3);
+			Robot.intakeMotors.moveRight(-0.3);
 			Robot.roller.move(-0.3);
 		}
 	}

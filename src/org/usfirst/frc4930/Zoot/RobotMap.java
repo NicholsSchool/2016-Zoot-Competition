@@ -27,8 +27,8 @@ public class RobotMap {
 	public static CANTalon hookDart;
 
 	public static CANTalon roller;
-	public static CANTalon intakeMotorsMaster;
-	public static CANTalon intakeMotorsSlave;
+	public static CANTalon intakeMotorsLeft;
+	public static CANTalon intakeMotorsRight;
 
 	public static DigitalInput boulderIntakeSwitch;
 	public static AnalogPotentiometer armPot;
@@ -59,8 +59,8 @@ public class RobotMap {
 		driveTrainRightSlave1 = new CANTalon(12);
 		driveTrainRightSlave2 = new CANTalon(13);
 		hookDart = new CANTalon(14);
-		intakeMotorsMaster = new CANTalon(15);
-		intakeMotorsSlave = new CANTalon(16);
+		intakeMotorsLeft = new CANTalon(15);
+		intakeMotorsRight = new CANTalon(16);
 		armDart = new CANTalon(17);
 		driveTrainLeftMaster = new CANTalon(18);
 		driveTrainLeftSlave1 = new CANTalon(19);
@@ -78,10 +78,6 @@ public class RobotMap {
 
 		driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
 		driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
-
-		intakeMotorsSlave.changeControlMode(TalonControlMode.Follower);
-		intakeMotorsSlave.set(intakeMotorsMaster.getDeviceID());
-		intakeMotorsSlave.reverseOutput(true);
 
 		// specific preset robot drive settings (do not change)
 		driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
