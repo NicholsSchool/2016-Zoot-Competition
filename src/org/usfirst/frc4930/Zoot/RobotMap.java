@@ -3,6 +3,7 @@ package org.usfirst.frc4930.Zoot;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
@@ -27,11 +28,21 @@ public class RobotMap {
 	public static CANTalon intakeMotorsMaster;
 	public static CANTalon intakeMotorsSlave;
 
+	public static DigitalInput boulderIntakeSwitch;
 	public static AnalogPotentiometer armPot;
+	public static DigitalInput armLowExtremeSwitch;
+	public static DigitalInput armHighExtremeSwitch;
+	public static DigitalInput hookLowExtremeSwitch;
+	public static DigitalInput hookHighExtremeSwitch;
 
 	public static void init() {
 
 		// sensors
+		hookHighExtremeSwitch = new DigitalInput(0);
+		boulderIntakeSwitch = new DigitalInput(1);
+		hookLowExtremeSwitch = new DigitalInput(2);
+		armHighExtremeSwitch = new DigitalInput(3);
+		armLowExtremeSwitch = new DigitalInput(4);
 		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
@@ -73,5 +84,11 @@ public class RobotMap {
 		driveTrainMasterMotors.setExpiration(0.1);
 		driveTrainMasterMotors.setSensitivity(0.5);
 		driveTrainMasterMotors.setMaxOutput(1.0);
+		driveTrainLeftMaster.enableBrakeMode(true);
+		driveTrainLeftSlave1.enableBrakeMode(true);
+		driveTrainLeftSlave2.enableBrakeMode(true);
+		driveTrainRightMaster.enableBrakeMode(true);
+		driveTrainRightSlave1.enableBrakeMode(true);
+		driveTrainRightSlave2.enableBrakeMode(true);
 	}
 }

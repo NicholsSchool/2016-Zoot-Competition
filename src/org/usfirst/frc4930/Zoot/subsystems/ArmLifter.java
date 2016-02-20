@@ -2,6 +2,8 @@ package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
 import org.usfirst.frc4930.Zoot.commands.MoveArm;
+
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -39,4 +41,10 @@ public class ArmLifter extends Subsystem {
 	// return RobotMap.armPot.get();
 	// }
 	//
+//	public static DigitalInput isFullyUp() {
+//		return RobotMap.armHighExtremeSwitch;
+//	}
+//	public static DigitalInput isFullyDown() {
+//		return RobotMap.armLowExtremeSwitch;
+//	}
 }
