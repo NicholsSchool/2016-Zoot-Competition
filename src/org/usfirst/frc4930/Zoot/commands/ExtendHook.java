@@ -18,6 +18,7 @@ public class ExtendHook extends Command {
     
     // called repeatedly
     protected void execute() {
+    	Robot.hookExtender.extend();
     }
     
     // called repeatedly
@@ -27,9 +28,11 @@ public class ExtendHook extends Command {
     
     // called after isFinished() returns true
     protected void end() {
+    	Robot.hookExtender.stop();
     }
     
     // called when another command requires some subsystem(s)
     protected void interrupted() {
+    	Robot.hookExtender.stop();
     }
 }
