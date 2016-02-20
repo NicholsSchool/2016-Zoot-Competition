@@ -13,6 +13,9 @@ public class MoveArm extends Command {
 	// private static double lowPotVal = 0.25;
 	// private static double armPotVal;
 
+	public MoveArm() {
+		requires(Robot.armLifter);
+	}
 	protected void initialize() {
 	}
 
