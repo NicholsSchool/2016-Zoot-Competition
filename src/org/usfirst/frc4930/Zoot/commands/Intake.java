@@ -10,29 +10,28 @@ public class Intake extends Command {
 
 	public Intake() {
 		requires(Robot.intakeMotors);
+		requires(Robot.roller);
 	}
 
-	// called once
 	protected void initialize() {
 	}
 
-	// called repeatedly
 	protected void execute() {
 		Robot.intakeMotors.intake();
+		Robot.roller.intake();
 	}
 
-	// called repeatedly
 	protected boolean isFinished() {
 		return false;
 	}
 
-	// called after isFinished() returns true
 	protected void end() {
 		Robot.intakeMotors.stop();
+		Robot.roller.stop();
 	}
 
-	// called when another command requires some subsystem(s)
 	protected void interrupted() {
 		Robot.intakeMotors.stop();
+		Robot.roller.stop();
 	}
 }

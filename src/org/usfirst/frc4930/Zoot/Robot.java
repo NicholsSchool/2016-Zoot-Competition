@@ -27,6 +27,7 @@ public class Robot extends IterativeRobot {
 	public static HookExtender hookExtender;
 	public static IntakeMotors intakeMotors;
 	public static Pneumatics pneumatics;
+	public static Roller roller;
 
 	public static boolean orientation;
 
@@ -46,6 +47,7 @@ public class Robot extends IterativeRobot {
 		hookExtender = new HookExtender();
 		intakeMotors = new IntakeMotors();
 		pneumatics = new Pneumatics();
+		roller = new Roller();
 
 		// OI must be instantiated after subsystems
 		oi = new OI();
