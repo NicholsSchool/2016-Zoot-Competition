@@ -8,6 +8,9 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class TankDrive extends Command {
 
+	public TankDrive() {
+		requires(Robot.driveTrain);
+	}
 	protected void initialize() {
 	}
 
