@@ -10,6 +10,7 @@ public class Shoot extends Command {
 
 	public Shoot() {
 		requires(Robot.intakeMotors);
+		requires(Robot.roller);
 	}
 
 	// called once
@@ -19,6 +20,7 @@ public class Shoot extends Command {
 	// called repeatedly
 	protected void execute() {
 		Robot.intakeMotors.shoot();
+		Robot.roller.shoot();
 	}
 
 	// called repeatedly
@@ -29,10 +31,12 @@ public class Shoot extends Command {
 	// called after isFinished() returns true
 	protected void end() {
 		Robot.intakeMotors.stop();
+		Robot.roller.stop();
 	}
 
 	// called when another command requires some subsystem(s)
 	protected void interrupted() {
 		Robot.intakeMotors.stop();
+		Robot.roller.stop();
 	}
 }
