@@ -1,44 +1,46 @@
 package org.usfirst.frc4930.Zoot.commands;
 
+//@todo remove unused import
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+//@todo remove unused import
 import org.usfirst.frc4930.Zoot.OI;
 import org.usfirst.frc4930.Zoot.subsystems.Cameras;
+//@todo remove unused import
 import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
+
+// @todo missing comments (see drop for example)
 
 /**
  * OrientationChange - switches orientation of drive train and cameras
  */
 public class OrientationChange extends Command {
 
-    public OrientationChange() {  	
-    }
+	public OrientationChange() {
+	}
 
-    protected void initialize() {
-    }
+	protected void initialize() {
+	}
 
-    protected void execute() {
-    	if (Robot.orientation) {
-    		Cameras.changeCam(Cameras.backCam);
-    		Robot.orientation = false;
-    		
-    	} else {
-    		Cameras.changeCam(Cameras.frontCam);
-    		Robot.orientation = true;
-    	}
-    }
+	protected void execute() {
+		if (Robot.orientation) {
+			Cameras.changeCam(Cameras.backCam);
+			Robot.orientation = false;
 
-    protected boolean isFinished() {
-        return true;
-    }
-    	
-    
+		} else {
+			Cameras.changeCam(Cameras.frontCam);
+			Robot.orientation = true;
+		}
+	}
 
+	protected boolean isFinished() {
+		return true;
+	}
 
-    protected void end() {
-    }
+	protected void end() {
+	}
 
-    protected void interrupted() {
-    }
+	protected void interrupted() {
+	}
 }
