@@ -78,12 +78,12 @@ public class Robot extends IterativeRobot {
 		}
 		cameras.initialize();
 
-		// put values to dashboard
-		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
-		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
-		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
+		// put switch values to dashboard
+		SmartDashboard.putBoolean("Bucket Limit Switch", RobotMap.boulderIntakeSwitch.get());
+		SmartDashboard.putBoolean("Arm High Limit Switch", RobotMap.armHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Arm Low Limit Switch", RobotMap.armLowExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook High Limit Switch", RobotMap.hookHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook Low Limit Switch", RobotMap.hookLowExtremeSwitch.get());
 	}
 
 	public void teleopPeriodic() {
