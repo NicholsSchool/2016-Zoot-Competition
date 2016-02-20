@@ -8,10 +8,6 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class CompressorOn extends Command {
 
-	public CompressorOn() {
-		requires(Robot.pneumatics);
-	}
-
 	protected void initialize() {
 	}
 

@@ -1,9 +1,12 @@
 package org.usfirst.frc4930.Zoot;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
@@ -27,12 +30,26 @@ public class RobotMap {
 	public static CANTalon intakeMotorsLeft;
 	public static CANTalon intakeMotorsRight;
 
+	public static DigitalInput boulderIntakeSwitch;
 	public static AnalogPotentiometer armPot;
+	public static DigitalInput armLowExtremeSwitch;
+	public static DigitalInput armHighExtremeSwitch;
+	public static DigitalInput hookLowExtremeSwitch;
+	public static DigitalInput hookHighExtremeSwitch;
+	public static AnalogGyro robotGyro;
 
 	public static void init() {
+		// DIO Sensors
+		hookHighExtremeSwitch = new DigitalInput(0);
+		boulderIntakeSwitch = new DigitalInput(1);
+		hookLowExtremeSwitch = new DigitalInput(2);
+		armHighExtremeSwitch = new DigitalInput(3);
+		armLowExtremeSwitch = new DigitalInput(4);
 
-		// sensors
+		// Analog Sensors
+		robotGyro = new AnalogGyro(0);
 		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
+
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
 
@@ -65,9 +82,23 @@ public class RobotMap {
 		// specific preset robot drive settings (do not change)
 		driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 
-		driveTrainMasterMotors.setSafetyEnabled(false);
+		driveTrainMasterMotors.setSafetyEnabled(true);
 		driveTrainMasterMotors.setExpiration(0.1);
 		driveTrainMasterMotors.setSensitivity(0.5);
 		driveTrainMasterMotors.setMaxOutput(1.0);
+
+		driveTrainLeftMaster.enableBrakeMode(true);
+		driveTrainLeftSlave1.enableBrakeMode(true);
+		driveTrainLeftSlave2.enableBrakeMode(true);
+		driveTrainRightMaster.enableBrakeMode(true);
+		driveTrainRightSlave1.enableBrakeMode(true);
+		driveTrainRightSlave2.enableBrakeMode(true);
+
+		// Use SmartDashboard
+		SmartDashboard.putBoolean("Bucket Limit Switch", boulderIntakeSwitch.get());
+		SmartDashboard.putBoolean("Arm High Limit Switch", armHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Arm Low Limit Switch", armLowExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook High Limit Switch", hookHighExtremeSwitch.get());
+		SmartDashboard.putBoolean("Hook Low Limit Switch", hookLowExtremeSwitch.get());
 	}
 }

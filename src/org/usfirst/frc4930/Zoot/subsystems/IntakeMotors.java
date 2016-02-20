@@ -1,7 +1,6 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
-import org.usfirst.frc4930.Zoot.commands.Intake;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -10,7 +9,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class IntakeMotors extends Subsystem {
 
 	public void initDefaultCommand() {
-		setDefaultCommand(new Intake());
 	}
 
 	public void intake() {
@@ -26,6 +24,11 @@ public class IntakeMotors extends Subsystem {
 	public void drop() {
 		RobotMap.intakeMotorsLeft.set(-0.5);
 		RobotMap.intakeMotorsRight.set(0.5);
+	}
+
+	public void move(double x) {
+		RobotMap.intakeMotorsLeft.set(x);
+		RobotMap.intakeMotorsRight.set(-x);
 	}
 
 	public void stop() {
