@@ -11,6 +11,7 @@ public class TankDrive extends Command {
 	public TankDrive() {
 		requires(Robot.driveTrain);
 	}
+
 	protected void initialize() {
 	}
 
