@@ -26,7 +26,9 @@ public class OI {
 	public JoystickButton joystick2Button7;
 	public JoystickButton joystick2Button9;
 
+	public JoystickButton joystick2Button8;
 	public JoystickButton joystick2Button10;
+	public JoystickButton joystick2Button11;
 
 	public OI() {
 
@@ -61,8 +63,14 @@ public class OI {
 		joystick2Button9 = new JoystickButton(joystick2, 9);
 		joystick2Button9.whileHeld(new CompressorOn());
 
-		joystick2Button10 = new JoystickButton(joystick2, 10);
+		joystick2Button10 = new JoystickButton(joystick2, 8);
 		joystick2Button10.whenPressed(new ButtonTester());
+
+		joystick2Button10 = new JoystickButton(joystick2, 10);
+		joystick2Button10.whileHeld(new ButtonTester());
+
+		joystick2Button10 = new JoystickButton(joystick2, 11);
+		joystick2Button10.whenReleased(new ButtonTester());
 
 	}
 
