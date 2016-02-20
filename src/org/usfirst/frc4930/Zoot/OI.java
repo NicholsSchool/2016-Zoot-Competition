@@ -37,13 +37,12 @@ public class OI {
 
 		joystick1Button1 = new JoystickButton(joystick1, 1);
 		joystick1Button1.whenReleased(new ShiftDown());
+		
+		joystick0Button3 = new JoystickButton(joystick0, 3);
+		joystick0Button3.whenReleased(new OrientationChange());
 
 		joystick1Button2 = new JoystickButton(joystick1, 2);
 		joystick1Button2.whenReleased(new Intake());
-
-		// @todo joystick 0 or 1? & reorder
-		joystick1Button3 = new JoystickButton(joystick0, 3);
-		joystick1Button3.whenReleased(new OrientationChange());
 
 		joystick2Button1 = new JoystickButton(joystick2, 1);
 		joystick2Button1.whenReleased(new Shoot());
