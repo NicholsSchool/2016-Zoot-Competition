@@ -8,33 +8,35 @@ import org.usfirst.frc4930.Zoot.subsystems.DriveTrain;
  * TankDrive - driving command during tele-op
  */
 public class TankDrive extends Command {
-    
-    public TankDrive() {
-        requires(Robot.driveTrain);
-    }
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    }
+	public TankDrive() {
+		requires(Robot.driveTrain);
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    	DriveTrain.move(Robot.oi.joystick0.getY(), Robot.oi.joystick1.getY());
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return false;
-    }
+	// Called repeatedly when this Command is scheduled to run
+	protected void execute() {
+		// @todo joysticks are static use getter methods instead
+		DriveTrain.move(Robot.oi.joystick0.getY(), Robot.oi.joystick1.getY());
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {
-    	Robot.driveTrain.stop();
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	protected boolean isFinished() {
+		return false;
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    	end();
-    }
+	// Called once after isFinished returns true
+	protected void end() {
+		Robot.driveTrain.stop();
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	protected void interrupted() {
+		// @todo pretty sure this is wrong
+		end();
+	}
 }

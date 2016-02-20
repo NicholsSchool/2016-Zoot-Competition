@@ -4,6 +4,8 @@ import org.usfirst.frc4930.Zoot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+// @todo add comments generally
+
 /**
  * HookExtender
  */
@@ -24,4 +26,3 @@ public class HookExtender extends Subsystem {
     	RobotMap.hookDart.set(0.0);
     }
 }
-
