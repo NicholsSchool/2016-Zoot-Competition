@@ -19,8 +19,7 @@ public class MoveArm extends Command {
 
 	// called repeatedly
 	protected void execute() {
-		// @todo joysticks are static use getter methods
-		ArmLifter.move(Robot.oi.joystick2.getY());
+		Robot.armLifter.move(Robot.oi.getJoystick2());
 	}
 
 	// called repeatedly

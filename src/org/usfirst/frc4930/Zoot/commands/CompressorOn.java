@@ -1,14 +1,10 @@
 package org.usfirst.frc4930.Zoot.commands;
 
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.subsystems.Pneumatics;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-// @todo java docs and comments (drop cmd is a good example)
-
 /**
- *
+ * Compressor On
  */
 public class CompressorOn extends Command {
 
@@ -24,7 +20,7 @@ public class CompressorOn extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Pneumatics.c.setClosedLoopControl(true);
+		Robot.pneumatics.c.setClosedLoopControl(true);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -34,12 +30,12 @@ public class CompressorOn extends Command {
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Pneumatics.c.setClosedLoopControl(false);
+		Robot.pneumatics.c.setClosedLoopControl(false);
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
-		Pneumatics.c.setClosedLoopControl(false);
+		Robot.pneumatics.c.setClosedLoopControl(false);
 	}
 }

@@ -19,8 +19,7 @@ public class TankDrive extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		// @todo joysticks are static use getter methods instead
-		DriveTrain.move(Robot.oi.joystick0.getY(), Robot.oi.joystick1.getY());
+		DriveTrain.move(Robot.oi.getJoystick0(), Robot.oi.getJoystick1());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -36,7 +35,6 @@ public class TankDrive extends Command {
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
-		// @todo pretty sure this is wrong
-		end();
+		Robot.driveTrain.stop();
 	}
 }

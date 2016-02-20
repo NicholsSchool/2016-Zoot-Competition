@@ -2,8 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-//@todo remove unused import
-import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * Autonomous - lasts 15 seconds
@@ -31,20 +29,25 @@ public class Autonomous extends Command {
 		// RobotMap.armDart.set(0.2);//Ran Arm Up
 		// RobotMap.intakeMotorsSlave.set(0.2);//Ran Counter CLockwise
 		// RobotMap.intakeMotorsMaster.set(0.2);//Ran Counter Clockwise
+
+		// example of calling a subsystem (change the ones above)
+		Robot.armLifter.move(0.0);
 	}
 
 	// called repeatedly
 	protected boolean isFinished() {
-		return false;
+		return true;
 	}
 
 	// called after isFinished() returns true
 	protected void end() {
+		Robot.armLifter.stop();
 		// @todo any motors set during execute need to be stopped here
 	}
 
 	// called when another command requires some subsystem(s)
 	protected void interrupted() {
+		Robot.armLifter.stop();
 		// @todo typically this should contain same logic as end()
 	}
 }
