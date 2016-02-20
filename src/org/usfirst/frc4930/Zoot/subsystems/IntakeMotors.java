@@ -11,23 +11,11 @@ public class IntakeMotors extends Subsystem {
 	public void initDefaultCommand() {
 	}
 
-	public void intake() {
-		RobotMap.intakeMotorsLeft.set(0.9);
-		RobotMap.intakeMotorsRight.set(-0.9);
-	}
-
-	public void shoot() {
-		RobotMap.intakeMotorsLeft.set(-0.9);
-		RobotMap.intakeMotorsRight.set(0.9);
-	}
-
-	public void drop() {
-		RobotMap.intakeMotorsLeft.set(-0.5);
-		RobotMap.intakeMotorsRight.set(0.5);
-	}
-
-	public void move(double x) {
+	public void moveLeft(double x) {
 		RobotMap.intakeMotorsLeft.set(x);
+	}
+	
+	public void moveRight(double x) {
 		RobotMap.intakeMotorsRight.set(-x);
 	}
 
