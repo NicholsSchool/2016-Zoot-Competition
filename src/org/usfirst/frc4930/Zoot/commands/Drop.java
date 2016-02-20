@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
@@ -19,13 +20,14 @@ public class Drop extends Command {
 
 	// called repeatedly
 	protected void execute() {
-		Robot.intakeMotors.drop();
-		Robot.roller.drop();
+		Robot.intakeMotors.move(-0.3);
+		Robot.roller.move(0.3);
+		Timer.delay(2.0);
 	}
 
 	// called repeatedly
 	protected boolean isFinished() {
-		return false;
+		return true;
 	}
 
 	// called after isFinished() returns true

@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
@@ -19,8 +20,10 @@ public class Shoot extends Command {
 
 	// called repeatedly
 	protected void execute() {
-		Robot.intakeMotors.shoot();
-		Robot.roller.shoot();
+		Robot.intakeMotors.move(-0.8);
+		Timer.delay(2.0);
+		Robot.roller.move(0.8);
+		Timer.delay(2.0);
 	}
 
 	// called repeatedly
