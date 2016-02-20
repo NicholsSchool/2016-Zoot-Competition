@@ -42,10 +42,10 @@ public class OI {
 		joystick0Button3.whenReleased(new OrientationChange());
 
 		joystick1Button2 = new JoystickButton(joystick1, 2);
-		joystick1Button2.whenReleased(new Intake());
+		joystick1Button2.whileHeld(new Intake());
 
 		joystick2Button1 = new JoystickButton(joystick2, 1);
-		joystick2Button1.whenReleased(new Shoot());
+		joystick2Button1.whenPressed(new Shoot());
 
 		joystick2Button3 = new JoystickButton(joystick2, 3);
 		joystick2Button3.whenReleased(new Drop());
