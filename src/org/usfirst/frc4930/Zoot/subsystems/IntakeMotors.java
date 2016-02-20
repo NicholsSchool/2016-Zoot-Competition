@@ -34,5 +34,6 @@ public class IntakeMotors extends Subsystem {
 
 	public void stop() {
 		RobotMap.intakeMotorsMaster.set(0.0);
+		RobotMap.roller.set(0.0);
 	}
 }
