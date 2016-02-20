@@ -5,39 +5,41 @@ import org.usfirst.frc4930.Zoot.subsystems.Pneumatics;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+// @todo java docs and comments (drop cmd is a good example)
+
 /**
  *
  */
 public class CompressorOn extends Command {
 
-    public CompressorOn() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.pneumatics);
-    }
+	public CompressorOn() {
+		// Use requires() here to declare subsystem dependencies
+		// eg. requires(chassis);
+		requires(Robot.pneumatics);
+	}
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    	Pneumatics.c.setClosedLoopControl(true);
-    }
+	// Called repeatedly when this Command is scheduled to run
+	protected void execute() {
+		Pneumatics.c.setClosedLoopControl(true);
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return false;
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	protected boolean isFinished() {
+		return false;
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {
-    	Pneumatics.c.setClosedLoopControl(false);
-    }
+	// Called once after isFinished returns true
+	protected void end() {
+		Pneumatics.c.setClosedLoopControl(false);
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    	Pneumatics.c.setClosedLoopControl(false);
-    }
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	protected void interrupted() {
+		Pneumatics.c.setClosedLoopControl(false);
+	}
 }

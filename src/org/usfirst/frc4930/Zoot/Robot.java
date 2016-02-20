@@ -13,78 +13,80 @@ import org.usfirst.frc4930.Zoot.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
+	// @todo put static booleans up here
 	public static OI oi;
-	
-	//commands
-    public static Command autonomous;
-    
-    //subsystems
-    public static ArmLifter armLifter;
-    public static Cameras cameras;
-    public static DriveTrain driveTrain;
-    public static HookExtender hookExtender;
-    public static IntakeMotors intakeMotors;
-    public static Pneumatics pneumatics;
-    
-    public static boolean orientation;
-    
-    public static boolean gearShift;
-    
-    public void robotInit() {
-   
-    	RobotMap.init();
- 
-    	orientation = true;
-        gearShift = false;
-    	
-    	// subsystems
-        armLifter = new ArmLifter();
-        cameras = new Cameras();
-        driveTrain = new DriveTrain();
-        hookExtender = new HookExtender();
-        intakeMotors = new IntakeMotors();
-        pneumatics = new Pneumatics();
-        
-        // OI must be instantiated after subsystems
-        oi = new OI();
-        
-        // autonomous must be instantiated after OI
-        autonomous = new Autonomous();
 
-    }
+	// commands
+	public static Command autonomous;
 
-    public void disabledInit(){
+	// subsystems
+	public static ArmLifter armLifter;
+	public static Cameras cameras;
+	public static DriveTrain driveTrain;
+	public static HookExtender hookExtender;
+	public static IntakeMotors intakeMotors;
+	public static Pneumatics pneumatics;
 
-    }
+	public static boolean orientation;
 
-    public void disabledPeriodic() {
-        Scheduler.getInstance().run();
-    }
+	public static boolean gearShift;
 
-    public void autonomousInit() {
+	public void robotInit() {
 
-        if (autonomous != null) autonomous.start();
-    }
+		RobotMap.init();
 
-    public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-        
-    }
+		orientation = true;
+		gearShift = false;
 
-    public void teleopInit() {
-    	// forces autonomous command to cancel when teleop begins
-        if (autonomous != null) {
-        	autonomous.cancel();
-        }
-        cameras.initialize();
-    }
+		// subsystems
+		armLifter = new ArmLifter();
+		cameras = new Cameras();
+		driveTrain = new DriveTrain();
+		hookExtender = new HookExtender();
+		intakeMotors = new IntakeMotors();
+		pneumatics = new Pneumatics();
 
-    public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-        cameras.execute();
-    }
+		// OI must be instantiated after subsystems
+		oi = new OI();
 
-    public void testPeriodic() {
-        LiveWindow.run();
-    }
+		// autonomous must be instantiated after OI
+		autonomous = new Autonomous();
+
+	}
+
+	public void disabledInit() {
+
+	}
+
+	public void disabledPeriodic() {
+		Scheduler.getInstance().run();
+	}
+
+	public void autonomousInit() {
+		// @todo break this out to multi-line if
+		if (autonomous != null)
+			autonomous.start();
+	}
+
+	public void autonomousPeriodic() {
+		Scheduler.getInstance().run();
+
+	}
+
+	public void teleopInit() {
+		// forces autonomous command to cancel when teleop begins
+		if (autonomous != null) {
+			autonomous.cancel();
+		}
+		cameras.initialize();
+	}
+
+	public void teleopPeriodic() {
+		Scheduler.getInstance().run();
+		cameras.execute();
+	}
+
+	public void testPeriodic() {
+		LiveWindow.run();
+	}
 }
