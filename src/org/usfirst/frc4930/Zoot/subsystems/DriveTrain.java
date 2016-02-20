@@ -19,7 +19,7 @@ public class DriveTrain extends Subsystem {
 		if (Robot.orientation) {
 			RobotMap.driveTrainMasterMotors.tankDrive(left, right);
 		} else {
-			RobotMap.driveTrainMasterMotors.tankDrive(right, left);
+			RobotMap.driveTrainMasterMotors.tankDrive(-right, -left);
 		}
 	}
 
