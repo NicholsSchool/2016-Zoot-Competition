@@ -8,6 +8,10 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class ShiftDown extends Command {
 
+	public ShiftDown() {
+		requires(Robot.pneumatics);
+	}
+	
 	protected void initialize() {
 	}
 
