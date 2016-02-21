@@ -26,9 +26,7 @@ public class Autonomous extends Command {
 		// RobotMap.intakeMotorsMaster.set(0.2);//Ran Counter Clockwise
 
 		// example of calling a subsystem (change the ones above)
-		Robot.armLifter.move(0.0);
-		Robot.roller.move(0.0);
-		Robot.driveTrain.move(0.5, -0.5);
+		Robot.driveTrain.move(0.3, 0.3);
 		Timer.delay(2);
 	}
 

@@ -16,11 +16,12 @@ public class MoveArm extends Command {
 	public MoveArm() {
 		requires(Robot.armLifter);
 	}
+
 	protected void initialize() {
 	}
 
 	protected void execute() {
-		Robot.armLifter.move(0.6 * Robot.oi.getJoystick2());
+		Robot.armLifter.move(0.8 * Robot.oi.getJoystick2());
 	}
 
 	protected boolean isFinished() {
