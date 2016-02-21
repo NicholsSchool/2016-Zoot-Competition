@@ -1,6 +1,7 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.commands.ShiftUp;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -15,6 +16,7 @@ public class Pneumatics extends Subsystem {
 	public Compressor c = new Compressor(50);
 
 	public void initDefaultCommand() {
+		setDefaultCommand(new ShiftUp());
 	}
 	
 //	public void enableHighGear() {

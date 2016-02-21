@@ -8,6 +8,10 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class ShiftUp extends Command {
 
+	public ShiftUp() {
+		requires(Robot.pneumatics);
+	}
+	
 	protected void initialize() {
 	}
 
