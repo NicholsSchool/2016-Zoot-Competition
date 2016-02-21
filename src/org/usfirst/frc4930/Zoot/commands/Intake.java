@@ -13,13 +13,13 @@ public class Intake extends Command {
 	}
 
 	protected void execute() {
-			Robot.intakeMotors.moveLeft(0.3);
-			Robot.intakeMotors.moveRight(0.3);
-			Robot.roller.move(-0.3);
+		Robot.intakeMotors.moveLeft(1.0);
+		Robot.intakeMotors.moveRight(1.0);
+		Robot.roller.move(-1.0);
 	}
 
 	protected boolean isFinished() {
-		if(RobotMap.boulderIntakeSwitch.get()) {
+		if (RobotMap.boulderIntakeSwitch.get()) {
 			return false;
 		} else {
 			return true;

@@ -13,7 +13,7 @@ public class RetractHook extends Command {
 	}
 
 	protected void execute() {
-		Robot.hookExtender.move(0.7);
+		Robot.hookExtender.move(1.0);
 	}
 
 	protected boolean isFinished() {

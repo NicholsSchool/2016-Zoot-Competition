@@ -8,15 +8,11 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class ShiftUp extends Command {
 
-	public ShiftUp() {
-		requires(Robot.pneumatics);
-	}
-	
 	protected void initialize() {
 	}
 
 	protected void execute() {
-		Robot.pneumatics.changeGear();
+		Robot.pneumatics.enableHighGear();
 	}
 
 	protected boolean isFinished() {
@@ -24,10 +20,8 @@ public class ShiftUp extends Command {
 	}
 
 	protected void end() {
-		Robot.pneumatics.stop();
 	}
 
 	protected void interrupted() {
-		Robot.pneumatics.stop();
 	}
 }

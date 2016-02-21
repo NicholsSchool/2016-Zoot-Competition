@@ -16,7 +16,6 @@ public class OrientationChange extends Command {
 		if (Robot.orientation) {
 			Cameras.changeCam(Cameras.backCam);
 			Robot.orientation = false;
-
 		} else {
 			Cameras.changeCam(Cameras.frontCam);
 			Robot.orientation = true;
