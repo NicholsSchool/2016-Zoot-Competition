@@ -3,8 +3,10 @@ package org.usfirst.frc4930.Zoot;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
@@ -37,7 +39,11 @@ public class RobotMap {
 	public static DigitalInput hookHighExtremeSwitch;
 	public static AnalogGyro robotGyro;
 
+	public static DoubleSolenoid doubleSolenoid;
+	public static Compressor compressor;
+
 	public static void init() {
+
 		// DIO Sensors
 		hookHighExtremeSwitch = new DigitalInput(0);
 		boulderIntakeSwitch = new DigitalInput(1);
@@ -52,7 +58,11 @@ public class RobotMap {
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
 
-		// motor controllers
+		// Pneumatics
+		doubleSolenoid = new DoubleSolenoid(50, 0, 1);
+		compressor = new Compressor(50);
+
+		// Motor Controllers
 		roller = new CANTalon(10);
 		driveTrainRightMaster = new CANTalon(11);
 		driveTrainRightSlave1 = new CANTalon(12);
@@ -65,7 +75,7 @@ public class RobotMap {
 		driveTrainLeftSlave1 = new CANTalon(19);
 		driveTrainLeftSlave2 = new CANTalon(20);
 
-		// setup slaves and masters
+		// Setup Slaves and Masters
 		driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
 		driveTrainLeftSlave1.set(driveTrainLeftMaster.getDeviceID());
 
