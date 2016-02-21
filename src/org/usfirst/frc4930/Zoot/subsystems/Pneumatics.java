@@ -27,8 +27,4 @@ public class Pneumatics extends Subsystem {
 	public void endCompressing() {
 		RobotMap.compressor.setClosedLoopControl(false);
 	}
-
-	public void stop() {
-
-	}
 }

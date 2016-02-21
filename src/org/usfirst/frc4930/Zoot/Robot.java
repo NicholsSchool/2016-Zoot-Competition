@@ -17,7 +17,6 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static boolean zoot;
 	public static boolean orientation;
-	public static boolean gearShift;
 
 	// commands
 	public static Command autonomous;
@@ -37,7 +36,6 @@ public class Robot extends IterativeRobot {
 		// true = Zoo && false = Tooz
 		zoot = false;
 		orientation = true;
-		gearShift = true;
 
 		// subsystems
 		armLifter = new ArmLifter();
@@ -80,14 +78,6 @@ public class Robot extends IterativeRobot {
 		cameras.initialize();
 
 		// put switch values to dashboard
-		// SmartDashboard.putBoolean("Bucket Limit Switch",
-		// RobotMap.boulderIntakeSwitch.get());
-		// SmartDashboard.putBoolean("Arm High Limit Switch",
-		// RobotMap.armHighExtremeSwitch.get());
-		// SmartDashboard.putBoolean("Arm Low Limit Switch",
-		// RobotMap.armLowExtremeSwitch.get());
-		// SmartDashboard.putBoolean("Hook High Limit Switch",
-		// RobotMap.hookHighExtremeSwitch.get());
 		SmartDashboard.putBoolean("Hook Low Limit Switch", RobotMap.hookLowExtremeSwitch.get());
 		System.out.println(RobotMap.boulderIntakeSwitch.get());
 	}

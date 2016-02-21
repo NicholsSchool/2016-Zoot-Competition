@@ -20,10 +20,8 @@ public class ShiftUp extends Command {
 	}
 
 	protected void end() {
-		Robot.pneumatics.stop();
 	}
 
 	protected void interrupted() {
-		Robot.pneumatics.stop();
 	}
 }
