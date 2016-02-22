@@ -93,7 +93,7 @@ public class RobotMap {
 
 		driveTrainMasterMotors.setSafetyEnabled(true);
 		driveTrainMasterMotors.setExpiration(0.1);
-		driveTrainMasterMotors.setSensitivity(0.5);
+		driveTrainMasterMotors.setSensitivity(0.75);
 		driveTrainMasterMotors.setMaxOutput(1.0);
 
 		driveTrainLeftMaster.enableBrakeMode(true);
