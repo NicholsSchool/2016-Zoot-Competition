@@ -16,12 +16,22 @@ public class Cameras {
 	private CameraServer server;
 
 	public Cameras() {
-		frontCam = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-		backCam = NIVision.IMAQdxOpenCamera("cam1", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-		curCam = frontCam;
-		frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
-		server = CameraServer.getInstance();
-		server.setQuality(50);
+//		try {
+			frontCam = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+			backCam = NIVision.IMAQdxOpenCamera("cam1", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+			curCam = frontCam;
+			frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+			server = CameraServer.getInstance();
+			server.setQuality(50);
+//		} catch (Exception e) {
+//			
+//		}
+//		frontCam = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+//		backCam = NIVision.IMAQdxOpenCamera("cam1", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+//		curCam = frontCam;
+//		frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+//		server = CameraServer.getInstance();
+//		server.setQuality(50);
 	}
 
 	public static void changeCam(int newId) {

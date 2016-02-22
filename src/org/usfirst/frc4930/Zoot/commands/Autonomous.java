@@ -28,6 +28,23 @@ public class Autonomous extends Command {
 		// example of calling a subsystem (change the ones above)
 		Robot.driveTrain.move(0.3, 0.3);
 		Timer.delay(2);
+		Robot.driveTrain.stop();
+//		Robot.armLifter.move(0.5);
+//		Timer.delay(1);
+//		Robot.armLifter.stop();
+//		Robot.driveTrain.move(0.2, -0.2);
+//		Timer.delay(0.5);
+//		Robot.driveTrain.stop();
+//		Robot.driveTrain.move(0.3, 0.3);
+//		Timer.delay(1.0);
+//		Robot.driveTrain.stop();
+//		Robot.intakeMotors.moveLeft(1.0);
+//		Robot.intakeMotors.moveRight(1.0);
+//		Timer.delay(2.0);
+//		Robot.roller.move(1.0);
+//		Timer.delay(0.5);
+//		Robot.intakeMotors.stop();
+//		Robot.roller.stop();
 	}
 
 	protected boolean isFinished() {

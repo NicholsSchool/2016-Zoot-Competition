@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Pneumatics extends Subsystem {
 
 	public void initDefaultCommand() {
+	//	RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
 
 	public void enableHighGear() {
