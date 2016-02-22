@@ -11,6 +11,7 @@ public class ShiftDown extends Command {
 	public ShiftDown(){
 		requires(Robot.pneumatics);
 	}
+
 	protected void initialize() {
 	}
 

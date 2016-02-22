@@ -5,12 +5,11 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Pneumatics
+ * Pneumatics - Controls DoubleSolenoid and Compressor
  */
 public class Pneumatics extends Subsystem {
 
 	public void initDefaultCommand() {
-	//	RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
 
 	public void enableHighGear() {

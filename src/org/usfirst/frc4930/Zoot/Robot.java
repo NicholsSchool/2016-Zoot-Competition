@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
@@ -27,6 +26,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain driveTrain;
 	public static HookExtender hookExtender;
 	public static IntakeMotors intakeMotors;
+	public static LimitSwitch limitSwitch;
 	public static Pneumatics pneumatics;
 	public static Roller roller;
 
@@ -43,6 +43,7 @@ public class Robot extends IterativeRobot {
 		driveTrain = new DriveTrain();
 		hookExtender = new HookExtender();
 		intakeMotors = new IntakeMotors();
+		limitSwitch = new LimitSwitch();
 		pneumatics = new Pneumatics();
 		roller = new Roller();
 
@@ -71,20 +72,23 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void teleopInit() {
-		// forces autonomous command to cancel when teleop begins
 		if (autonomous != null) {
 			autonomous.cancel();
 		}
-		cameras.initialize();
-
-		// put switch values to dashboard
-		SmartDashboard.putBoolean("Hook Low Limit Switch", RobotMap.hookLowExtremeSwitch.get());
-		System.out.println(RobotMap.boulderIntakeSwitch.get());
+		try {
+			cameras.initialize();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 	}
 
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		cameras.execute();
+		try {
+			cameras.execute();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 	}
 
 	public void testPeriodic() {

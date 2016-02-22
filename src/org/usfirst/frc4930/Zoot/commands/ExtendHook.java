@@ -2,7 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * ExtendHook - controls the length of the hook arm
@@ -17,7 +16,7 @@ public class ExtendHook extends Command {
 	}
 
 	protected boolean isFinished() {
-		if (!RobotMap.hookHighExtremeSwitch.get()) {
+		if (!Robot.limitSwitch.hookExtended()) {
 			return true;
 		} else {
 			return false;

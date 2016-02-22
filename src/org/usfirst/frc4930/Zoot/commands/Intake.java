@@ -2,7 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * Intake - intakes the boulder
@@ -13,13 +12,12 @@ public class Intake extends Command {
 	}
 
 	protected void execute() {
-		Robot.intakeMotors.moveLeft(1.0);
-		Robot.intakeMotors.moveRight(1.0);
+		Robot.intakeMotors.move(1.0);
 		Robot.roller.move(-1.0);
 	}
 
 	protected boolean isFinished() {
-		if (RobotMap.boulderIntakeSwitch.get()) {
+		if (Robot.limitSwitch.boulderInPosition()) {
 			return false;
 		} else {
 			return true;
