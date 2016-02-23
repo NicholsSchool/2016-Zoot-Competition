@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ArmLifter extends Subsystem {
 	
-	private final double VERTICAL_POT_EXTREME = 0.75;
-	private final double HORIZONTAL_POT_EXTREME = 0.25;
+	private final double VERTICAL_POT_EXTREME = 1.0;
+	private final double HORIZONTAL_POT_EXTREME = 0.0;
 	
 	public void initDefaultCommand() {
 		setDefaultCommand(new MoveArm());
