@@ -9,6 +9,7 @@ import org.usfirst.frc4930.Zoot.commands.RetractHook;
 import org.usfirst.frc4930.Zoot.commands.ShiftDown;
 import org.usfirst.frc4930.Zoot.commands.ShiftUp;
 import org.usfirst.frc4930.Zoot.commands.Shoot;
+import org.usfirst.frc4930.Zoot.commands.ChangeToShotCam;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -69,6 +70,9 @@ public class OI {
 
 		joystick2Button9 = new JoystickButton(joystick2, 9);
 		joystick2Button9.whileHeld(new CompressorOn());
+		
+		joystick2Button10 = new JoystickButton(joystick2, 10);
+		joystick2Button10.whenPressed(new ChangeToShotCam());
 	}
 
 	public double getJoystick0() {
