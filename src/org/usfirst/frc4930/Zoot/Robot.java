@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
@@ -89,6 +91,7 @@ public class Robot extends IterativeRobot {
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+		SmartDashboard.putData("Arm Pot", RobotMap.armPot);
 	}
 
 	public void testPeriodic() {

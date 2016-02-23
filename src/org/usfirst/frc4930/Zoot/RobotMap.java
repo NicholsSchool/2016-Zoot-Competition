@@ -53,7 +53,7 @@ public class RobotMap {
 
 		// Analog Sensors
 		robotGyro = new AnalogGyro(0);
-		armPot = new AnalogPotentiometer(1, 1.0, 1.0);
+		armPot = new AnalogPotentiometer(3);
 
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
