@@ -15,14 +15,10 @@ public class Pneumatics extends Subsystem {
 
 	public void enableHighGear() {
 		RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kForward);
-		Timer.delay(2.0);
-		RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
 
 	public void enableLowGear() {
 		RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
-		Timer.delay(2.0);
-		RobotMap.doubleSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
 
 	public void startCompressing() {
