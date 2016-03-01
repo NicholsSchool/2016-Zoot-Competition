@@ -3,6 +3,7 @@ package org.usfirst.frc4930.Zoot.subsystems;
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.util.AllocationException;
 
 /**
  * Cameras
@@ -18,6 +19,8 @@ public class Cameras {
 	private CameraServer server;
 
 	public Cameras() {
+		try
+		{
 		frontCam = NIVision.IMAQdxOpenCamera("cam0",
 				NIVision.IMAQdxCameraControlMode.CameraControlModeController);
 		backCam = NIVision.IMAQdxOpenCamera("cam1",
@@ -27,6 +30,8 @@ public class Cameras {
 		frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
 		server = CameraServer.getInstance();
 		server.setQuality(50);
+		} catch(AllocationException e){
+		}
 	}
 
 	public static void changeCam(int newId) {
