@@ -13,6 +13,8 @@ public class Autonomous extends Command {
 	}
 
 	protected void execute() {
+		Robot.armLifter.move(0.7);
+		Timer.delay(0.5);
 		Robot.driveTrain.move(0.3, 0.3);
 		Timer.delay(2);
 		// Robot.driveTrain.stop();
