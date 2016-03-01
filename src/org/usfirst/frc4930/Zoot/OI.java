@@ -1,13 +1,11 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.CompressorOn;
 import org.usfirst.frc4930.Zoot.commands.Drop;
 import org.usfirst.frc4930.Zoot.commands.ExtendHook;
+import org.usfirst.frc4930.Zoot.commands.GoToShotAngle;
 import org.usfirst.frc4930.Zoot.commands.Intake;
 import org.usfirst.frc4930.Zoot.commands.OrientationChange;
 import org.usfirst.frc4930.Zoot.commands.RetractHook;
-import org.usfirst.frc4930.Zoot.commands.ShiftDown;
-import org.usfirst.frc4930.Zoot.commands.ShiftUp;
 import org.usfirst.frc4930.Zoot.commands.Shoot;
 import org.usfirst.frc4930.Zoot.commands.ChangeToShotCam;
 import edu.wpi.first.wpilibj.Joystick;
@@ -30,6 +28,7 @@ public class OI {
 	public JoystickButton joystick1Button3;
 
 	public JoystickButton joystick2Button1;
+	public JoystickButton joystick2Button2;
 	public JoystickButton joystick2Button3;
 	public JoystickButton joystick2Button6;
 	public JoystickButton joystick2Button7;
@@ -44,14 +43,8 @@ public class OI {
 		joystick1 = new Joystick(1);
 		joystick2 = new Joystick(2);
 
-		joystick0Button1 = new JoystickButton(joystick0, 1);
-		joystick0Button1.whenPressed(new ShiftDown());
-
 		joystick0Button3 = new JoystickButton(joystick0, 3);
 		joystick0Button3.whenPressed(new OrientationChange());
-
-		joystick1Button1 = new JoystickButton(joystick1, 1);
-		joystick1Button1.whenPressed(new ShiftUp());
 
 		joystick1Button2 = new JoystickButton(joystick1, 2);
 		joystick1Button2.whileHeld(new Intake());
@@ -59,6 +52,9 @@ public class OI {
 		joystick2Button1 = new JoystickButton(joystick2, 1);
 		joystick2Button1.whenPressed(new Shoot());
 
+		joystick2Button1 = new JoystickButton(joystick2, 2);
+		joystick2Button1.whenPressed(new GoToShotAngle());
+		
 		joystick2Button3 = new JoystickButton(joystick2, 3);
 		joystick2Button3.whenPressed(new Drop());
 
@@ -67,9 +63,6 @@ public class OI {
 
 		joystick2Button7 = new JoystickButton(joystick2, 7);
 		joystick2Button7.whileHeld(new RetractHook());
-
-		joystick2Button9 = new JoystickButton(joystick2, 9);
-		joystick2Button9.whileHeld(new CompressorOn());
 		
 		joystick2Button10 = new JoystickButton(joystick2, 10);
 		joystick2Button10.whenPressed(new ChangeToShotCam());
