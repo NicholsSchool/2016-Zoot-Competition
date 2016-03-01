@@ -17,9 +17,7 @@ public class GoToShotAngle extends Command{
 
 	@Override
 	protected void execute() {
-		while(RobotMap.armPot.get() < 0.75){
-			Robot.armLifter.move(0.5);
-		}
+		Robot.moveArmToShotAngle.execute();
 	}
 
 	@Override
