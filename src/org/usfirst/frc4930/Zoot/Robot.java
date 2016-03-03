@@ -32,7 +32,6 @@ public class Robot extends IterativeRobot {
 	public static HookExtender hookExtender;
 	public static IntakeMotors intakeMotors;
 	public static LimitSwitch limitSwitch;
-	public static MoveArmToShotAngle moveArmToShotAngle;
 	public static Roller roller;
 
 	public void robotInit() {
@@ -49,7 +48,6 @@ public class Robot extends IterativeRobot {
 		hookExtender = new HookExtender();
 		intakeMotors = new IntakeMotors();
 		limitSwitch = new LimitSwitch();
-		moveArmToShotAngle = new MoveArmToShotAngle();
 		roller = new Roller();
 
 		// OI must be instantiated after subsystems
