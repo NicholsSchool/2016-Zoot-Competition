@@ -1,12 +1,9 @@
 package org.usfirst.frc4930.Zoot;
 
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
@@ -37,10 +34,7 @@ public class RobotMap {
 	public static DigitalInput armHighExtremeSwitch;
 	public static DigitalInput hookLowExtremeSwitch;
 	public static DigitalInput hookHighExtremeSwitch;
-	public static AnalogGyro robotGyro;
 
-	public static DoubleSolenoid doubleSolenoid;
-	public static Compressor compressor;
 
 	public static void init() {
 
@@ -51,8 +45,7 @@ public class RobotMap {
 		armHighExtremeSwitch = new DigitalInput(3);
 		armLowExtremeSwitch = new DigitalInput(4);
 
-		// Analog Sensors
-		robotGyro = new AnalogGyro(0);
+		
 		armPot = new AnalogPotentiometer(3);
 
 		// encoders Left: 6 & 7
