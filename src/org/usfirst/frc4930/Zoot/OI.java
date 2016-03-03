@@ -20,23 +20,16 @@ public class OI {
 	public static Joystick joystick1;
 	public static Joystick joystick2;
 
-	public JoystickButton joystick0Button1;
 	public JoystickButton joystick0Button3;
 
-	public JoystickButton joystick1Button1;
 	public JoystickButton joystick1Button2;
-	public JoystickButton joystick1Button3;
 
 	public JoystickButton joystick2Button1;
 	public JoystickButton joystick2Button2;
 	public JoystickButton joystick2Button3;
 	public JoystickButton joystick2Button6;
 	public JoystickButton joystick2Button7;
-	public JoystickButton joystick2Button9;
-
-	public JoystickButton joystick2Button8;
 	public JoystickButton joystick2Button10;
-	public JoystickButton joystick2Button11;
 
 	public OI() {
 		joystick0 = new Joystick(0);
@@ -52,8 +45,8 @@ public class OI {
 		joystick2Button1 = new JoystickButton(joystick2, 1);
 		joystick2Button1.whenPressed(new Shoot());
 
-		joystick2Button1 = new JoystickButton(joystick2, 2);
-		joystick2Button1.whenPressed(new GoToShotAngle());
+		joystick2Button2 = new JoystickButton(joystick2, 2);
+		joystick2Button2.whenPressed(new GoToShotAngle());
 		
 		joystick2Button3 = new JoystickButton(joystick2, 3);
 		joystick2Button3.whenPressed(new Drop());

@@ -10,21 +10,24 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ArmLifter extends Subsystem {
 	
-	private final double HIGH_POT_EXTREME = 1.0;
-	private final double LOW_POT_EXTREME = 0.0;
-	
 	public void initDefaultCommand() {
 		setDefaultCommand(new MoveArm());
 	}
 
 	public void move(double yAxis) {
-		double armPotVal = RobotMap.armPot.get();
-		if ((armPotVal >= LOW_POT_EXTREME) && (armPotVal <= HIGH_POT_EXTREME)) {
-			RobotMap.armDart.set(yAxis);
-		}		
+		RobotMap.armDart.set(yAxis);
+	}
+	
+	public void moveToShotAngle(){
+		while(RobotMap.armPot.get() < 0.75){  
+			RobotMap.armDart.set(0.5);
+		}
 	}
 
 	public void stop() {
 		RobotMap.armDart.set(0.0);
 	}
+
 }
+
+

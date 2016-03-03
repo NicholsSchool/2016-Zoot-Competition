@@ -58,9 +58,6 @@ public class RobotMap {
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
 
-		// Pneumatics
-		doubleSolenoid = new DoubleSolenoid(50, 0, 1);
-		compressor = new Compressor(50);
 
 		// Motor Controllers
 		roller = new CANTalon(10);
