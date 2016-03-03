@@ -1,7 +1,6 @@
 package org.usfirst.frc4930.Zoot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -19,8 +18,6 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static boolean zoot;
 	public static boolean orientation;
-	public static double gyroAngle;
-	public static double Kp = 0.03;
 
 	// commands
 	public static Command autonomous;
@@ -39,7 +36,7 @@ public class Robot extends IterativeRobot {
 
 		// true = Zoo && false = Tooz
 		zoot = false;
-		orientation = true;
+		//orientation = true;
 
 		// subsystems
 		armLifter = new ArmLifter();
@@ -68,16 +65,10 @@ public class Robot extends IterativeRobot {
 		if (autonomous != null) {
 			autonomous.start();
 		}
-		RobotMap.robotGyro.reset();
 	}
 
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
-		while (isAutonomous() && isEnabled()) {
-			gyroAngle = RobotMap.robotGyro.getAngle();
-			RobotMap.driveTrainMasterMotors.drive(0.5, gyroAngle * Kp);
-			Timer.delay(0.05);
-		}
 	}
 
 	public void teleopInit() {
