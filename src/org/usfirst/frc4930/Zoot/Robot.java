@@ -7,8 +7,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc4930.Zoot.commands.AutonomousOne;
-import org.usfirst.frc4930.Zoot.commands.AutonomousTwo;
+import org.usfirst.frc4930.Zoot.commands.Autonomous1;
+import org.usfirst.frc4930.Zoot.commands.Autonomous2;
+import org.usfirst.frc4930.Zoot.commands.Autonomous3;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
 /**
@@ -23,8 +24,9 @@ public class Robot extends IterativeRobot {
 
 	// commands
 	public static Command autoCommand;
-	public static Command autonomousOne;
-	public static Command autonomousTwo;
+	public static Command autonomous1;
+	public static Command autonomous2;
+	public static Command autonomous3;
 	public static SendableChooser autoChooser;
 
 	// subsystems
@@ -56,12 +58,14 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 
 		// autonomous must be instantiated after OI
-		autonomousOne = new AutonomousOne();
-		autonomousTwo = new AutonomousTwo();
+		autonomous1 = new Autonomous1();
+		autonomous2 = new Autonomous2();
+		autonomous3 = new Autonomous3();
 		autoChooser = new SendableChooser();
 		
-		autoChooser.addDefault("Autonomous One", autonomousOne);
-		autoChooser.addObject("Autonomous Two", autonomousTwo);
+		autoChooser.addDefault("Autonomous 1", autonomous1);
+		autoChooser.addObject("Autonomous 2", autonomous2);
+		autoChooser.addObject("Autonomous 3", autonomous3);
 		SmartDashboard.putData("Auto Chooser", autoChooser);
 	}
 
