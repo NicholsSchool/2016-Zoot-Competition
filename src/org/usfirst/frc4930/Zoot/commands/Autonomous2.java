@@ -7,7 +7,7 @@ import org.usfirst.frc4930.Zoot.Robot;
 /**
  * Autonomous - lasts 15 seconds
  */
-public class AutonomousTwo extends Command {
+public class Autonomous2 extends Command {
 
 	protected void initialize() {
 	}
