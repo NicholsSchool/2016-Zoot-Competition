@@ -7,7 +7,7 @@ import org.usfirst.frc4930.Zoot.Robot;
 /**
  * Autonomous - lasts 15 seconds
  */
-public class Autonomous extends Command {
+public class AutonomousOne extends Command {
 
 	protected void initialize() {
 	}
@@ -43,10 +43,12 @@ public class Autonomous extends Command {
 	protected void end() {
 		// every subsystem used in execute() should be stopped here
 		Robot.driveTrain.stop();
+		Robot.armLifter.stop();
 	}
 
 	protected void interrupted() {
 		// this needs to be the same as end()
 		Robot.driveTrain.stop();
+		Robot.armLifter.stop();
 	}
 }
