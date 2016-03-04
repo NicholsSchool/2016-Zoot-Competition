@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc4930.Zoot.commands.Autonomous1;
 import org.usfirst.frc4930.Zoot.commands.Autonomous2;
 import org.usfirst.frc4930.Zoot.commands.Autonomous3;
@@ -19,7 +18,6 @@ import org.usfirst.frc4930.Zoot.subsystems.*;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-	public static boolean zoot;
 	public static boolean orientation;
 
 	// commands
@@ -41,18 +39,21 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		RobotMap.init();
 
-		// true = Zoo && false = Tooz
-		zoot = false;
-		//orientation = true;
+		orientation = true;
 
 		// subsystems
 		armLifter = new ArmLifter();
-		cameras = new Cameras();
 		driveTrain = new DriveTrain();
 		hookExtender = new HookExtender();
 		intakeMotors = new IntakeMotors();
 		limitSwitch = new LimitSwitch();
 		roller = new Roller();
+
+		try {
+			cameras = new Cameras();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
 		// OI must be instantiated after subsystems
 		oi = new OI();
@@ -62,7 +63,7 @@ public class Robot extends IterativeRobot {
 		autonomous2 = new Autonomous2();
 		autonomous3 = new Autonomous3();
 		autoChooser = new SendableChooser();
-		
+
 		autoChooser.addDefault("Autonomous 1", autonomous1);
 		autoChooser.addObject("Autonomous 2", autonomous2);
 		autoChooser.addObject("Autonomous 3", autonomous3);
@@ -95,12 +96,12 @@ public class Robot extends IterativeRobot {
 
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		SmartDashboard.putData("Arm Pot", RobotMap.armPot);
 		try {
 			cameras.execute();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		SmartDashboard.putData("Arm Pot", RobotMap.armPot);
 	}
 
 	public void testPeriodic() {

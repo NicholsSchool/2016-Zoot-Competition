@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * ArmLifter
  */
 public class ArmLifter extends Subsystem {
-	
+
 	public void initDefaultCommand() {
 		setDefaultCommand(new MoveArm());
 	}
@@ -17,11 +17,12 @@ public class ArmLifter extends Subsystem {
 	public void move(double yAxis) {
 		RobotMap.armDart.set(yAxis);
 	}
-	
-	public void moveToShotAngle(){
-		while(RobotMap.armPot.get() < 0.75){  
+
+	public void moveToShotAngle() {
+		while (RobotMap.armPot.get() < 0.75) {
 			RobotMap.armDart.set(0.5);
 		}
+		RobotMap.armDart.set(0.0);
 	}
 
 	public void stop() {
@@ -29,5 +30,3 @@ public class ArmLifter extends Subsystem {
 	}
 
 }
-
-

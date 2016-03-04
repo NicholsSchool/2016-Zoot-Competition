@@ -14,16 +14,12 @@ public class Autonomous3 extends Command {
 
 	protected void execute() {
 		RobotMap.driveTrainLeftMaster.set(0.5);
-//		RobotMap.driveTrainLeftSlave1.set(0.5);
-//		RobotMap.driveTrainLeftSlave2.set(0.5);
-//		RobotMap.driveTrainRightMaster.set(0.5);
-//		RobotMap.driveTrainRightSlave1.set(0.5);
-//		RobotMap.driveTrainRightSlave2.set(0.5);
-//		RobotMap.intakeMotorsLeft.set(0.5);
-//		RobotMap.intakeMotorsRight.set(0.5);
-//		RobotMap.roller.set(0.5);
-//		RobotMap.armDart.set(0.5);
-//		RobotMap.hookDart.set(0.5);
+		// RobotMap.driveTrainRightMaster.set(0.5);
+		// RobotMap.intakeMotorsLeft.set(0.5);
+		// RobotMap.intakeMotorsRight.set(0.5);
+		// RobotMap.roller.set(0.5);
+		// RobotMap.armDart.set(0.5);
+		// RobotMap.hookDart.set(0.5);
 	}
 
 	protected boolean isFinished() {
