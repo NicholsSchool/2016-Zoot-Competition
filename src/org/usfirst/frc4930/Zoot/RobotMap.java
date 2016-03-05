@@ -35,7 +35,6 @@ public class RobotMap {
 	public static DigitalInput hookLowExtremeSwitch;
 	public static DigitalInput hookHighExtremeSwitch;
 
-
 	public static void init() {
 
 		// DIO Sensors
@@ -45,12 +44,10 @@ public class RobotMap {
 		armHighExtremeSwitch = new DigitalInput(3);
 		armLowExtremeSwitch = new DigitalInput(4);
 
-		
 		armPot = new AnalogPotentiometer(3);
 
 		// encoders Left: 6 & 7
 		// encoders Right: 8 & 9
-
 
 		// Motor Controllers
 		roller = new CANTalon(10);
@@ -78,7 +75,6 @@ public class RobotMap {
 		driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
 		driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
 
-		// specific preset robot drive settings (do not change)
 		driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 
 		driveTrainMasterMotors.setSafetyEnabled(true);

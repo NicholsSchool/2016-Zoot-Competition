@@ -3,13 +3,12 @@ package org.usfirst.frc4930.Zoot.commands;
 import org.usfirst.frc4930.Zoot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class GoToShotAngle extends Command{
+public class GoToShotAngle extends Command {
 
-	public GoToShotAngle(){
-		requires(Robot.armLifter);
+	public GoToShotAngle() {
 	}
 
-	protected void initialize() {	
+	protected void initialize() {
 	}
 
 	protected void execute() {

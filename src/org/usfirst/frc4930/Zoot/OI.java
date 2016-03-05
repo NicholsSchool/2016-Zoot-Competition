@@ -47,7 +47,7 @@ public class OI {
 
 		joystick2Button2 = new JoystickButton(joystick2, 2);
 		joystick2Button2.whenPressed(new GoToShotAngle());
-		
+
 		joystick2Button3 = new JoystickButton(joystick2, 3);
 		joystick2Button3.whenPressed(new Drop());
 
@@ -56,7 +56,7 @@ public class OI {
 
 		joystick2Button7 = new JoystickButton(joystick2, 7);
 		joystick2Button7.whileHeld(new RetractHook());
-		
+
 		joystick2Button10 = new JoystickButton(joystick2, 10);
 		joystick2Button10.whenPressed(new ChangeToShotCam());
 	}

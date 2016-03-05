@@ -3,7 +3,6 @@ package org.usfirst.frc4930.Zoot.subsystems;
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
 import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.util.AllocationException;
 
 /**
  * Cameras
@@ -19,27 +18,21 @@ public class Cameras {
 	private CameraServer server;
 
 	public Cameras() {
-		try
-		{
-		frontCam = NIVision.IMAQdxOpenCamera("cam0",
-				NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-		backCam = NIVision.IMAQdxOpenCamera("cam1",
-				NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-		shotCam = NIVision.IMAQdxOpenCamera("cam2",NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+		frontCam = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+		backCam = NIVision.IMAQdxOpenCamera("cam1", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+		shotCam = NIVision.IMAQdxOpenCamera("cam2", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
 		curCam = frontCam;
 		frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
 		server = CameraServer.getInstance();
 		server.setQuality(50);
-		} catch(AllocationException e){
-		}
 	}
 
 	public static void changeCam(int newId) {
-		if(curCam != shotCam){
-		NIVision.IMAQdxStopAcquisition(curCam);
-		curCam = newId;
-		NIVision.IMAQdxConfigureGrab(newId);
-		NIVision.IMAQdxStartAcquisition(newId);
+		if (curCam != shotCam) {
+			NIVision.IMAQdxStopAcquisition(curCam);
+			curCam = newId;
+			NIVision.IMAQdxConfigureGrab(newId);
+			NIVision.IMAQdxStartAcquisition(newId);
 		}
 	}
 
@@ -47,16 +40,14 @@ public class Cameras {
 		NIVision.IMAQdxGrab(curCam, frame, 1);
 		server.setImage(frame);
 	}
-	
-	public static void changeToShotCam(){
 
-		if(curCam != shotCam){
+	public static void changeToShotCam() {
+		if (curCam != shotCam) {
 			pastCam = curCam;
 			NIVision.IMAQdxStopAcquisition(curCam);
 			curCam = shotCam;
 			NIVision.IMAQdxConfigureGrab(shotCam);
 			NIVision.IMAQdxStartAcquisition(shotCam);
-			
 		} else {
 			NIVision.IMAQdxStopAcquisition(curCam);
 			curCam = pastCam;
