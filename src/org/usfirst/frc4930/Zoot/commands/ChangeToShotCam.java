@@ -5,20 +5,17 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class ChangeToShotCam extends Command {
 
-	protected void initialize() {
-	}
+  protected void initialize() {}
 
-	protected void execute() {
-		Cameras.changeToShotCam();
-	}
+  protected void execute() {
+    Cameras.changeToShotCam();
+  }
 
-	protected boolean isFinished() {
-		return true;
-	}
+  protected boolean isFinished() {
+    return true;
+  }
 
-	protected void end() {
-	}
+  protected void end() {}
 
-	protected void interrupted() {
-	}
+  protected void interrupted() {}
 }

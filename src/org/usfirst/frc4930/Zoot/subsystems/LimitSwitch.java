@@ -9,26 +9,25 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class LimitSwitch extends Subsystem {
 
-	public void initDefaultCommand() {
-	}
+  public void initDefaultCommand() {}
 
-	public boolean boulderInPosition() {
-		return RobotMap.boulderIntakeSwitch.get();
-	}
+  public boolean boulderInPosition() {
+    return RobotMap.boulderIntakeSwitch.get();
+  }
 
-	public boolean armUp() {
-		return RobotMap.armHighExtremeSwitch.get();
-	}
+  public boolean armUp() {
+    return RobotMap.armHighExtremeSwitch.get();
+  }
 
-	public boolean armDown() {
-		return RobotMap.armLowExtremeSwitch.get();
-	}
+  public boolean armDown() {
+    return RobotMap.armLowExtremeSwitch.get();
+  }
 
-	public boolean hookExtended() {
-		return RobotMap.hookHighExtremeSwitch.get();
-	}
+  public boolean hookExtended() {
+    return RobotMap.hookHighExtremeSwitch.get();
+  }
 
-	public boolean hookRetracted() {
-		return RobotMap.hookLowExtremeSwitch.get();
-	}
+  public boolean hookRetracted() {
+    return RobotMap.hookLowExtremeSwitch.get();
+  }
 }

@@ -11,19 +11,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrain extends Subsystem {
 
-	public void initDefaultCommand() {
-		setDefaultCommand(new TankDrive());
-	}
+  public void initDefaultCommand() {
+    setDefaultCommand(new TankDrive());
+  }
 
-	public void move(double left, double right) {
-		if (Robot.orientation) {
-			RobotMap.driveTrainMasterMotors.tankDrive(left, right);
-		} else {
-			RobotMap.driveTrainMasterMotors.tankDrive(-right, -left);
-		}
-	}
+  public void move(double left, double right) {
+    if (Robot.orientation) {
+      RobotMap.driveTrainMasterMotors.tankDrive(left, right);
+    } else {
+      RobotMap.driveTrainMasterMotors.tankDrive(-right, -left);
+    }
+  }
 
-	public void stop() {
-		RobotMap.driveTrainMasterMotors.stopMotor();
-	}
+  public void stop() {
+    RobotMap.driveTrainMasterMotors.stopMotor();
+  }
 }

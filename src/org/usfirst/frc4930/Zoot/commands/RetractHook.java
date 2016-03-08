@@ -8,26 +8,25 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class RetractHook extends Command {
 
-	protected void initialize() {
-	}
+  protected void initialize() {}
 
-	protected void execute() {
-		Robot.hookExtender.move(1.0);
-	}
+  protected void execute() {
+    Robot.hookExtender.move(1.0);
+  }
 
-	protected boolean isFinished() {
-		if (!Robot.limitSwitch.hookExtended()) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+  protected boolean isFinished() {
+    if (!Robot.limitSwitch.hookExtended()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-	protected void end() {
-		Robot.hookExtender.stop();
-	}
+  protected void end() {
+    Robot.hookExtender.stop();
+  }
 
-	protected void interrupted() {
-		Robot.hookExtender.stop();
-	}
+  protected void interrupted() {
+    Robot.hookExtender.stop();
+  }
 }
