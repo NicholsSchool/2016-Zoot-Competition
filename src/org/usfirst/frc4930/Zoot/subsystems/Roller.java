@@ -9,14 +9,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Roller extends Subsystem {
 
-	protected void initDefaultCommand() {
-	}
+  protected void initDefaultCommand() {}
 
-	public void move(double x) {
-		RobotMap.roller.set(-x);
-	}
+  public void move(double x) {
+    RobotMap.roller.set(-x);
+  }
 
-	public void stop() {
-		RobotMap.roller.set(0.0);
-	}
+  public void stop() {
+    RobotMap.roller.set(0.0);
+  }
 }

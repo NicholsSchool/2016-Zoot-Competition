@@ -9,26 +9,23 @@ import org.usfirst.frc4930.Zoot.subsystems.Cameras;
  */
 public class OrientationChange extends Command {
 
-	protected void initialize() {
-	}
+  protected void initialize() {}
 
-	protected void execute() {
-		if (Robot.orientation) {
-			Cameras.changeCam(Cameras.backCam);
-			Robot.orientation = false;
-		} else {
-			Cameras.changeCam(Cameras.frontCam);
-			Robot.orientation = true;
-		}
-	}
+  protected void execute() {
+    if (Robot.orientation) {
+      Cameras.changeCam(Cameras.backCam);
+      Robot.orientation = false;
+    } else {
+      Cameras.changeCam(Cameras.frontCam);
+      Robot.orientation = true;
+    }
+  }
 
-	protected boolean isFinished() {
-		return true;
-	}
+  protected boolean isFinished() {
+    return true;
+  }
 
-	protected void end() {
-	}
+  protected void end() {}
 
-	protected void interrupted() {
-	}
+  protected void interrupted() {}
 }

@@ -8,16 +8,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class IntakeMotors extends Subsystem {
 
-	public void initDefaultCommand() {
-	}
+  public void initDefaultCommand() {}
 
-	public void move(double x) {
-		RobotMap.intakeMotorsLeft.set(x);
-		RobotMap.intakeMotorsRight.set(-x);
-	}
+  public void move(double x) {
+    RobotMap.intakeMotorsLeft.set(x);
+    RobotMap.intakeMotorsRight.set(-x);
+  }
 
-	public void stop() {
-		RobotMap.intakeMotorsLeft.set(0.0);
-		RobotMap.intakeMotorsRight.set(0.0);
-	}
+  public void stop() {
+    RobotMap.intakeMotorsLeft.set(0.0);
+    RobotMap.intakeMotorsRight.set(0.0);
+  }
 }
