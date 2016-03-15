@@ -22,7 +22,10 @@ public class DriveTrain extends Subsystem {
       RobotMap.driveTrainMasterMotors.tankDrive(-right, -left);
     }
   }
-
+  
+  public void moveAuto(double autoleft, double autoright) {
+	  RobotMap.driveTrainMasterMotors.tankDrive(autoleft, autoright);
+  }
   public void stop() {
     RobotMap.driveTrainMasterMotors.stopMotor();
   }

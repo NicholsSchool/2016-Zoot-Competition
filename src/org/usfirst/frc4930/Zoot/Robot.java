@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
     intakeMotors = new IntakeMotors();
     limitSwitch = new LimitSwitch();
     roller = new Roller();
-
+    autonomous1 = new Autonomous1();
     try {
       cameras = new Cameras();
     } catch (Exception e) {
@@ -59,15 +59,15 @@ public class Robot extends IterativeRobot {
     oi = new OI();
 
     // autonomous must be instantiated after OI
-    autonomous1 = new Autonomous1();
-    autonomous2 = new Autonomous2();
-    autonomous3 = new Autonomous3();
-    autoChooser = new SendableChooser();
 
-    autoChooser.addDefault("Autonomous 1", autonomous1);
-    autoChooser.addObject("Autonomous 2", autonomous2);
-    autoChooser.addObject("Autonomous 3", autonomous3);
-    SmartDashboard.putData("Auto Chooser", autoChooser);
+//    autonomous2 = new Autonomous2();
+//    autonomous3 = new Autonomous3();
+//    autoChooser = new SendableChooser();
+
+//    autoChooser.addDefault("Autonomous 1", autonomous1);
+//    autoChooser.addObject("Autonomous 2", autonomous2);
+//    autoChooser.addObject("Autonomous 3", autonomous3);
+//    SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
   public void disabledInit() {}
@@ -77,8 +77,10 @@ public class Robot extends IterativeRobot {
   }
 
   public void autonomousInit() {
-    autoCommand = (Command) autoChooser.getSelected();
-    autoCommand.start();
+//    autoCommand = (Command) autoChooser.getSelected();
+//    autoCommand.start();
+	    
+	    autonomous1.start();
   }
 
   public void autonomousPeriodic() {
@@ -95,7 +97,7 @@ public class Robot extends IterativeRobot {
 
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashboard.putData("Arm Pot", RobotMap.armPot);
+    SmartDashboard.putNumber("Arm Pot", RobotMap.armPot.get());
     try {
       cameras.execute();
     } catch (Exception e) {

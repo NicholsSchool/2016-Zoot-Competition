@@ -44,7 +44,7 @@ public class RobotMap {
     armHighExtremeSwitch = new DigitalInput(3);
     armLowExtremeSwitch = new DigitalInput(4);
 
-    armPot = new AnalogPotentiometer(3);
+    armPot = new AnalogPotentiometer(2, 360, 0);
 
     // encoders Left: 6 & 7
     // encoders Right: 8 & 9

@@ -19,8 +19,11 @@ public class ArmLifter extends Subsystem {
   }
 
   public void moveToShotAngle() {
-    while (RobotMap.armPot.get() < 0.75) {
-      RobotMap.armDart.set(0.5);
+    while (RobotMap.armPot.get() < 334.6) {
+      RobotMap.armDart.set(1.0);
+    }
+    while(RobotMap.armPot.get() > 334.6){
+    	RobotMap.armDart.set(-1.0);
     }
     RobotMap.armDart.set(0.0);
   }
