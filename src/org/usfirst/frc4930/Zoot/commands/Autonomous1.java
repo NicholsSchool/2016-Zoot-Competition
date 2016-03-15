@@ -3,19 +3,43 @@ package org.usfirst.frc4930.Zoot.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * Autonomous - lasts 15 seconds
  */
 public class Autonomous1 extends Command {
 
+	public Autonomous1(){
+		requires(Robot.driveTrain);
+	}
+
   protected void initialize() {}
 
   protected void execute() {
-    Robot.armLifter.move(0.7);
-    Timer.delay(0.5);
-    Robot.driveTrain.move(0.3, 0.3);
-    Timer.delay(2);
+	  RobotMap.driveTrainMasterMotors.setSafetyEnabled(false);
+	  while(RobotMap.armPot.get() > 301.0){
+		  Robot.armLifter.move(-0.8);
+		  }
+	  Timer.delay(0.5);
+	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7,- 0.7);
+	  Timer.delay(3.2);
+	  RobotMap.driveTrainMasterMotors.stopMotor();
+	  Timer.delay(0.3);
+	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7, 0.4);
+	  Timer.delay(2.15);
+	  RobotMap.driveTrainMasterMotors.stopMotor();
+	  Robot.armLifter.moveToShotAngle();
+	  Timer.delay(0.5);
+	  RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
+	  Timer.delay(2.0);
+	  RobotMap.driveTrainMasterMotors.stopMotor();
+//	  Timer.delay(2.0);
+//	  Robot.driveTrain.stop();
+	  //    Robot.armLifter.move(0.7);
+//    Timer.delay(0.5);
+//    Robot.driveTrain.move(0.3, 0.3);
+//    Timer.delay(2);
     // Robot.driveTrain.stop();
     // Robot.armLifter.move(0.5);
     // Timer.delay(1);
