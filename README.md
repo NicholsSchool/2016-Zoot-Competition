@@ -1,10 +1,26 @@
 ## 2016 Zoot & Tooz
 
-### Things for Thomas to do at Tech Valley:
+### Zoot Checklist For TVR:
+* Rotate electrical board supports. (Double check wiring.)
+* Check webdahsboard for talons. (Use Firefox) (Configuration, etc.)
+* Check motor directions. (Auto3 Class)
+* Check pot for extreme values.
+* Test Autochooser.
+* Put boolean on the dashboard to check for ball intake.
 
-### Necessary:
-* Check wiring/ports
-* Remember to use Firefox
-* Set CAN Talon Channel #'s individually on WebDashboard
-* Check rotation of individual motors (use AutonomousThree class, on the SmartDashboard you can choose AutonomousThree as a command)
-* Check potentiometer for extreme values and set them in MoveArm command
+### General Programming @TODOs:
+* Encoders.
+* Limit Switch positioning with mechanical team present.
+* ~~Pot values~~ & Math/Trig - figure out 15 inch limit formula.
+* ~~Shifting using pneumatics.~~
+* ~~Autonomous.~~
+* Test monitor on driver station.
+* Driving normalization using gyro.
+* ~~Third camera.~~
+* ~~Multiple computers can deploy code.~~
+* ~~Have the ability to choose which autonomous mode from smart dashboard.~~
+* Allow drive team to modify motor values through smart dashboard.
+
+### Documentation:
+* Autochooser: http://wpilib.screenstepslive.com/s/4485/m/26401/l/255419-choosing-an-autonomous-program-from-smartdashboard
+* Smart Dashboard, Set Properties: http://wpilib.screenstepslive.com/s/4485/m/26401/l/255415-changing-the-display-properties-of-a-value
