@@ -2,11 +2,14 @@
 
 ### Zoot Checklist For TVR:
 * Rotate electrical board supports. (Double check wiring.)
-* Check webdahsboard for talons. (Use Firefox) (Configuration, etc.)
+* Check webdashboard for talons. (Use Firefox) (Configuration, etc.)
 * Check motor directions. (Auto3 Class)
 * Check pot for extreme values.
 * Test Autochooser.
 * Put boolean on the dashboard to check for ball intake.
+* Fine Tune Dylan's Auto Routine on Practice Field
+* Make sure Rio Power Indicator is not Red
+
 
 ### General Programming @TODOs:
 * Encoders.
