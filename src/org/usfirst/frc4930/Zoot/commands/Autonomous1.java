@@ -17,23 +17,23 @@ public class Autonomous1 extends Command {
   protected void initialize() {}
 
   protected void execute() {
-	  RobotMap.driveTrainMasterMotors.setSafetyEnabled(false);
-	  while(RobotMap.armPot.get() > 301.0){
-		  Robot.armLifter.move(-0.8);
-		  }
-	  Timer.delay(0.5);
-	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7,- 0.7);
-	  Timer.delay(3.2);
-	  RobotMap.driveTrainMasterMotors.stopMotor();
-	  Timer.delay(0.3);
-	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7, 0.4);
-	  Timer.delay(2.15);
-	  RobotMap.driveTrainMasterMotors.stopMotor();
-	  Robot.armLifter.moveToShotAngle();
-	  Timer.delay(0.5);
-	  RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
-	  Timer.delay(2.0);
-	  RobotMap.driveTrainMasterMotors.stopMotor();
+//	  RobotMap.driveTrainMasterMotors.setSafetyEnabled(false);
+//	  while(RobotMap.armPot.get() > 341){
+//		  Robot.armLifter.move(-0.8);
+//		  }
+//	  Timer.delay(0.5);
+//	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7,- 0.7);
+//	  Timer.delay(3.2);
+//	  RobotMap.driveTrainMasterMotors.stopMotor();
+//	  Timer.delay(0.3);
+//	  RobotMap.driveTrainMasterMotors.tankDrive(-0.7, 0.4);
+//	  Timer.delay(2.15);
+//	  RobotMap.driveTrainMasterMotors.stopMotor();
+//	  Robot.armLifter.moveToShotAngle();
+//	  Timer.delay(0.5);
+//	  RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
+//	  Timer.delay(2.0);
+//	  RobotMap.driveTrainMasterMotors.stopMotor();
 	  
 	  //System Check
 	  

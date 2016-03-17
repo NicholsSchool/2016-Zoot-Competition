@@ -88,7 +88,11 @@ public class Robot extends IterativeRobot {
   }
 
   public void teleopInit() {
-    try {
+	  if( autonomous1 != null){
+		  autonomous1.cancel();
+	  }
+	  
+	  try {
       cameras.initialize();
     } catch (Exception e) {
       System.out.println(e.toString());
@@ -98,6 +102,7 @@ public class Robot extends IterativeRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
     SmartDashboard.putNumber("Arm Pot", RobotMap.armPot.get());
+    SmartDashboard.putBoolean("Limit Switch Value", RobotMap.hookHighExtremeSwitch.get());
     try {
       cameras.execute();
     } catch (Exception e) {
