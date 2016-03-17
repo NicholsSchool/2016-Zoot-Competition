@@ -3,7 +3,6 @@ package org.usfirst.frc4930.Zoot.subsystems;
 import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
 import org.usfirst.frc4930.Zoot.commands.TankDrive;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -22,10 +21,11 @@ public class DriveTrain extends Subsystem {
       RobotMap.driveTrainMasterMotors.tankDrive(-right, -left);
     }
   }
-  
+
   public void moveAuto(double autoleft, double autoright) {
-	  RobotMap.driveTrainMasterMotors.tankDrive(autoleft, autoright);
+    RobotMap.driveTrainMasterMotors.tankDrive(autoleft, autoright);
   }
+
   public void stop() {
     RobotMap.driveTrainMasterMotors.stopMotor();
   }
