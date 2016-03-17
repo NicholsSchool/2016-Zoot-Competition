@@ -34,6 +34,39 @@ public class Autonomous1 extends Command {
 	  RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
 	  Timer.delay(2.0);
 	  RobotMap.driveTrainMasterMotors.stopMotor();
+	  
+	  //System Check
+	  
+//	    RobotMap.driveTrainLeftMaster.set(0.5);//FORWARD
+//	    Timer.delay(0.5);
+//	    RobotMap.driveTrainLeftMaster.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.driveTrainRightMaster.set(0.5);//FORWARD
+//	    Timer.delay(0.5);
+//	    RobotMap.driveTrainRightMaster.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.intakeMotorsLeft.set(0.5);//IN
+//	    Timer.delay(0.5);
+//	    RobotMap.intakeMotorsLeft.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.intakeMotorsRight.set(0.5);//IN
+//	    Timer.delay(0.5);
+//	    RobotMap.intakeMotorsRight.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.roller.set(0.5);//IN
+//	    Timer.delay(0.5);
+//	    RobotMap.roller.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.armDart.set(0.5);//UP
+//	    Timer.delay(0.5);
+//	    RobotMap.armDart.set(0.0);
+//	    Timer.delay(0.5);
+//	    RobotMap.hookDart.set(-0.5);//UP
+//	    Timer.delay(0.5);
+//	    RobotMap.hookDart.set(0.0);
+	  
+	  
+	  
 //	  Timer.delay(2.0);
 //	  Robot.driveTrain.stop();
 	  //    Robot.armLifter.move(0.7);
