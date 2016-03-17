@@ -79,11 +79,11 @@ public class RobotMap {
     driveTrainMasterMotors.setSensitivity(0.6);
     driveTrainMasterMotors.setMaxOutput(1.0);
 
-    driveTrainLeftMaster.enableBrakeMode(true);
-    driveTrainLeftSlave1.enableBrakeMode(true);
-    driveTrainLeftSlave2.enableBrakeMode(true);
-    driveTrainRightMaster.enableBrakeMode(true);
-    driveTrainRightSlave1.enableBrakeMode(true);
-    driveTrainRightSlave2.enableBrakeMode(true);
+    driveTrainLeftMaster.enableBrakeMode(false);
+    driveTrainLeftSlave1.enableBrakeMode(false);
+    driveTrainLeftSlave2.enableBrakeMode(false);
+    driveTrainRightMaster.enableBrakeMode(false);
+    driveTrainRightSlave1.enableBrakeMode(false);
+    driveTrainRightSlave2.enableBrakeMode(false);
   }
 }

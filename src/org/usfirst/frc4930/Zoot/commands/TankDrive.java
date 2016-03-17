@@ -15,7 +15,7 @@ public class TankDrive extends Command {
   protected void initialize() {}
 
   protected void execute() {
-    Robot.driveTrain.move(Robot.oi.getJoystick0(), Robot.oi.getJoystick1());
+    Robot.driveTrain.controlledMove(Robot.oi.getJoystick0(), Robot.oi.getJoystick1());
   }
 
   protected boolean isFinished() {
