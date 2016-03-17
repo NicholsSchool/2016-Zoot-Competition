@@ -24,5 +24,4 @@ public class GoToShotAngle extends Command {
   protected void interrupted() {
     Robot.armLifter.stop();
   }
-
 }

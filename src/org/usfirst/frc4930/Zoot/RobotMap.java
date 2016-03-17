@@ -46,9 +46,6 @@ public class RobotMap {
 
     armPot = new AnalogPotentiometer(2, 360, 0);
 
-    // encoders Left: 6 & 7
-    // encoders Right: 8 & 9
-
     // Motor Controllers
     roller = new CANTalon(10);
     driveTrainRightMaster = new CANTalon(11);

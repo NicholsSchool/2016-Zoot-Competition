@@ -4,11 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc4930.Zoot.commands.Autonomous1;
-import org.usfirst.frc4930.Zoot.commands.Autonomous2;
-import org.usfirst.frc4930.Zoot.commands.Autonomous3;
+import org.usfirst.frc4930.Zoot.commands.Autonomous;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
 /**
@@ -21,11 +18,7 @@ public class Robot extends IterativeRobot {
   public static boolean orientation;
 
   // commands
-  public static Command autoCommand;
-  public static Command autonomous1;
-  public static Command autonomous2;
-  public static Command autonomous3;
-  public static SendableChooser autoChooser;
+  public static Command autonomous;
 
   // subsystems
   public static ArmLifter armLifter;
@@ -48,7 +41,7 @@ public class Robot extends IterativeRobot {
     intakeMotors = new IntakeMotors();
     limitSwitch = new LimitSwitch();
     roller = new Roller();
-    autonomous1 = new Autonomous1();
+
     try {
       cameras = new Cameras();
     } catch (Exception e) {
@@ -59,15 +52,7 @@ public class Robot extends IterativeRobot {
     oi = new OI();
 
     // autonomous must be instantiated after OI
-
-//    autonomous2 = new Autonomous2();
-//    autonomous3 = new Autonomous3();
-//    autoChooser = new SendableChooser();
-
-//    autoChooser.addDefault("Autonomous 1", autonomous1);
-//    autoChooser.addObject("Autonomous 2", autonomous2);
-//    autoChooser.addObject("Autonomous 3", autonomous3);
-//    SmartDashboard.putData("Auto Chooser", autoChooser);
+    autonomous = new Autonomous();
   }
 
   public void disabledInit() {}
@@ -77,10 +62,7 @@ public class Robot extends IterativeRobot {
   }
 
   public void autonomousInit() {
-//    autoCommand = (Command) autoChooser.getSelected();
-//    autoCommand.start();
-	    
-	    autonomous1.start();
+    autonomous.start();
   }
 
   public void autonomousPeriodic() {
@@ -88,11 +70,10 @@ public class Robot extends IterativeRobot {
   }
 
   public void teleopInit() {
-	  if( autonomous1 != null){
-		  autonomous1.cancel();
-	  }
-	  
-	  try {
+    if (autonomous != null) {
+      autonomous.cancel();
+    }
+    try {
       cameras.initialize();
     } catch (Exception e) {
       System.out.println(e.toString());
@@ -102,7 +83,6 @@ public class Robot extends IterativeRobot {
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
     SmartDashboard.putNumber("Arm Pot", RobotMap.armPot.get());
-    SmartDashboard.putBoolean("Limit Switch Value", RobotMap.hookHighExtremeSwitch.get());
     try {
       cameras.execute();
     } catch (Exception e) {
