@@ -1,6 +1,7 @@
 package org.usfirst.frc4930.Zoot;
 
 import org.usfirst.frc4930.Zoot.commands.ChangeToShotCam;
+import org.usfirst.frc4930.Zoot.commands.Drop;
 import org.usfirst.frc4930.Zoot.commands.ExtendHook;
 import org.usfirst.frc4930.Zoot.commands.GoToShotAngle;
 import org.usfirst.frc4930.Zoot.commands.Intake;
@@ -25,6 +26,7 @@ public class OI {
 
   public JoystickButton joystick2Button1;
   public JoystickButton joystick2Button2;
+  public JoystickButton joystick2Button3;
   public JoystickButton joystick2Button6;
   public JoystickButton joystick2Button7;
   public JoystickButton joystick2Button10;
@@ -45,6 +47,9 @@ public class OI {
 
     joystick2Button2 = new JoystickButton(joystick2, 2);
     joystick2Button2.whenPressed(new GoToShotAngle());
+
+    joystick2Button3 = new JoystickButton(joystick2, 3);
+    joystick2Button3.whenPressed(new Drop());
 
     joystick2Button6 = new JoystickButton(joystick2, 6);
     joystick2Button6.whileHeld(new ExtendHook());
