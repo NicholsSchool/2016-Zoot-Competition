@@ -22,11 +22,10 @@ public class Autonomous extends Command {
 
   protected void execute() {
 
-	// this.driveOverDefenseWithArmUp();
+	 this.driveOverDefenseWithArmUp();
 	// this.lowBarAutoNoShot();
     // this.lowBarAutoWithPotAndShooing();
-    // this.lowBarAutoNoShot();
-	   this.lowBarWithoutPotWithLowShot();
+    // this.lowBarWithoutPotWithLowShot();
     // this.spyAuto();
     // this.sysCheck();
   }

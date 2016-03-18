@@ -34,7 +34,9 @@ public class RobotMap {
   public static DigitalInput armHighExtremeSwitch;
   public static DigitalInput hookLowExtremeSwitch;
   public static DigitalInput hookHighExtremeSwitch;
-
+//  public class APot(){
+//	  
+//  }
   public static void init() {
 
     // DIO Sensors
@@ -44,8 +46,9 @@ public class RobotMap {
     armHighExtremeSwitch = new DigitalInput(3);
     armLowExtremeSwitch = new DigitalInput(4);
 
-    armPot = new AnalogPotentiometer(2, 360, 0);
-
+    armPot = new AnalogPotentiometer(2);
+    //highextreme = 84.400;
+    //lowextreme = 68.000;
     // Motor Controllers
     roller = new CANTalon(10);
     driveTrainRightMaster = new CANTalon(11);

@@ -82,7 +82,7 @@ public class Robot extends IterativeRobot {
 
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashboard.putNumber("Arm Pot", RobotMap.armPot.get());
+    SmartDashboard.putNumber("Arm Pot", Math.round(RobotMap.armPot.get()*1000));
     try {
       cameras.execute();
     } catch (Exception e) {
