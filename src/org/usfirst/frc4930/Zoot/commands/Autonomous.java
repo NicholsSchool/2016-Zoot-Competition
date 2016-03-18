@@ -23,6 +23,8 @@ public class Autonomous extends Command {
   protected void execute() {
     this.lowBarAutoNoShot();
     // this.lowBarAutoWithPotAndShooing();
+    // this.driveOverDefenseWithArmUp();
+    // this.lowBarAutoNoShot();
     // this.spyAuto();
     // this.sysCheck();
   }
