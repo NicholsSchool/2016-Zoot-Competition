@@ -21,10 +21,12 @@ public class Autonomous extends Command {
   }
 
   protected void execute() {
-    this.lowBarAutoNoShot();
+
+	// this.driveOverDefenseWithArmUp();
+	// this.lowBarAutoNoShot();
     // this.lowBarAutoWithPotAndShooing();
-    // this.driveOverDefenseWithArmUp();
     // this.lowBarAutoNoShot();
+	   this.lowBarWithoutPotWithLowShot();
     // this.spyAuto();
     // this.sysCheck();
   }
@@ -44,8 +46,8 @@ public class Autonomous extends Command {
   }
   
   protected void driveOverDefenseWithArmUp(){
-	  Robot.driveTrain.move(-0.7, -0.7);
-	  Timer.delay(1.5);
+	  Robot.driveTrain.move(-0.8, -0.8);
+	  Timer.delay(1.8);
       Robot.driveTrain.stop();
   }
 
@@ -75,6 +77,21 @@ public class Autonomous extends Command {
     RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
     Timer.delay(2.0);
     RobotMap.driveTrainMasterMotors.stopMotor();
+  }
+  
+  protected void lowBarWithoutPotWithLowShot(){
+	  Robot.armLifter.move(-0.8);
+	  Timer.delay(2);
+	  Robot.armLifter.stop();
+	  Robot.driveTrain.move(-0.7, -0.7);
+	  Timer.delay(1.5);
+	  Robot.driveTrain.stop();
+	  Robot.driveTrain.move(-0.7, 0.4);
+	  Timer.delay(2);
+	  Robot.driveTrain.move(-0.7, -0.7);
+	  Timer.delay(1.0);
+	  Robot.driveTrain.stop();
+	  new Shoot();
   }
   
   protected void spyAuto(){
