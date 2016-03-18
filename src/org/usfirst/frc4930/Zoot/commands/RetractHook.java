@@ -15,7 +15,7 @@ public class RetractHook extends Command {
   }
 
   protected boolean isFinished() {
-    if (!Robot.limitSwitch.hookExtended()) {
+    if (!Robot.limitSwitch.hookRetracted()) {
       return true;
     } else {
       return false;
