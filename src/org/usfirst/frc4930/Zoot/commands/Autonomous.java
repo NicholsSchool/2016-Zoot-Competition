@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
+import org.usfirst.frc4930.Zoot.commands.Shoot;
 
 /**
  * Autonomous - lasts 15 seconds
@@ -12,6 +13,7 @@ public class Autonomous extends Command {
 
   public Autonomous() {
     requires(Robot.driveTrain);
+    requires(Robot.armLifter);
   }
 
   protected void initialize() {
@@ -19,8 +21,11 @@ public class Autonomous extends Command {
   }
 
   protected void execute() {
-    this.Auto1();
-    // this.Auto2();
+    this.lowBarAutoNoShot();
+    // this.lowBarAutoWithPotAndShooing();
+    // this.driveOverDefenseWithArmUp();
+    // this.lowBarAutoNoShot();
+    // this.spyAuto();
     // this.sysCheck();
   }
 
@@ -37,17 +42,23 @@ public class Autonomous extends Command {
     Robot.driveTrain.stop();
     Robot.armLifter.stop();
   }
+  
+  protected void driveOverDefenseWithArmUp(){
+	  Robot.driveTrain.move(-0.7, -0.7);
+	  Timer.delay(1.5);
+      Robot.driveTrain.stop();
+  }
 
-  protected void Auto1() {
+  protected void lowBarAutoNoShot() {
     Robot.armLifter.move(-0.8);
     Timer.delay(2);
     Robot.armLifter.stop();
-    Robot.driveTrain.move(0.3, 0.3);
-    Timer.delay(2.5);
+    Robot.driveTrain.move(-0.7, -0.7);
+    Timer.delay(1.5);
     Robot.driveTrain.stop();
   }
 
-  protected void Auto2() {
+  protected void lowBarAutoWithPotAndShooting() {
     while (RobotMap.armPot.get() > 341) {
       Robot.armLifter.move(-0.8);
     }
@@ -64,6 +75,19 @@ public class Autonomous extends Command {
     RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
     Timer.delay(2.0);
     RobotMap.driveTrainMasterMotors.stopMotor();
+  }
+  
+  protected void spyAuto(){
+	Robot.driveTrain.move(-0.5, -0.5);
+	Timer.delay(1.5);
+	Robot.driveTrain.stop();
+	new Shoot();
+	Timer.delay(0.5);
+	Robot.driveTrain.move(0.8, 0.1);
+	Timer.delay(1.75);
+	Robot.driveTrain.move(0.7, 0.7);
+	Timer.delay(1.0);
+	Robot.driveTrain.stop();
   }
 
   protected void sysCheck() {
