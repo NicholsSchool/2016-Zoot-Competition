@@ -18,11 +18,11 @@ public class Cameras {
   private CameraServer server;
 
   public Cameras() {
-    frontCam = NIVision.IMAQdxOpenCamera("cam1",
+    frontCam = NIVision.IMAQdxOpenCamera("cam3",
         NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-    backCam = NIVision.IMAQdxOpenCamera("cam2",
+    backCam = NIVision.IMAQdxOpenCamera("cam4",
         NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-    shotCam = NIVision.IMAQdxOpenCamera("cam3",
+    shotCam = NIVision.IMAQdxOpenCamera("cam5",
         NIVision.IMAQdxCameraControlMode.CameraControlModeController);
     curCam = frontCam;
     frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
