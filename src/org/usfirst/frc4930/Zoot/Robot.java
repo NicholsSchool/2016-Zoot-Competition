@@ -27,6 +27,7 @@ public class Robot extends IterativeRobot {
   public static HookExtender hookExtender;
   public static IntakeMotors intakeMotors;
   public static LimitSwitch limitSwitch;
+  public static Potentiometer Potentiometer;
   public static Roller roller;
 
   public void robotInit() {
@@ -82,7 +83,7 @@ public class Robot extends IterativeRobot {
 
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashboard.putNumber("Arm Pot", Math.round(RobotMap.armPot.get()*1000));
+    SmartDashboard.putNumber("Arm Pot", Math.round(RobotMap.armPot.get() * 1000));
     try {
       cameras.execute();
     } catch (Exception e) {

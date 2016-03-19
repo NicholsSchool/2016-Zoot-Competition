@@ -22,9 +22,8 @@ public class Autonomous extends Command {
 
   protected void execute() {
 
-	 this.driveOverDefenseWithArmUp();
-	// this.lowBarAutoNoShot();
-    // this.lowBarAutoWithPotAndShooing();
+    this.driveOverDefenseWithArmUp();
+    // this.lowBarAutoNoShot();
     // this.lowBarWithoutPotWithLowShot();
     // this.spyAuto();
     // this.sysCheck();
@@ -43,11 +42,11 @@ public class Autonomous extends Command {
     Robot.driveTrain.stop();
     Robot.armLifter.stop();
   }
-  
-  protected void driveOverDefenseWithArmUp(){
-	  Robot.driveTrain.move(-0.8, -0.8);
-	  Timer.delay(1.8);
-      Robot.driveTrain.stop();
+
+  protected void driveOverDefenseWithArmUp() {
+    Robot.driveTrain.move(-0.8, -0.8);
+    Timer.delay(1.8);
+    Robot.driveTrain.stop();
   }
 
   protected void lowBarAutoNoShot() {
@@ -59,51 +58,32 @@ public class Autonomous extends Command {
     Robot.driveTrain.stop();
   }
 
-  protected void lowBarAutoWithPotAndShooting() {
-    while (RobotMap.armPot.get() > 341) {
-      Robot.armLifter.move(-0.8);
-    }
-    Timer.delay(0.5);
-    RobotMap.driveTrainMasterMotors.tankDrive(-0.7, -0.7);
-    Timer.delay(3.2);
-    RobotMap.driveTrainMasterMotors.stopMotor();
-    Timer.delay(0.3);
-    RobotMap.driveTrainMasterMotors.tankDrive(-0.7, 0.4);
-    Timer.delay(2.15);
-    RobotMap.driveTrainMasterMotors.stopMotor();
-    Robot.armLifter.moveToShotAngle();
-    Timer.delay(0.5);
-    RobotMap.driveTrainMasterMotors.tankDrive(-0.5, -0.5);
-    Timer.delay(2.0);
-    RobotMap.driveTrainMasterMotors.stopMotor();
+  protected void lowBarWithoutPotWithLowShot() {
+    Robot.armLifter.move(-0.8);
+    Timer.delay(2);
+    Robot.armLifter.stop();
+    Robot.driveTrain.move(-0.7, -0.7);
+    Timer.delay(1.5);
+    Robot.driveTrain.stop();
+    Robot.driveTrain.move(-0.7, 0.4);
+    Timer.delay(2);
+    Robot.driveTrain.move(-0.7, -0.7);
+    Timer.delay(1.0);
+    Robot.driveTrain.stop();
+    new Shoot();
   }
-  
-  protected void lowBarWithoutPotWithLowShot(){
-	  Robot.armLifter.move(-0.8);
-	  Timer.delay(2);
-	  Robot.armLifter.stop();
-	  Robot.driveTrain.move(-0.7, -0.7);
-	  Timer.delay(1.5);
-	  Robot.driveTrain.stop();
-	  Robot.driveTrain.move(-0.7, 0.4);
-	  Timer.delay(2);
-	  Robot.driveTrain.move(-0.7, -0.7);
-	  Timer.delay(1.0);
-	  Robot.driveTrain.stop();
-	  new Shoot();
-  }
-  
-  protected void spyAuto(){
-	Robot.driveTrain.move(-0.5, -0.5);
-	Timer.delay(1.5);
-	Robot.driveTrain.stop();
-	new Shoot();
-	Timer.delay(0.5);
-	Robot.driveTrain.move(0.8, 0.1);
-	Timer.delay(1.75);
-	Robot.driveTrain.move(0.7, 0.7);
-	Timer.delay(1.0);
-	Robot.driveTrain.stop();
+
+  protected void spyAuto() {
+    Robot.driveTrain.move(-0.5, -0.5);
+    Timer.delay(1.5);
+    Robot.driveTrain.stop();
+    new Shoot();
+    Timer.delay(0.5);
+    Robot.driveTrain.move(0.8, 0.1);
+    Timer.delay(1.75);
+    Robot.driveTrain.move(0.7, 0.7);
+    Timer.delay(1.0);
+    Robot.driveTrain.stop();
   }
 
   protected void sysCheck() {
