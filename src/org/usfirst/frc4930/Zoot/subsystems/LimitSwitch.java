@@ -1,7 +1,6 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -29,5 +28,11 @@ public class LimitSwitch extends Subsystem {
 
   public boolean hookRetracted() {
     return RobotMap.hookLowExtremeSwitch.get();
+  }
+  
+  public static void zeroPotentiometer(){
+	  if(!RobotMap.armLowExtremeSwitch.get()){
+		  RobotMap.armPot.reset();
+	  }
   }
 }
