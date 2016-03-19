@@ -31,14 +31,57 @@ public class RobotMap {
   public static CANTalon intakeMotorsRight;
 
   public static DigitalInput boulderIntakeSwitch;
-  public static AnalogPotentiometer armPot;
+//  public static AnalogPotentiometer armPot;
+  public static ZeroablePotentiometer armPot;
   public static DigitalInput armLowExtremeSwitch;
   public static DigitalInput armHighExtremeSwitch;
   public static DigitalInput hookLowExtremeSwitch;
   public static DigitalInput hookHighExtremeSwitch;
-//  public class APot(){
-//	  
-//  }
+  
+  public static class ZeroablePotentiometer extends AnalogPotentiometer {
+		
+		private double offset = 0.0;
+		private int invert = 1;
+		public ZeroablePotentiometer(int channel) {
+			super(channel);
+		}
+		
+//		public ZeroablePotentiometer(int channel, double scale) {
+//			super(channel, scale);
+//		}
+//		
+//		public ZeroablePotentiometer(int channel, double scale, double offset) {	
+//			super(channel, scale);
+//			this.offset = offset;
+//		}
+		
+		public double get() {
+			return (super.get() - offset) * invert;
+		}
+		
+		private boolean hasReset = false;
+		
+		public void reset() {
+			offset = super.get();
+			hasReset = true;
+		}
+		public boolean isReset() {
+			return hasReset;
+		}
+		
+		public void setInverted(boolean invert) {
+			if(invert) {
+				this.invert = -1;
+			} else {
+				this.invert = 1;
+			}
+		}
+		
+		public boolean isInverted() {
+			return this.invert == -1;
+		}
+	}
+
   public static void init() {
 
     // DIO Sensors
@@ -48,9 +91,8 @@ public class RobotMap {
     armHighExtremeSwitch = new DigitalInput(3);
     armLowExtremeSwitch = new DigitalInput(4);
 
-    armPot = new AnalogPotentiometer(2);
-    //highextreme = 84.400;
-    //lowextreme = 68.000;
+    armPot = new ZeroablePotentiometer(2);
+    
     // Motor Controllers
     roller = new CANTalon(10);
     driveTrainRightMaster = new CANTalon(11);
