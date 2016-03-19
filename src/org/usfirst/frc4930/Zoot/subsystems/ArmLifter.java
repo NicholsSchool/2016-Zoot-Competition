@@ -15,7 +15,7 @@ public class ArmLifter extends Subsystem {
   }
 
   public void move(double yAxis) {
-    if (RobotMap.armLowExtremeSwitch.get()) {
+    if (RobotMap.armLowExtremeSwitch.get() && RobotMap.armHighExtremeSwitch.get()) {
       RobotMap.armDart.set(yAxis);
     } else {
       Robot.armLifter.stop();
