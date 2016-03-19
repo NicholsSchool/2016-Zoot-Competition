@@ -111,8 +111,8 @@ public class Autonomous extends Command {
     Timer.delay(0.5);
     RobotMap.armDart.set(0.0);
     Timer.delay(0.5);
-    RobotMap.hookDartMaster.set(-0.5);// UP
+    RobotMap.hookDartScrew.set(-0.5);// UP
     Timer.delay(0.5);
-    RobotMap.hookDartMaster.set(0.0);
+    RobotMap.hookDartScrew.set(0.0);
   }
 }

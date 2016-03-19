@@ -14,8 +14,7 @@ public class ExtendHook extends Command {
   protected void initialize() {}
 
   protected void execute() {
-    Robot.hookExtender.move(-1.0);
-
+    Robot.hookExtender.moveUp(-1.0);
     if (onlyOnce) {
       RobotMap.driveTrainLeftMaster.enableBrakeMode(true);
       RobotMap.driveTrainLeftSlave1.enableBrakeMode(true);

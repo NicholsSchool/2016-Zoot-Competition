@@ -22,8 +22,8 @@ public class RobotMap {
   public static CANTalon driveTrainRightSlave2;
 
   public static CANTalon armDart;
-  public static CANTalon hookDartMaster;
-  public static CANTalon hookDartSlave;
+  public static CANTalon hookDartScrew;
+  public static CANTalon hookDartWinch;
 
 
   public static CANTalon roller;
@@ -90,18 +90,18 @@ public class RobotMap {
     armPot = new ZeroablePotentiometer(2, 360);
 
     // Motor Controllers
+    hookDartWinch = new CANTalon(9);
     roller = new CANTalon(10);
     driveTrainRightMaster = new CANTalon(11);
     driveTrainRightSlave1 = new CANTalon(12);
     driveTrainRightSlave2 = new CANTalon(13);
-    hookDartMaster = new CANTalon(14);
+    hookDartScrew = new CANTalon(14);
     intakeMotorsLeft = new CANTalon(15);
     intakeMotorsRight = new CANTalon(16);
     armDart = new CANTalon(17);
     driveTrainLeftMaster = new CANTalon(18);
     driveTrainLeftSlave1 = new CANTalon(19);
     driveTrainLeftSlave2 = new CANTalon(20);
-    hookDartSlave = new CANTalon(21);
 
     // Setup Slaves and Masters
     driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
@@ -115,9 +115,6 @@ public class RobotMap {
 
     driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
     driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
-
-    hookDartSlave.changeControlMode(TalonControlMode.Follower);
-    hookDartSlave.set(hookDartMaster.getDeviceID());
 
     driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 

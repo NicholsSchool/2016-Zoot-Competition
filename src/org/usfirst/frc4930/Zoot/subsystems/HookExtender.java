@@ -10,11 +10,16 @@ public class HookExtender extends Subsystem {
 
   public void initDefaultCommand() {}
 
-  public void move(double x) {
-    RobotMap.hookDartMaster.set(x);
+  public void moveUp(double x) {
+    RobotMap.hookDartScrew.set(x);
+  }
+  
+  public void moveDown(double x) {
+	  RobotMap.hookDartWinch.set(x);
+	  RobotMap.hookDartScrew.set(x);
   }
 
   public void stop() {
-    RobotMap.hookDartMaster.set(0.0);
+    RobotMap.hookDartScrew.set(0.0);
   }
 }

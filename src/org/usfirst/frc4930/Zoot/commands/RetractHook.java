@@ -11,7 +11,7 @@ public class RetractHook extends Command {
   protected void initialize() {}
 
   protected void execute() {
-    Robot.hookExtender.move(1.0);
+    Robot.hookExtender.moveDown(1.0);
   }
 
   protected boolean isFinished() {
