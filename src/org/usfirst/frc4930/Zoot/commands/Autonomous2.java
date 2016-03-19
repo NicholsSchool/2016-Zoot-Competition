@@ -9,9 +9,9 @@ import org.usfirst.frc4930.Zoot.commands.Shoot;
 /**
  * Autonomous - lasts 15 seconds
  */
-public class Autonomous extends Command {
+public class Autonomous2 extends Command {
 
-  public Autonomous() {
+  public Autonomous2() {
     requires(Robot.driveTrain);
     requires(Robot.armLifter);
   }
@@ -22,8 +22,8 @@ public class Autonomous extends Command {
 
   protected void execute() {
 
-    this.driveOverDefenseWithArmUp();
-    // this.lowBarAutoNoShot();
+//    this.driveOverDefenseWithArmUp();
+     this.lowBarAutoNoShot();
     // this.lowBarWithoutPotWithLowShot();
     // this.spyAuto();
     // this.sysCheck();
