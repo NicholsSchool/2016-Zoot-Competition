@@ -92,8 +92,7 @@ public class RobotMap {
     armLowExtremeSwitch = new DigitalInput(4);
 
     armPot = new ZeroablePotentiometer(2);
-    //highextreme = 84.400;
-    //lowextreme = 68.000;
+    
     // Motor Controllers
     roller = new CANTalon(10);
     driveTrainRightMaster = new CANTalon(11);
