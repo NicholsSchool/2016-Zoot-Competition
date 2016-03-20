@@ -68,10 +68,17 @@ public class Robot extends IterativeRobot {
     autoChooser = new SendableChooser();
     
     autoChooser.addDefault("driveOverDefenseWithArmUp", autonomous1);
-    autoChooser.addDefault("lowBarAutoNoShot", autonomous2);
-    autoChooser.addDefault("spyAuto", autonomous3);
-    autoChooser.addDefault("lowBarWithoutPotWithLowShot", autonomous4);
+    autoChooser.addObject("lowBarAutoNoShot", autonomous2);
+    autoChooser.addObject("spyAuto", autonomous3);
+    autoChooser.addObject("lowBarWithoutPotWithLowShot", autonomous4);
     SmartDashboard.putData("Auto Chooser", autoChooser);
+
+    SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
+    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
+    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
+    SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
+    SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
+    
   }
 
   public void disabledInit() {}
