@@ -19,11 +19,7 @@ public MoveArm() {
   }
 
   protected boolean isFinished() {
-    if (!Robot.limitSwitch.armUp() || !Robot.limitSwitch.armDown()) {
-      return true;
-    } else {
-      return false;
-    }
+	  return false;
   }
 
   protected void end() {

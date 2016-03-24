@@ -110,8 +110,6 @@ public class Robot extends IterativeRobot {
       System.out.println(e.toString());
     }
     SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
-    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
-    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
     SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
   }
