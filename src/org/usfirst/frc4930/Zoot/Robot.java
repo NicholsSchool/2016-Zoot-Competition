@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4930.Zoot.commands.Autonomous1;
 import org.usfirst.frc4930.Zoot.commands.Autonomous2;
 import org.usfirst.frc4930.Zoot.commands.Autonomous3;
+import org.usfirst.frc4930.Zoot.commands.Autonomous4;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
 /**
@@ -64,6 +65,7 @@ public class Robot extends IterativeRobot {
     autonomous1 = new Autonomous1();
     autonomous2 = new Autonomous2();
     autonomous3 = new Autonomous3();
+    autonomous4 = new Autonomous4();
     autoChooser = new SendableChooser();
     
     autoChooser.addDefault("driveOverDefenseWithArmUp", autonomous1);
@@ -112,6 +114,8 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
     SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
+    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
+    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
   }
 
   public void testPeriodic() {
