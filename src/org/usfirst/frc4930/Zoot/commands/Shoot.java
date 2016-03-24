@@ -13,7 +13,7 @@ public class Shoot extends Command {
 
   protected void execute() {
     Robot.intakeMotors.move(-1.0);
-    Timer.delay(0.5);
+    Timer.delay(0.75);
     Robot.roller.move(1.0);
     Timer.delay(0.1);
   }

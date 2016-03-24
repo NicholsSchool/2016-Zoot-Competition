@@ -2,6 +2,7 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
+import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * RetractHook - retracts the hook
@@ -11,11 +12,11 @@ public class RetractHook extends Command {
   protected void initialize() {}
 
   protected void execute() {
-    Robot.hookExtender.move(1.0);
+    Robot.hookExtender.moveDown(1.0);
   }
 
   protected boolean isFinished() {
-    if (!Robot.limitSwitch.hookRetracted()) {
+    if (Robot.limitSwitch.hookRetracted()) {
       return true;
     } else {
       return false;
