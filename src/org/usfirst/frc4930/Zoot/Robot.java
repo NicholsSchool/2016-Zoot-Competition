@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4930.Zoot.commands.Autonomous1;
 import org.usfirst.frc4930.Zoot.commands.Autonomous2;
 import org.usfirst.frc4930.Zoot.commands.Autonomous3;
-import org.usfirst.frc4930.Zoot.commands.Autonomous4;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 
 /**
@@ -73,11 +72,6 @@ public class Robot extends IterativeRobot {
     autoChooser.addObject("lowBarWithoutPotWithLowShot", autonomous4);
     SmartDashboard.putData("Auto Chooser", autoChooser);
 
-    SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
-    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
-    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
-    SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
-    SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
     
   }
 
@@ -119,5 +113,10 @@ public class Robot extends IterativeRobot {
 
   public void testPeriodic() {
     LiveWindow.run();
+    SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
+    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
+    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
+    SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
+    SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
   }
 }
