@@ -1,30 +1,28 @@
 package org.usfirst.frc4930.Zoot.subsystems;
 
-import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
+
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Potentiometer
  */
-public class Potentiometer {
+public class Potentiometer extends Subsystem{
 
-  private final double SHOT_ANGLE = 48.000;
+  private final static double OUTERWORKS_SHOT_ANGLE = 48.000;
 
-  public void goToAngle(double angle) {
-     while(!Robot.limitSwitch.armDown()){
-   	  Robot.armLifter.move(-0.8);
-     }
-     while(angle > RobotMap.armPot.get()){
-    	 Robot.armLifter.move(0.8);
-     }
-  }
 
   public double getValue() {
     return RobotMap.armPot.get();
   }
 
-  public double getShotAngle() {
-    return SHOT_ANGLE;
+  public static double getShotAngle() {
+    return OUTERWORKS_SHOT_ANGLE;
+  }
+
+
+  protected void initDefaultCommand() {
+	
   }
 
 }
