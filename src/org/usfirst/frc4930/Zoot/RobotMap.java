@@ -32,7 +32,6 @@ public class RobotMap {
 
   public static DigitalInput boulderIntakeSwitch;
   public static DigitalInput armLowExtremeSwitch;
-  public static DigitalInput armHighExtremeSwitch;
   public static DigitalInput hookLowExtremeSwitch;
   public static DigitalInput hookHighExtremeSwitch;
 
@@ -84,7 +83,6 @@ public class RobotMap {
     hookHighExtremeSwitch = new DigitalInput(0);
     boulderIntakeSwitch = new DigitalInput(1);
     hookLowExtremeSwitch = new DigitalInput(2);
-    armHighExtremeSwitch = new DigitalInput(3);
     armLowExtremeSwitch = new DigitalInput(4);
 
     armPot = new ZeroablePotentiometer(2, 360);
