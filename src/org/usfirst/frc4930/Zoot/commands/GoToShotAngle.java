@@ -10,8 +10,8 @@ public class GoToShotAngle extends Command {
   protected void initialize() {}
 
   protected void execute() {
-    double shotAngle = Robot.Potentiometer.getShotAngle();
-    Robot.Potentiometer.goToAngle(shotAngle);
+    double shotAngle = Robot.potentiometer.getShotAngle();
+    Robot.potentiometer.goToAngle(shotAngle);
   }
 
   protected boolean isFinished() {

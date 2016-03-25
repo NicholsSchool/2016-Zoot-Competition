@@ -20,7 +20,6 @@ public class Autonomous1A extends Command {
   }
 
   protected void execute() {
-
     this.driveOverDefenseWithArmUp();
     // this.sysCheck();
   }

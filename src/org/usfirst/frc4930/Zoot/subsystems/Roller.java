@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * Roller - Subsystem that controls the Roller Motor
  */
-
 public class Roller extends Subsystem {
 
   protected void initDefaultCommand() {}

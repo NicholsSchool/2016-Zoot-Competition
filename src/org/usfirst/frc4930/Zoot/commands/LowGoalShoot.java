@@ -6,9 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class LowGoalShoot extends Command{
 
-	protected void initialize() {
-		
-	}
+	protected void initialize() {}
 
 	protected void execute() {
 	    Robot.intakeMotors.move(-1.0);
@@ -30,5 +28,4 @@ public class LowGoalShoot extends Command{
 	   Robot.intakeMotors.stop();
 	   Robot.roller.stop();
     }
-
 }

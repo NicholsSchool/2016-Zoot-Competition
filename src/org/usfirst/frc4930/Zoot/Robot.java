@@ -40,7 +40,7 @@ public class Robot extends IterativeRobot {
   public static HookExtender hookExtender;
   public static IntakeMotors intakeMotors;
   public static LimitSwitch limitSwitch;
-  public static Potentiometer Potentiometer;
+  public static Potentiometer potentiometer;
   public static Roller roller;
 
   public void robotInit() {
@@ -54,6 +54,7 @@ public class Robot extends IterativeRobot {
     hookExtender = new HookExtender();
     intakeMotors = new IntakeMotors();
     limitSwitch = new LimitSwitch();
+    potentiometer = new Potentiometer();
     roller = new Roller();
 
     try {
@@ -81,8 +82,6 @@ public class Robot extends IterativeRobot {
     autoChooser.addObject("Low Bar And Low Shot", autonomous4);
     autoChooser.addObject("Driving over The Cheval-De_Frise", autonomous5);
     SmartDashboard.putData("Auto Chooser", autoChooser);
-
-    
   }
 
   public void disabledInit() {}
@@ -128,6 +127,5 @@ public class Robot extends IterativeRobot {
 
   public void testPeriodic() {
     LiveWindow.run();
-
   }
 }

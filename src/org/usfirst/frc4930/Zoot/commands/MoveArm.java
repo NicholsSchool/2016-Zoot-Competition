@@ -8,9 +8,9 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class MoveArm extends Command {
 	
-public MoveArm() {
+  public MoveArm() {
 	requires(Robot.armLifter);
-}
+  }
 
   protected void initialize() {}
 

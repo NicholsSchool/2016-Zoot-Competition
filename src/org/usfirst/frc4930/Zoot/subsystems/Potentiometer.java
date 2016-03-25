@@ -26,5 +26,4 @@ public class Potentiometer {
   public double getShotAngle() {
     return SHOT_ANGLE;
   }
-
 }

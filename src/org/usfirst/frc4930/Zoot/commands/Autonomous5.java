@@ -52,5 +52,4 @@ public class Autonomous5 extends Command {
 		Timer.delay(1.25);
 		Robot.driveTrain.stop();
 	}
-
 }

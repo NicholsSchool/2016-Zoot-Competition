@@ -25,7 +25,6 @@ public class RobotMap {
   public static CANTalon hookDartScrew;
   public static CANTalon hookDartWinch;
 
-
   public static CANTalon roller;
   public static CANTalon intakeMotorsLeft;
   public static CANTalon intakeMotorsRight;
