@@ -113,6 +113,12 @@ public class Robot extends IterativeRobot {
 
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    LimitSwitch.zeroPotentiometer();
+    SmartDashboard.putNumber("Arm Pot", Math.round(RobotMap.armPot.get()));
+    SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
+    SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
+    SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
+    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
     try {
       cameras.execute();
     } catch (Exception e) {
@@ -122,11 +128,6 @@ public class Robot extends IterativeRobot {
 
   public void testPeriodic() {
     LiveWindow.run();
-    SmartDashboard.putNumber("Arm Pot", Math.round(RobotMap.armPot.get()));
-    SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
-    SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
-    SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
-    SmartDashboard.putBoolean("armDown", Robot.limitSwitch.armDown());
-    SmartDashboard.putBoolean("armUp", Robot.limitSwitch.armUp());
+
   }
 }

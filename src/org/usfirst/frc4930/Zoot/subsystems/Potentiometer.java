@@ -42,7 +42,7 @@ public class Potentiometer {
       }
       Robot.armLifter.stop();
     } else {
-      while (RobotMap.armLowExtremeSwitch.get() && RobotMap.armHighExtremeSwitch.get()) {
+      while (RobotMap.armLowExtremeSwitch.get()) {
         Robot.armLifter.move(-0.8);
       }
     }
