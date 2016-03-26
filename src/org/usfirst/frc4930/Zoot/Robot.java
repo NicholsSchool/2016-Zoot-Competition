@@ -40,7 +40,6 @@ public class Robot extends IterativeRobot {
   public static HookExtender hookExtender;
   public static IntakeMotors intakeMotors;
   public static LimitSwitch limitSwitch;
-  public static Potentiometer Potentiometer;
   public static Roller roller;
 
   public void robotInit() {
