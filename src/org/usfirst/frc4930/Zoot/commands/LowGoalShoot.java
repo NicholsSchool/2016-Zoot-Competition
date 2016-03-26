@@ -11,7 +11,7 @@ public class LowGoalShoot extends Command{
 	}
 
 	protected void execute() {
-	    Robot.intakeMotors.move(-1.0);
+	    Robot.intakeMotors.move(-0.75);
 	    Timer.delay(0.1);
 	    Robot.roller.move(1.0);
 	    Timer.delay(0.1);
