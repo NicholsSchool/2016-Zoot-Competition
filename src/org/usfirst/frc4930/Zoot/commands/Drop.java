@@ -14,7 +14,7 @@ public class Drop extends Command {
   protected void execute() {
     Robot.intakeMotors.move(-0.3);
     Robot.roller.move(0.3);
-    Timer.delay(2.0);
+    Timer.delay(.5);
   }
 
   protected boolean isFinished() {

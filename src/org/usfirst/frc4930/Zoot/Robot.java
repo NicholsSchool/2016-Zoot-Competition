@@ -37,6 +37,7 @@ public class Robot extends IterativeRobot {
   public static ArmLifter armLifter;
   public static Cameras cameras;
   public static DriveTrain driveTrain;
+  public static FlashLight flashLight;
   public static HookExtender hookExtender;
   public static IntakeMotors intakeMotors;
   public static LimitSwitch limitSwitch;
@@ -50,6 +51,7 @@ public class Robot extends IterativeRobot {
     // subsystems
     armLifter = new ArmLifter();
     driveTrain = new DriveTrain();
+    flashLight = new FlashLight();
     hookExtender = new HookExtender();
     intakeMotors = new IntakeMotors();
     limitSwitch = new LimitSwitch();
