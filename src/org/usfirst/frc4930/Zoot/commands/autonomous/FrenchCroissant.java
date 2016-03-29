@@ -18,12 +18,7 @@ public class FrenchCroissant extends Command {
 
   protected void initialize() {
     RobotMap.driveTrainMasterMotors.setSafetyEnabled(false);
-    RobotMap.driveTrainLeftMaster.enableBrakeMode(true);
-    RobotMap.driveTrainLeftSlave1.enableBrakeMode(true);
-    RobotMap.driveTrainLeftSlave2.enableBrakeMode(true);
-    RobotMap.driveTrainRightMaster.enableBrakeMode(true);
-    RobotMap.driveTrainRightSlave1.enableBrakeMode(true);
-    RobotMap.driveTrainRightSlave2.enableBrakeMode(true);
+    Robot.driveTrain.brakeMode(true);
   }
 
   protected void execute() {
@@ -44,6 +39,7 @@ public class FrenchCroissant extends Command {
   }
 
   protected void end() {
+    Robot.driveTrain.brakeMode(false);
     Robot.driveTrain.stop();
     Robot.armLifter.stop();
   }

@@ -44,4 +44,13 @@ public class DriveTrain extends Subsystem {
   public void stop() {
     RobotMap.driveTrainMasterMotors.stopMotor();
   }
+
+  public void brakeMode(boolean mode) {
+    RobotMap.driveTrainLeftMaster.enableBrakeMode(mode);
+    RobotMap.driveTrainLeftSlave1.enableBrakeMode(mode);
+    RobotMap.driveTrainLeftSlave2.enableBrakeMode(mode);
+    RobotMap.driveTrainRightMaster.enableBrakeMode(mode);
+    RobotMap.driveTrainRightSlave1.enableBrakeMode(mode);
+    RobotMap.driveTrainRightSlave2.enableBrakeMode(mode);
+  }
 }
