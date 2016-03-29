@@ -44,6 +44,7 @@ public class Robot extends IterativeRobot {
   public static LimitSwitch limitSwitch;
 
   public void robotInit() {
+
     RobotMap.init();
     oi = new OI();
 
@@ -74,6 +75,7 @@ public class Robot extends IterativeRobot {
     autoSystemsCheck = new SystemsCheck();
     autoChooser = new SendableChooser();
 
+    // setup autoChooser options
     autoChooser.addDefault("Do Nothing (Litterally)", autoDoNothing);
     autoChooser.addObject("Drive Short With Arm Up (Not Ramparts)", autoDriveShortWithArmUp);
     autoChooser.addObject("Drive Long With Arm Up (Ramparts)", autoDriveLongWithArmUp);
@@ -82,7 +84,6 @@ public class Robot extends IterativeRobot {
     autoChooser.addObject("French Croissant", autoFrenchCroissant);
     autoChooser.addObject("Spy Bot With High Shot", autoSpyBotWithHighShot);
     autoChooser.addObject("Systems Check (Diagnostic)", autoSystemsCheck);
-
     SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 

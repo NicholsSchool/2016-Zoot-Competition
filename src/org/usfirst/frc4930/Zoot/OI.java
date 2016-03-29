@@ -14,10 +14,13 @@ public class OI {
   public static Joystick joystick1;
   public static Joystick joystick2;
 
+  // left joystick buttons
   public JoystickButton joystick0Button3;
 
+  // right joystick buttons
   public JoystickButton joystick1Button2;
 
+  // operator joystick buttons
   public JoystickButton joystick2Button1;
   public JoystickButton joystick2Button2;
   public JoystickButton joystick2Button3;
