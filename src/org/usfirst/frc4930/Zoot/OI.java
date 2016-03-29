@@ -73,4 +73,9 @@ public class OI {
   public double getJoystick2() {
     return joystick2.getY();
   }
+
+  public double getJoystick2Throttle() {
+    // @todo experimental code
+    return joystick2.getRawAxis(3);
+  }
 }

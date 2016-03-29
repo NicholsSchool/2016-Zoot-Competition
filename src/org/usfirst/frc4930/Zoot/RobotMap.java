@@ -73,6 +73,7 @@ public class RobotMap {
 
     driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
 
+    // @todo determine if this is really necessary
     driveTrainMasterMotors.setSafetyEnabled(true);
     driveTrainMasterMotors.setExpiration(0.1);
     driveTrainMasterMotors.setSensitivity(0.6);
