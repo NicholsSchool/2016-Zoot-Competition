@@ -1,18 +1,11 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.ChangeToShotCam;
-import org.usfirst.frc4930.Zoot.commands.Drop;
-import org.usfirst.frc4930.Zoot.commands.ExtendHook;
-import org.usfirst.frc4930.Zoot.commands.Intake;
-import org.usfirst.frc4930.Zoot.commands.OrientationChange;
-import org.usfirst.frc4930.Zoot.commands.RetractHook;
-import org.usfirst.frc4930.Zoot.commands.Shoot;
-import org.usfirst.frc4930.Zoot.commands.ToggleFlashlight;
-import org.usfirst.frc4930.Zoot.commands.LowGoalShoot;
+import org.usfirst.frc4930.Zoot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
+ * OI Class
  * Binds operator interface controls to commands.
  */
 public class OI {
@@ -46,16 +39,16 @@ public class OI {
 
     joystick2Button1 = new JoystickButton(joystick2, 1);
     joystick2Button1.whenPressed(new Shoot());
-    
+
     joystick2Button2 = new JoystickButton(joystick2, 2);
     joystick2Button2.whenPressed(new LowGoalShoot());
 
     joystick2Button3 = new JoystickButton(joystick2, 3);
     joystick2Button3.whenPressed(new Drop());
-    
+
     joystick2Button5 = new JoystickButton(joystick2, 5);
     joystick2Button5.whenPressed(new ToggleFlashlight());
-    
+
     joystick2Button6 = new JoystickButton(joystick2, 6);
     joystick2Button6.whileHeld(new ExtendHook());
 

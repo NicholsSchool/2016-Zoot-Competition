@@ -1,6 +1,6 @@
 package org.usfirst.frc4930.Zoot.commands;
 
-import org.usfirst.frc4930.Zoot.subsystems.Cameras;
+import org.usfirst.frc4930.Zoot.subsystems.sensors.Cameras;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class ChangeToShotCam extends Command {

@@ -6,17 +6,14 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc4930.Zoot.commands.Autonomous1A;
-import org.usfirst.frc4930.Zoot.commands.Autonomous1B;
-import org.usfirst.frc4930.Zoot.commands.Autonomous2;
-import org.usfirst.frc4930.Zoot.commands.Autonomous3;
-import org.usfirst.frc4930.Zoot.commands.Autonomous4;
-import org.usfirst.frc4930.Zoot.commands.Autonomous5;
+import org.usfirst.frc4930.Zoot.commands.autonomous.*;
 import org.usfirst.frc4930.Zoot.subsystems.*;
+import org.usfirst.frc4930.Zoot.subsystems.sensors.Cameras;
+import org.usfirst.frc4930.Zoot.subsystems.sensors.LimitSwitch;
 
 /**
- * RoboRIO automatically fires a method corresponding to the current game mode. Init() fires only
- * once. Then periodic() fires in succession.
+ * RoboRIO automatically fires a method corresponding to the current game mode.
+ * Init() fires only once. Periodic() fires approximately every 20ms.
  */
 public class Robot extends IterativeRobot {
 
@@ -67,14 +64,14 @@ public class Robot extends IterativeRobot {
     oi = new OI();
 
     // autonomous must be instantiated after OI
-    autonomous1A = new Autonomous1A();
+    autonomous1A = new DriveOverDefenseWithArmUp();
     autonomous1B = new Autonomous1B();
     autonomous2 = new Autonomous2();
     autonomous3 = new Autonomous3();
     autonomous4 = new Autonomous4();
     autonomous5 = new Autonomous5();
     autoChooser = new SendableChooser();
-    
+
     autoChooser.addDefault("Drive over A Defense (Not Ramparts)", autonomous1A);
     autoChooser.addDefault("Drive over Ramparts", autonomous1B);
     autoChooser.addObject("Low Bar And No Shot", autonomous2);
@@ -83,7 +80,6 @@ public class Robot extends IterativeRobot {
     autoChooser.addObject("Driving over The Cheval-De_Frise", autonomous5);
     SmartDashboard.putData("Auto Chooser", autoChooser);
 
-    
   }
 
   public void disabledInit() {}
@@ -93,7 +89,7 @@ public class Robot extends IterativeRobot {
   }
 
   public void autonomousInit() {
-	autoCommand = (Command) autoChooser.getSelected();
+    autoCommand = (Command) autoChooser.getSelected();
     autoCommand.start();
   }
 
