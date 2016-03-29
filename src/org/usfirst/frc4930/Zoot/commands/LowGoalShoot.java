@@ -4,6 +4,9 @@ import org.usfirst.frc4930.Zoot.Robot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * LowGoalShoot - shots the boulder
+ */
 public class LowGoalShoot extends Command {
 
   protected void initialize() {}

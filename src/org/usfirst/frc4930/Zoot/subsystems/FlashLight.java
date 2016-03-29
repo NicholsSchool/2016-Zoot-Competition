@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * FlashLight - LEDs controlled by a spike relay
+ * FlashLight
  */
 public class FlashLight extends Subsystem {
 

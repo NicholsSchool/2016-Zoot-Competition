@@ -4,7 +4,7 @@ import org.usfirst.frc4930.Zoot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * LimitSwitch
+ * LimitSwitches
  */
 public class LimitSwitch extends Subsystem {
 
