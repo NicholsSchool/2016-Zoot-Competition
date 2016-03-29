@@ -10,16 +10,14 @@ import org.usfirst.frc4930.Zoot.commands.autonomous.*;
 import org.usfirst.frc4930.Zoot.subsystems.*;
 import org.usfirst.frc4930.Zoot.subsystems.sensors.*;
 
-// import org.usfirst.frc4930.Zoot.subsystems.sensors.*;
-
 /**
- * RoboRIO automatically fires a method corresponding to the current game mode.
- * ...Init() fires only once. ...Periodic() fires approximately every 20ms.
+ * RoboRIO automatically fires the method corresponding to the current game mode.
+ * Init() fires only once. Periodic() fires approximately every 20ms.
  */
 public class Robot extends IterativeRobot {
 
   public static OI oi;
-  public static boolean orientation;
+  public static boolean orientation = true;
 
   // commands
   public static Command autoCommand;
@@ -47,7 +45,6 @@ public class Robot extends IterativeRobot {
 
   public void robotInit() {
     RobotMap.init();
-    orientation = true;
     oi = new OI();
 
     // instantiate subsystems
