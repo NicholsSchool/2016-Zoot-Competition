@@ -13,7 +13,7 @@ public class LimitSwitch extends Subsystem {
   public boolean boulderInPosition() {
     return RobotMap.boulderIntakeSwitch.get();
   }
-  
+
   public boolean armDown() {
     return RobotMap.armLowExtremeSwitch.get();
   }
@@ -25,10 +25,10 @@ public class LimitSwitch extends Subsystem {
   public boolean hookRetracted() {
     return RobotMap.hookLowExtremeSwitch.get();
   }
-  
-  public static void zeroPotentiometer(){
-	  if(!RobotMap.armLowExtremeSwitch.get()){
-		  RobotMap.armPot.reset();
-	  }
+
+  public static void zeroPotentiometer() {
+    if (!RobotMap.armLowExtremeSwitch.get()) {
+      RobotMap.armPot.reset();
+    }
   }
 }

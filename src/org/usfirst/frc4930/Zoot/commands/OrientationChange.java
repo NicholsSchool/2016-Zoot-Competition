@@ -27,5 +27,7 @@ public class OrientationChange extends Command {
 
   protected void end() {}
 
-  protected void interrupted() {}
+  protected void interrupted() {
+    end();
+  }
 }

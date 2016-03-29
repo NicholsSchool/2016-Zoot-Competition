@@ -27,6 +27,6 @@ public class RetractHook extends Command {
   }
 
   protected void interrupted() {
-    Robot.hookExtender.stop();
+    end();
   }
 }

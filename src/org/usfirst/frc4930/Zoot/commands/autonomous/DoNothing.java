@@ -20,5 +20,7 @@ public class DoNothing extends Command {
 
   protected void end() {}
 
-  protected void interrupted() {}
+  protected void interrupted() {
+    end();
+  }
 }

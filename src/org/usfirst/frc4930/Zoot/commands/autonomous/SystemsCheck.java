@@ -7,7 +7,7 @@ import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * SystemsCheck Auto
- * Autonomous - lasts 15 seconds
+ * Autonomous - use in the pits with the robot on blocks
  */
 public class SystemsCheck extends Command {
 

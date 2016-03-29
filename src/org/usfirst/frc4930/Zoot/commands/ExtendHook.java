@@ -29,7 +29,6 @@ public class ExtendHook extends Command {
   }
 
   protected void end() {
-    Robot.driveTrain.brakeMode(false);
     Robot.hookExtender.stop();
   }
 

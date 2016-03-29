@@ -20,5 +20,7 @@ public class ChangeToShotCam extends Command {
 
   protected void end() {}
 
-  protected void interrupted() {}
+  protected void interrupted() {
+    end();
+  }
 }
