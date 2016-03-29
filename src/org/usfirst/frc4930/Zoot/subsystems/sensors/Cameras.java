@@ -33,6 +33,16 @@ public class Cameras {
     server.setQuality(50);
   }
 
+  public void initialize() {
+    NIVision.IMAQdxStartAcquisition(curCam);
+    changeCam(frontCam);
+  }
+
+  public void execute() {
+    NIVision.IMAQdxGrab(curCam, frame, 1);
+    server.setImage(frame);
+  }
+
   public static void changeCam(int newId) {
     if (curCam != shotCam) {
       NIVision.IMAQdxStopAcquisition(curCam);
@@ -40,11 +50,6 @@ public class Cameras {
       NIVision.IMAQdxConfigureGrab(newId);
       NIVision.IMAQdxStartAcquisition(newId);
     }
-  }
-
-  public void updateCam() {
-    NIVision.IMAQdxGrab(curCam, frame, 1);
-    server.setImage(frame);
   }
 
   public static void changeToShotCam() {
@@ -60,14 +65,5 @@ public class Cameras {
       NIVision.IMAQdxConfigureGrab(curCam);
       NIVision.IMAQdxStartAcquisition(curCam);
     }
-  }
-
-  public void initialize() {
-    NIVision.IMAQdxStartAcquisition(curCam);
-    changeCam(frontCam);
-  }
-
-  public void execute() {
-    updateCam();
   }
 }

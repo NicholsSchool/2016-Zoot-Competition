@@ -26,7 +26,6 @@ public class LowBarNoShot extends Command {
     Robot.armLifter.stop();
     Robot.driveTrain.move(-0.7, -0.7);
     Timer.delay(1.5);
-    Robot.driveTrain.stop();
   }
 
   protected boolean isFinished() {

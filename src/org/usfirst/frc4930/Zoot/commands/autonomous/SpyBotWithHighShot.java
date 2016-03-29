@@ -39,7 +39,6 @@ public class SpyBotWithHighShot extends Command {
     Timer.delay(1.75);
     Robot.driveTrain.move(0.7, 0.7);
     Timer.delay(1.0);
-    Robot.driveTrain.stop();
   }
 
   protected boolean isFinished() {

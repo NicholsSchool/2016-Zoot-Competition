@@ -31,7 +31,6 @@ public class FrenchCroissant extends Command {
     Robot.driveTrain.move(-0.8, -0.8);
     Robot.armLifter.move(1.0);
     Timer.delay(1.25);
-    Robot.driveTrain.stop();
   }
 
   protected boolean isFinished() {
