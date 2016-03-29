@@ -1,4 +1,4 @@
-package org.usfirst.frc4930.Zoot.subsystems;
+package org.usfirst.frc4930.Zoot.subsystems.sensors;
 
 import org.usfirst.frc4930.Zoot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;

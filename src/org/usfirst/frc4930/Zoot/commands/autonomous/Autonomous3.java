@@ -1,4 +1,4 @@
-package org.usfirst.frc4930.Zoot.commands;
+package org.usfirst.frc4930.Zoot.commands.autonomous;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
