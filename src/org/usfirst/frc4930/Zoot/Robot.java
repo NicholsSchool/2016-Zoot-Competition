@@ -76,14 +76,14 @@ public class Robot extends IterativeRobot {
     autoChooser = new SendableChooser();
 
     // setup autoChooser options
-    autoChooser.addDefault("Do Nothing (Litterally)", autoDoNothing);
+    autoChooser.addDefault("Do Nothing (litterally)", autoDoNothing);
     autoChooser.addObject("Drive Short With Arm Up (Not Ramparts)", autoDriveShortWithArmUp);
     autoChooser.addObject("Drive Long With Arm Up (Ramparts)", autoDriveLongWithArmUp);
     autoChooser.addObject("Low Bar No Shot", autoLowBarNoShot);
     autoChooser.addObject("Low Bar With Low Shot", autoLowBarWithLowShot);
     autoChooser.addObject("French Croissant", autoFrenchCroissant);
     autoChooser.addObject("Spy Bot With High Shot", autoSpyBotWithHighShot);
-    autoChooser.addObject("Systems Check (Diagnostic)", autoSystemsCheck);
+    autoChooser.addObject("Systems Check (diagnostic)", autoSystemsCheck);
     SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
