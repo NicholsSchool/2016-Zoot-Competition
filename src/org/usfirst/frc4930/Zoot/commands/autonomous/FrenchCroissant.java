@@ -5,9 +5,13 @@ import org.usfirst.frc4930.Zoot.RobotMap;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Autonomous5 extends Command {
+/**
+ * FrenchCroissant Auto
+ * Autonomous - lasts 15 seconds
+ */
+public class FrenchCroissant extends Command {
 
-  public Autonomous5() {
+  public FrenchCroissant() {
     requires(Robot.driveTrain);
     requires(Robot.armLifter);
   }
@@ -23,24 +27,6 @@ public class Autonomous5 extends Command {
   }
 
   protected void execute() {
-    this.FrenchCroissantAuto();
-  }
-
-  protected boolean isFinished() {
-    return true;
-  }
-
-  protected void end() {
-    Robot.driveTrain.stop();
-    Robot.armLifter.stop();
-  }
-
-  protected void interrupted() {
-    Robot.driveTrain.stop();
-    Robot.armLifter.stop();
-  }
-
-  protected void FrenchCroissantAuto() {
     Robot.driveTrain.move(-0.5, -0.5);
     Timer.delay(2.5);
     Robot.driveTrain.move(-0.1, -0.1);
@@ -53,4 +39,16 @@ public class Autonomous5 extends Command {
     Robot.driveTrain.stop();
   }
 
+  protected boolean isFinished() {
+    return true;
+  }
+
+  protected void end() {
+    Robot.driveTrain.stop();
+    Robot.armLifter.stop();
+  }
+
+  protected void interrupted() {
+    end();
+  }
 }

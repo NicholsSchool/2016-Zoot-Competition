@@ -6,35 +6,18 @@ import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
- * DriveShortWithArmUp Class
+ * SystemsCheck Auto
  * Autonomous - lasts 15 seconds
  */
-public class DriveShortWithArmUp extends Command {
+public class SystemsCheck extends Command {
 
-  public DriveShortWithArmUp() {
+  public SystemsCheck() {
     requires(Robot.driveTrain);
   }
 
   protected void initialize() {}
 
   protected void execute() {
-    Robot.driveTrain.move(-0.8, -0.8);
-    Timer.delay(1.9);
-  }
-
-  protected boolean isFinished() {
-    return true;
-  }
-
-  protected void end() {
-    Robot.driveTrain.stop();
-  }
-
-  protected void interrupted() {
-    Robot.driveTrain.stop();
-  }
-
-  protected void sysCheck() {
     RobotMap.driveTrainLeftMaster.set(0.5); // FORWARD
     Timer.delay(0.5);
     RobotMap.driveTrainLeftMaster.set(0.0);
@@ -62,5 +45,17 @@ public class DriveShortWithArmUp extends Command {
     RobotMap.hookDartScrew.set(-0.5);// UP
     Timer.delay(0.5);
     RobotMap.hookDartScrew.set(0.0);
+  }
+
+  protected boolean isFinished() {
+    return true;
+  }
+
+  protected void end() {
+    Robot.driveTrain.stop();
+  }
+
+  protected void interrupted() {
+    end();
   }
 }

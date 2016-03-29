@@ -6,11 +6,12 @@ import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
+ * DriveLongWithArmUp Auto
  * Autonomous - lasts 15 seconds
  */
-public class Autonomous1B extends Command {
+public class DriveLongWithArmUp extends Command {
 
-  public Autonomous1B() {
+  public DriveLongWithArmUp() {
     requires(Robot.driveTrain);
     requires(Robot.armLifter);
   }
@@ -20,9 +21,9 @@ public class Autonomous1B extends Command {
   }
 
   protected void execute() {
-
-    this.driveOverDefenseWithArmUp();
-    // this.sysCheck();
+    Robot.driveTrain.move(-0.8, -0.8);
+    Timer.delay(2.7);
+    Robot.driveTrain.stop();
   }
 
   protected boolean isFinished() {
@@ -35,13 +36,6 @@ public class Autonomous1B extends Command {
   }
 
   protected void interrupted() {
-    Robot.driveTrain.stop();
-    Robot.armLifter.stop();
+    end();
   }
-
-  protected void driveOverDefenseWithArmUp() {
-	 Robot.driveTrain.move(-0.8, -0.8);
-	 Timer.delay(2.8);
-	 Robot.driveTrain.stop();
- }
 }
