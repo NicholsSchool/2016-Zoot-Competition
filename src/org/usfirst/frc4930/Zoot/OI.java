@@ -1,8 +1,8 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc4930.Zoot.commands.*;
 
 /**
  * OI Class
