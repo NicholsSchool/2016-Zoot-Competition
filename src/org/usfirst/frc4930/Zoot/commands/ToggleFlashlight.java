@@ -10,9 +10,9 @@ public class ToggleFlashlight extends Command {
 
   protected void initialize() {
     if (Robot.flashLight.enabled) {
-      Robot.flashLight.disableFlashlight();
+      Robot.flashLight.off();
     } else {
-      Robot.flashLight.enableFlashlight();
+      Robot.flashLight.on();
     }
   }
 

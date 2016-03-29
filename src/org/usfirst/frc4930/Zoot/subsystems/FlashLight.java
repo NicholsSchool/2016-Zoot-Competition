@@ -17,12 +17,12 @@ public class FlashLight extends Subsystem {
     spike = new Relay(0);
   }
 
-  public void enableFlashlight() {
+  public void on() {
     spike.set(Relay.Value.kForward);
     enabled = true;
   }
 
-  public void disableFlashlight() {
+  public void off() {
     spike.set(Relay.Value.kOff);
     enabled = false;
   }
