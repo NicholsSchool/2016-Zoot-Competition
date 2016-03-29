@@ -14,10 +14,10 @@ public class OI {
   public static Joystick joystick1;
   public static Joystick joystick2;
 
-  // left joystick buttons
+  // left driver joystick buttons
   public JoystickButton joystick0Button3;
 
-  // right joystick buttons
+  // right driver joystick buttons
   public JoystickButton joystick1Button2;
 
   // operator joystick buttons
