@@ -2,7 +2,6 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.RobotMap;
 
 /**
  * ExtendHook - controls the length of the hook arm
@@ -16,12 +15,7 @@ public class ExtendHook extends Command {
   protected void execute() {
     Robot.hookExtender.moveUp(-1.0);
     if (onlyOnce) {
-      RobotMap.driveTrainLeftMaster.enableBrakeMode(true);
-      RobotMap.driveTrainLeftSlave1.enableBrakeMode(true);
-      RobotMap.driveTrainLeftSlave2.enableBrakeMode(true);
-      RobotMap.driveTrainRightMaster.enableBrakeMode(true);
-      RobotMap.driveTrainRightSlave1.enableBrakeMode(true);
-      RobotMap.driveTrainRightSlave2.enableBrakeMode(true);
+      Robot.driveTrain.brakeMode(true);
       onlyOnce = false;
     }
   }
@@ -39,6 +33,6 @@ public class ExtendHook extends Command {
   }
 
   protected void interrupted() {
-    Robot.hookExtender.stop();
+    end();
   }
 }

@@ -1,18 +1,11 @@
 package org.usfirst.frc4930.Zoot;
 
-import org.usfirst.frc4930.Zoot.commands.ChangeToShotCam;
-import org.usfirst.frc4930.Zoot.commands.Drop;
-import org.usfirst.frc4930.Zoot.commands.ExtendHook;
-import org.usfirst.frc4930.Zoot.commands.Intake;
-import org.usfirst.frc4930.Zoot.commands.OrientationChange;
-import org.usfirst.frc4930.Zoot.commands.RetractHook;
-import org.usfirst.frc4930.Zoot.commands.Shoot;
-import org.usfirst.frc4930.Zoot.commands.ToggleFlashlight;
-import org.usfirst.frc4930.Zoot.commands.LowGoalShoot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc4930.Zoot.commands.*;
 
 /**
+ * OI Class
  * Binds operator interface controls to commands.
  */
 public class OI {
@@ -21,10 +14,13 @@ public class OI {
   public static Joystick joystick1;
   public static Joystick joystick2;
 
+  // left driver joystick buttons
   public JoystickButton joystick0Button3;
 
+  // right driver joystick buttons
   public JoystickButton joystick1Button2;
 
+  // operator joystick buttons
   public JoystickButton joystick2Button1;
   public JoystickButton joystick2Button2;
   public JoystickButton joystick2Button3;
@@ -46,16 +42,16 @@ public class OI {
 
     joystick2Button1 = new JoystickButton(joystick2, 1);
     joystick2Button1.whenPressed(new Shoot());
-    
+
     joystick2Button2 = new JoystickButton(joystick2, 2);
     joystick2Button2.whenPressed(new LowGoalShoot());
 
     joystick2Button3 = new JoystickButton(joystick2, 3);
     joystick2Button3.whenPressed(new Drop());
-    
+
     joystick2Button5 = new JoystickButton(joystick2, 5);
     joystick2Button5.whenPressed(new ToggleFlashlight());
-    
+
     joystick2Button6 = new JoystickButton(joystick2, 6);
     joystick2Button6.whileHeld(new ExtendHook());
 
@@ -76,5 +72,10 @@ public class OI {
 
   public double getJoystick2() {
     return joystick2.getY();
+  }
+
+  public double getJoystick2Throttle() {
+    // @todo experimental code
+    return joystick2.getRawAxis(3);
   }
 }

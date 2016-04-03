@@ -1,4 +1,4 @@
-package org.usfirst.frc4930.Zoot.subsystems;
+package org.usfirst.frc4930.Zoot.subsystems.sensors;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
@@ -18,16 +18,29 @@ public class Cameras {
   private CameraServer server;
 
   public Cameras() {
-    frontCam = NIVision.IMAQdxOpenCamera("cam3",
-        NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-    backCam = NIVision.IMAQdxOpenCamera("cam4",
-        NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-    shotCam = NIVision.IMAQdxOpenCamera("cam5",
-        NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+    frontCam =
+        NIVision.IMAQdxOpenCamera("cam3",
+            NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+    backCam =
+        NIVision.IMAQdxOpenCamera("cam4",
+            NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+    shotCam =
+        NIVision.IMAQdxOpenCamera("cam5",
+            NIVision.IMAQdxCameraControlMode.CameraControlModeController);
     curCam = frontCam;
     frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
     server = CameraServer.getInstance();
     server.setQuality(50);
+  }
+
+  public void initialize() {
+    NIVision.IMAQdxStartAcquisition(curCam);
+    changeCam(frontCam);
+  }
+
+  public void execute() {
+    NIVision.IMAQdxGrab(curCam, frame, 1);
+    server.setImage(frame);
   }
 
   public static void changeCam(int newId) {
@@ -37,11 +50,6 @@ public class Cameras {
       NIVision.IMAQdxConfigureGrab(newId);
       NIVision.IMAQdxStartAcquisition(newId);
     }
-  }
-
-  public void updateCam() {
-    NIVision.IMAQdxGrab(curCam, frame, 1);
-    server.setImage(frame);
   }
 
   public static void changeToShotCam() {
@@ -57,14 +65,5 @@ public class Cameras {
       NIVision.IMAQdxConfigureGrab(curCam);
       NIVision.IMAQdxStartAcquisition(curCam);
     }
-  }
-
-  public void initialize() {
-    NIVision.IMAQdxStartAcquisition(curCam);
-    changeCam(frontCam);
-  }
-
-  public void execute() {
-    updateCam();
   }
 }

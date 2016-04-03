@@ -7,10 +7,10 @@ import org.usfirst.frc4930.Zoot.Robot;
  * MoveArm - lifts the arm
  */
 public class MoveArm extends Command {
-	
-public MoveArm() {
-	requires(Robot.armLifter);
-}
+
+  public MoveArm() {
+    requires(Robot.armLifter);
+  }
 
   protected void initialize() {}
 
@@ -19,7 +19,7 @@ public MoveArm() {
   }
 
   protected boolean isFinished() {
-	  return false;
+    return false;
   }
 
   protected void end() {
@@ -27,6 +27,6 @@ public MoveArm() {
   }
 
   protected void interrupted() {
-    Robot.armLifter.stop();
+    end();
   }
 }

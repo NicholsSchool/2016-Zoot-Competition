@@ -10,11 +10,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ArmLifter extends Subsystem {
 
   public void initDefaultCommand() {
+    // @todo test if this is necessary
     setDefaultCommand(new MoveArm());
   }
 
   public void move(double yAxis) {
-	  RobotMap.armDart.set(yAxis);
+    RobotMap.armDart.set(yAxis);
   }
 
   public void stop() {

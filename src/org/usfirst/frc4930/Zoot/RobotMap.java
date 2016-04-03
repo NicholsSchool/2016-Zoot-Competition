@@ -25,7 +25,6 @@ public class RobotMap {
   public static CANTalon hookDartScrew;
   public static CANTalon hookDartWinch;
 
-
   public static CANTalon roller;
   public static CANTalon intakeMotorsLeft;
   public static CANTalon intakeMotorsRight;
@@ -36,6 +35,52 @@ public class RobotMap {
   public static DigitalInput hookHighExtremeSwitch;
 
   public static ZeroablePotentiometer armPot;
+
+  public static void init() {
+
+    // DIO Sensors
+    hookHighExtremeSwitch = new DigitalInput(0);
+    boulderIntakeSwitch = new DigitalInput(1);
+    hookLowExtremeSwitch = new DigitalInput(2);
+    armLowExtremeSwitch = new DigitalInput(4);
+
+    // Analog Sensors
+    armPot = new ZeroablePotentiometer(2, 360);
+
+    // Motor Controllers
+    hookDartWinch = new CANTalon(9);
+    roller = new CANTalon(10);
+    driveTrainRightMaster = new CANTalon(11);
+    driveTrainRightSlave1 = new CANTalon(12);
+    driveTrainRightSlave2 = new CANTalon(13);
+    hookDartScrew = new CANTalon(14);
+    intakeMotorsLeft = new CANTalon(15);
+    intakeMotorsRight = new CANTalon(16);
+    armDart = new CANTalon(17);
+    driveTrainLeftMaster = new CANTalon(18);
+    driveTrainLeftSlave1 = new CANTalon(19);
+    driveTrainLeftSlave2 = new CANTalon(20);
+
+    // Setup Slave Motors
+    driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
+    driveTrainLeftSlave1.set(driveTrainLeftMaster.getDeviceID());
+    driveTrainLeftSlave2.changeControlMode(TalonControlMode.Follower);
+    driveTrainLeftSlave2.set(driveTrainLeftMaster.getDeviceID());
+    driveTrainRightSlave1.changeControlMode(TalonControlMode.Follower);
+    driveTrainRightSlave1.set(driveTrainRightMaster.getDeviceID());
+    driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
+    driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
+
+    driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
+
+    // @todo determine if this is really necessary
+    driveTrainMasterMotors.setSafetyEnabled(true);
+    driveTrainMasterMotors.setExpiration(0.1);
+    driveTrainMasterMotors.setSensitivity(0.6);
+    driveTrainMasterMotors.setMaxOutput(1.0);
+
+    Robot.driveTrain.brakeMode(false);
+  }
 
   public static class ZeroablePotentiometer extends AnalogPotentiometer {
 
@@ -75,57 +120,5 @@ public class RobotMap {
     public boolean isInverted() {
       return this.invert == -1;
     }
-  }
-
-  public static void init() {
-
-    // DIO Sensors
-    hookHighExtremeSwitch = new DigitalInput(0);
-    boulderIntakeSwitch = new DigitalInput(1);
-    hookLowExtremeSwitch = new DigitalInput(2);
-    armLowExtremeSwitch = new DigitalInput(4);
-
-    armPot = new ZeroablePotentiometer(2, 360);
-
-    // Motor Controllers
-    hookDartWinch = new CANTalon(9);
-    roller = new CANTalon(10);
-    driveTrainRightMaster = new CANTalon(11);
-    driveTrainRightSlave1 = new CANTalon(12);
-    driveTrainRightSlave2 = new CANTalon(13);
-    hookDartScrew = new CANTalon(14);
-    intakeMotorsLeft = new CANTalon(15);
-    intakeMotorsRight = new CANTalon(16);
-    armDart = new CANTalon(17);
-    driveTrainLeftMaster = new CANTalon(18);
-    driveTrainLeftSlave1 = new CANTalon(19);
-    driveTrainLeftSlave2 = new CANTalon(20);
-
-    // Setup Slaves and Masters
-    driveTrainLeftSlave1.changeControlMode(TalonControlMode.Follower);
-    driveTrainLeftSlave1.set(driveTrainLeftMaster.getDeviceID());
-
-    driveTrainLeftSlave2.changeControlMode(TalonControlMode.Follower);
-    driveTrainLeftSlave2.set(driveTrainLeftMaster.getDeviceID());
-
-    driveTrainRightSlave1.changeControlMode(TalonControlMode.Follower);
-    driveTrainRightSlave1.set(driveTrainRightMaster.getDeviceID());
-
-    driveTrainRightSlave2.changeControlMode(TalonControlMode.Follower);
-    driveTrainRightSlave2.set(driveTrainRightMaster.getDeviceID());
-
-    driveTrainMasterMotors = new RobotDrive(driveTrainLeftMaster, driveTrainRightMaster);
-
-    driveTrainMasterMotors.setSafetyEnabled(true);
-    driveTrainMasterMotors.setExpiration(0.1);
-    driveTrainMasterMotors.setSensitivity(0.6);
-    driveTrainMasterMotors.setMaxOutput(1.0);
-
-    driveTrainLeftMaster.enableBrakeMode(false);
-    driveTrainLeftSlave1.enableBrakeMode(false);
-    driveTrainLeftSlave2.enableBrakeMode(false);
-    driveTrainRightMaster.enableBrakeMode(false);
-    driveTrainRightSlave1.enableBrakeMode(false);
-    driveTrainRightSlave2.enableBrakeMode(false);
   }
 }

@@ -1,17 +1,17 @@
-package org.usfirst.frc4930.Zoot.commands;
+package org.usfirst.frc4930.Zoot.commands.autonomous;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 import org.usfirst.frc4930.Zoot.RobotMap;
-import org.usfirst.frc4930.Zoot.commands.Shoot;
 
 /**
+ * LowBarWithLowShot Auto
  * Autonomous - lasts 15 seconds
  */
-public class Autonomous2 extends Command {
+public class LowBarWithLowShot extends Command {
 
-  public Autonomous2() {
+  public LowBarWithLowShot() {
     requires(Robot.driveTrain);
     requires(Robot.armLifter);
   }
@@ -21,7 +21,16 @@ public class Autonomous2 extends Command {
   }
 
   protected void execute() {
-     this.lowBarAutoNoShot();
+    Robot.armLifter.move(-0.8);
+    Timer.delay(2);
+    Robot.armLifter.stop();
+    Robot.driveTrain.move(-0.7, -0.7);
+    Timer.delay(1.5);
+    Robot.driveTrain.stop();
+    Robot.driveTrain.move(-0.7, 0.4);
+    Timer.delay(2);
+    Robot.driveTrain.move(-0.7, -0.7);
+    Timer.delay(1.0);
   }
 
   protected boolean isFinished() {
@@ -34,16 +43,6 @@ public class Autonomous2 extends Command {
   }
 
   protected void interrupted() {
-    Robot.driveTrain.stop();
-    Robot.armLifter.stop();
-  }
-
-  protected void lowBarAutoNoShot() {
-    Robot.armLifter.move(-0.8);
-    Timer.delay(2);
-    Robot.armLifter.stop();
-    Robot.driveTrain.move(-0.7, -0.7);
-    Timer.delay(1.5);
-    Robot.driveTrain.stop();
+    end();
   }
 }

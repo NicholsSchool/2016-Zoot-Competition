@@ -2,7 +2,7 @@ package org.usfirst.frc4930.Zoot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
-import org.usfirst.frc4930.Zoot.subsystems.Cameras;
+import org.usfirst.frc4930.Zoot.subsystems.sensors.Cameras;
 
 /**
  * OrientationChange - switches orientation of drive train and cameras
@@ -27,5 +27,7 @@ public class OrientationChange extends Command {
 
   protected void end() {}
 
-  protected void interrupted() {}
+  protected void interrupted() {
+    end();
+  }
 }

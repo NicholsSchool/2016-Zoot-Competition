@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
 /**
- * TankDrive - driving command during tele-op
+ * TankDrive - driving command during teleop
  */
 public class TankDrive extends Command {
 
@@ -27,6 +27,6 @@ public class TankDrive extends Command {
   }
 
   protected void interrupted() {
-    Robot.driveTrain.stop();
+    end();
   }
 }

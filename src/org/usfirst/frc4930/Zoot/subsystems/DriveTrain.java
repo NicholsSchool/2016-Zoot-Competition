@@ -24,6 +24,7 @@ public class DriveTrain extends Subsystem {
 
   public void controlledMove(double left, double right) {
 
+    // @todo interesting use for getting the current of a talon
     // double talonCurrent = RobotMap.driveTrainLeftMaster.getOutputCurrent();
 
     double multiplier = 1.0;
@@ -43,5 +44,14 @@ public class DriveTrain extends Subsystem {
 
   public void stop() {
     RobotMap.driveTrainMasterMotors.stopMotor();
+  }
+
+  public void brakeMode(boolean mode) {
+    RobotMap.driveTrainLeftMaster.enableBrakeMode(mode);
+    RobotMap.driveTrainLeftSlave1.enableBrakeMode(mode);
+    RobotMap.driveTrainLeftSlave2.enableBrakeMode(mode);
+    RobotMap.driveTrainRightMaster.enableBrakeMode(mode);
+    RobotMap.driveTrainRightSlave1.enableBrakeMode(mode);
+    RobotMap.driveTrainRightSlave2.enableBrakeMode(mode);
   }
 }

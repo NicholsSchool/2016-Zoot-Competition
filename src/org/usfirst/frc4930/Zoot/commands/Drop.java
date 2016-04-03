@@ -27,7 +27,6 @@ public class Drop extends Command {
   }
 
   protected void interrupted() {
-    Robot.intakeMotors.stop();
-    Robot.roller.stop();
+    end();
   }
 }

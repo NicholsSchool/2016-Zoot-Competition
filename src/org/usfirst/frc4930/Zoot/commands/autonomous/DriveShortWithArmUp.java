@@ -1,21 +1,24 @@
-package org.usfirst.frc4930.Zoot.commands;
+package org.usfirst.frc4930.Zoot.commands.autonomous;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
 /**
- * Shoot - shoots the boulder
+ * DriveShortWithArmUp Class
+ * Autonomous - lasts 15 seconds
  */
-public class Shoot extends Command {
+public class DriveShortWithArmUp extends Command {
+
+  public DriveShortWithArmUp() {
+    requires(Robot.driveTrain);
+  }
 
   protected void initialize() {}
 
   protected void execute() {
-    Robot.intakeMotors.move(-1.0);
-    Timer.delay(0.75);
-    Robot.roller.move(1.0);
-    Timer.delay(0.1);
+    Robot.driveTrain.move(-0.8, -0.8);
+    Timer.delay(1.9);
   }
 
   protected boolean isFinished() {
@@ -23,8 +26,7 @@ public class Shoot extends Command {
   }
 
   protected void end() {
-    Robot.intakeMotors.stop();
-    Robot.roller.stop();
+    Robot.driveTrain.stop();
   }
 
   protected void interrupted() {
