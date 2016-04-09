@@ -19,7 +19,7 @@ public class DriveLongWithArmUp extends Command {
   protected void execute() {
     // @todo avoid using timer in this manor, needs some thought
     Robot.driveTrain.move(-0.8, -0.8);
-    Timer.delay(2.7);
+    Timer.delay(2.2);
   }
 
   protected boolean isFinished() {

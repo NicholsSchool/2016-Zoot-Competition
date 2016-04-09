@@ -18,7 +18,7 @@ public class DriveShortWithArmUp extends Command {
 
   protected void execute() {
     Robot.driveTrain.move(-0.8, -0.8);
-    Timer.delay(1.9);
+    Timer.delay(1.8);
   }
 
   protected boolean isFinished() {

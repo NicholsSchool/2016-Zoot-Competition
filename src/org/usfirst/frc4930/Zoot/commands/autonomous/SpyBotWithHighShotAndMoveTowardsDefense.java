@@ -9,9 +9,9 @@ import org.usfirst.frc4930.Zoot.RobotMap;
  * SpyBotWithHighShot Auto
  * Autonomous - lasts 15 seconds
  */
-public class SpyBotWithHighShot extends Command {
+public class SpyBotWithHighShotAndMoveTowardsDefense extends Command {
 
-  public SpyBotWithHighShot() {
+  public SpyBotWithHighShotAndMoveTowardsDefense() {
     requires(Robot.driveTrain);
     requires(Robot.armLifter);
     requires(Robot.intakeMotors);
@@ -26,6 +26,13 @@ public class SpyBotWithHighShot extends Command {
     Robot.driveTrain.move(-0.5, -0.5);
     Timer.delay(1.5);
     Robot.driveTrain.stop();
+    while(!RobotMap.armLowExtremeSwitch.get()){
+    	Robot.armLifter.move(-0.8);
+    }
+    while(RobotMap.armPot.get() > 55){
+    	Robot.armLifter.move(0.8);
+    }
+    Robot.armLifter.stop();
     // START Inserted from Shoot Command
     Robot.intakeMotors.move(-1.0);
     Timer.delay(0.75);

@@ -14,6 +14,7 @@ import org.usfirst.frc4930.Zoot.subsystems.sensors.*;
  * RoboRIO automatically fires the method corresponding to the current game mode.
  * Init() fires only once. Periodic() fires approximately every 20ms.
  */
+
 public class Robot extends IterativeRobot {
 
   public static OI oi;
@@ -26,8 +27,10 @@ public class Robot extends IterativeRobot {
   public static Command autoDriveLongWithArmUp;
   public static Command autoLowBarNoShot;
   public static Command autoLowBarWithLowShot;
-  public static Command autoSpyBotWithHighShot;
+  public static Command autoRockwallWithHighShot;
+  public static Command autoSpyBotWithHighShotAndMoveTowardsDefense;
   public static Command autoFrenchCroissant;
+  public static Command autoSpyBotWithOnlyHighShot;
   public static Command autoSystemsCheck;
   public static SendableChooser autoChooser;
 
@@ -70,19 +73,23 @@ public class Robot extends IterativeRobot {
     autoDriveLongWithArmUp = new DriveLongWithArmUp();
     autoLowBarNoShot = new LowBarNoShot();
     autoLowBarWithLowShot = new LowBarWithLowShot();
+    autoRockwallWithHighShot = new RockwallWithHighShot();
     autoFrenchCroissant = new FrenchCroissant();
-    autoSpyBotWithHighShot = new SpyBotWithHighShot();
+    autoSpyBotWithHighShotAndMoveTowardsDefense = new SpyBotWithHighShotAndMoveTowardsDefense();
+    autoSpyBotWithOnlyHighShot = new SpyBotWithOnlyHighShot();
     autoSystemsCheck = new SystemsCheck();
     autoChooser = new SendableChooser();
 
     // setup autoChooser options
-    autoChooser.addDefault("Do Nothing (litterally)", autoDoNothing);
+    autoChooser.addDefault("Do Nothing (literally)", autoDoNothing);
     autoChooser.addObject("Drive Short With Arm Up (Not Ramparts)", autoDriveShortWithArmUp);
     autoChooser.addObject("Drive Long With Arm Up (Ramparts)", autoDriveLongWithArmUp);
     autoChooser.addObject("Low Bar No Shot", autoLowBarNoShot);
     autoChooser.addObject("Low Bar With Low Shot", autoLowBarWithLowShot);
+    autoChooser.addObject("Rockwall With High Shot", autoRockwallWithHighShot);
     autoChooser.addObject("French Croissant", autoFrenchCroissant);
-    autoChooser.addObject("Spy Bot With High Shot", autoSpyBotWithHighShot);
+    autoChooser.addObject("Spy Bot With High Shot", autoSpyBotWithHighShotAndMoveTowardsDefense);
+    autoChooser.addObject("Spy Bot Auto With Only High Shot", autoSpyBotWithOnlyHighShot);
     autoChooser.addObject("Systems Check (diagnostic)", autoSystemsCheck);
     SmartDashboard.putData("Auto Chooser", autoChooser);
   }
