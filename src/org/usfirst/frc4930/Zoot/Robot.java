@@ -30,6 +30,7 @@ public class Robot extends IterativeRobot {
   public static Command autoRockwallWithHighShot;
   public static Command autoSpyBotWithHighShotAndMoveTowardsDefense;
   public static Command autoFrenchCroissant;
+  public static Command autoSlowFrenchCroissant;
   public static Command autoSpyBotWithOnlyHighShot;
   public static Command autoSystemsCheck;
   public static SendableChooser autoChooser;
@@ -75,6 +76,7 @@ public class Robot extends IterativeRobot {
     autoLowBarWithLowShot = new LowBarWithLowShot();
     autoRockwallWithHighShot = new RockwallWithHighShot();
     autoFrenchCroissant = new FrenchCroissant();
+    autoSlowFrenchCroissant = new SlowFrenchCroissant();
     autoSpyBotWithHighShotAndMoveTowardsDefense = new SpyBotWithHighShotAndMoveTowardsDefense();
     autoSpyBotWithOnlyHighShot = new SpyBotWithOnlyHighShot();
     autoSystemsCheck = new SystemsCheck();
@@ -84,10 +86,11 @@ public class Robot extends IterativeRobot {
     autoChooser.addDefault("Do Nothing (literally)", autoDoNothing);
     autoChooser.addObject("Drive Short With Arm Up (Not Ramparts)", autoDriveShortWithArmUp);
     autoChooser.addObject("Drive Long With Arm Up (Ramparts)", autoDriveLongWithArmUp);
+    autoChooser.addObject("Rockwall With High Shot", autoRockwallWithHighShot);
     autoChooser.addObject("Low Bar No Shot", autoLowBarNoShot);
     autoChooser.addObject("Low Bar With Low Shot", autoLowBarWithLowShot);
-    autoChooser.addObject("Rockwall With High Shot", autoRockwallWithHighShot);
     autoChooser.addObject("French Croissant", autoFrenchCroissant);
+    autoChooser.addObject("Slower French Croissant", autoSlowFrenchCroissant);
     autoChooser.addObject("Spy Bot With High Shot", autoSpyBotWithHighShotAndMoveTowardsDefense);
     autoChooser.addObject("Spy Bot Auto With Only High Shot", autoSpyBotWithOnlyHighShot);
     autoChooser.addObject("Systems Check (diagnostic)", autoSystemsCheck);
