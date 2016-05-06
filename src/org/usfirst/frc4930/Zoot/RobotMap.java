@@ -79,7 +79,7 @@ public class RobotMap {
     driveTrainMasterMotors.setSensitivity(0.6);
     driveTrainMasterMotors.setMaxOutput(1.0);
 
-    Robot.driveTrain.brakeMode(false);
+   // Robot.driveTrain.brakeMode(false);
   }
 
   public static class ZeroablePotentiometer extends AnalogPotentiometer {
