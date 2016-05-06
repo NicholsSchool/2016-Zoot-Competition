@@ -59,6 +59,8 @@ public class Robot extends IterativeRobot {
     hookExtender = new HookExtender();
     intakeMotors = new IntakeMotors();
     roller = new Roller();
+    
+    Robot.driveTrain.brakeMode(false);
 
     // instantiate sensors
     limitSwitch = new LimitSwitch();
