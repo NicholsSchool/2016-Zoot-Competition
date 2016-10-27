@@ -9,12 +9,20 @@ import org.usfirst.frc4930.Zoot.Robot;
  */
 public class SpinUpShooter extends Command {
   double endTime;
+  double spd;
+  double spinTime;
+  protected SpinUpShooter(double newSpd, double newSpinTime)
+  {
+	  spd = newSpd;
+	  spinTime = newSpinTime;
+  }
   protected void initialize() {
-  	endTime =Timer.getFPGATimestamp()+.75;
+  	endTime =Timer.getFPGATimestamp()+spinTime;
+  	
   }
 
   protected void execute() {
-    Robot.intakeMotors.move(-1.0);
+    Robot.intakeMotors.move(spd);
   }
 
   protected boolean isFinished() {
@@ -22,7 +30,7 @@ public class SpinUpShooter extends Command {
   }
 
   protected void end() {
-      Robot.intakeMotors.move(-1.0);
+      Robot.intakeMotors.move(spd);
   }
 
   protected void interrupted() {
