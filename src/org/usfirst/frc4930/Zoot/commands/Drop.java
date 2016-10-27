@@ -1,32 +1,19 @@
 package org.usfirst.frc4930.Zoot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc4930.Zoot.Robot;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  * Drop - slowly drop boulder
  */
-public class Drop extends Command {
+public class Drop extends CommandGroup {
 
-  protected void initialize() {}
-
-  protected void execute() {
-    Robot.intakeMotors.move(-0.3);
-    Robot.roller.move(0.3);
-    Timer.delay(.5);
-  }
-
-  protected boolean isFinished() {
-    return true;
-  }
-
-  protected void end() {
-    Robot.intakeMotors.stop();
-    Robot.roller.stop();
-  }
-
-  protected void interrupted() {
-    end();
-  }
+		public Drop() {
+			
+	    	addParallel(new SpinUpShooter(-0.3,0.5));
+	    	addParallel(new SpinUpRoller(0.3,0.5));
+		}
+	
 }
+/*Robot.intakeMotors.move(-0.3);
+Robot.roller.move(0.3);
+Timer.delay(.5);*/
