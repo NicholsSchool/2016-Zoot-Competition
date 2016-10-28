@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Drop extends CommandGroup {
 
 	public Drop() {
-		addParallel(new SpinUpShooter(-0.3,0.5));
+	    addParallel(new SpinUpShooter(-0.3,0.5));
 	    addParallel(new SpinUpRoller(0.3,0.5));
 	}
 	
