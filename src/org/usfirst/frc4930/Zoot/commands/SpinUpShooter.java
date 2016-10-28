@@ -5,24 +5,26 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4930.Zoot.Robot;
 
 /**
- * Shoot - shoots the boulder
+ * Spins up the Shooter motors.
  */
 public class SpinUpShooter extends Command {
+  
   double endTime;
   double spd;
   double spinTime;
+  
   protected SpinUpShooter(double newSpd, double newSpinTime)
   {
 	  spd = newSpd;
 	  spinTime = newSpinTime;
   }
   protected void initialize() {
-  	endTime =Timer.getFPGATimestamp()+spinTime;
+	  endTime =Timer.getFPGATimestamp()+spinTime;
   	
   }
 
   protected void execute() {
-    Robot.intakeMotors.move(spd);
+	  Robot.intakeMotors.move(spd);
   }
 
   protected boolean isFinished() {
