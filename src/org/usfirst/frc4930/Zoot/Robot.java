@@ -1,5 +1,6 @@
 package org.usfirst.frc4930.Zoot;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -46,6 +47,10 @@ public class Robot extends IterativeRobot {
   // sensors
   public static Cameras cameras;
   public static LimitSwitch limitSwitch;
+  
+  // encoders
+  public Encoder DrivebaseRight;
+  public Encoder DrivebaseLeft;
 
   public void robotInit() {
 
