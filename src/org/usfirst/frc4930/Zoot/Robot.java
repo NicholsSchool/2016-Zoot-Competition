@@ -49,8 +49,8 @@ public class Robot extends IterativeRobot {
   public static LimitSwitch limitSwitch;
   
   // encoders
-  public Encoder DrivebaseRight;
-  public Encoder DrivebaseLeft;
+  public static Encoder DrivebaseRight;
+  public static Encoder DrivebaseLeft;
 
   public void robotInit() {
 
@@ -144,22 +144,22 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
     
     // output data for Encoder DrivebaseRight
-    SmartDashboard.putInt("Encoder DrivebaseRight: count", DrivebaseRight.get());
+    SmartDashboard.putNumber("Encoder DrivebaseRight: count", DrivebaseRight.get());
     SmartDashboard.putNumber("Encoder DrivebaseRight: rawDistance", DrivebaseRight.getRaw());
     SmartDashboard.putNumber("Encoder DrivebaseRight: distance", DrivebaseRight.getDistance());
     SmartDashboard.putNumber("Encoder DrivebaseRight: period", DrivebaseRight.getPeriod());
     SmartDashboard.putNumber("Encoder DrivebaseRight: rate", DrivebaseRight.getRate());
-    SmartDashboard.putNumber("Encoder DrivebaseRight: direction", DrivebaseRight.getDirection());
-    SmartDashboard.putNumber("Encoder DrivebaseRight: stopped", DrivebaseRight.getStopped());
+    SmartDashboard.putBoolean("Encoder DrivebaseRight: direction", DrivebaseRight.getDirection());
+    SmartDashboard.putBoolean("Encoder DrivebaseRight: stopped", DrivebaseRight.getStopped());
     
     // output data for Encoder DrivebaseLeft
-    SmartDashboard.putInt("Encoder DrivebaseLeft: count", DrivebaseLeft.get());
+    SmartDashboard.putNumber("Encoder DrivebaseLeft: count", DrivebaseLeft.get());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: rawDistance", DrivebaseLeft.getRaw());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: distance", DrivebaseLeft.getDistance());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: period", DrivebaseLeft.getPeriod());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: rate", DrivebaseLeft.getRate());
-    SmartDashboard.putNumber("Encoder DrivebaseLeft: direction", DrivebaseLeft.getDirection());
-    SmartDashboard.putNumber("Encoder DrivebaseLeft: stopped", DrivebaseLeft.getStopped());
+    SmartDashboard.putBoolean("Encoder DrivebaseLeft: direction", DrivebaseLeft.getDirection());
+    SmartDashboard.putBoolean("Encoder DrivebaseLeft: stopped", DrivebaseLeft.getStopped());
     
     try {
       cameras.execute();
