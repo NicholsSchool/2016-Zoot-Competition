@@ -103,9 +103,13 @@ public class Robot extends IterativeRobot {
     autoChooser.addObject("Systems Check (diagnostic)", autoSystemsCheck);
     SmartDashboard.putData("Auto Chooser", autoChooser);
     
-    // instantiate encoders, not sure about the ports
-	DrivebaseRight = new Encoder(6,7, false, Encoder.EncodingType.k4X);
+    // instantiate encoders
+	DrivebaseRight = new Encoder(6,7, true, Encoder.EncodingType.k4X);
+
 	DrivebaseLeft = new Encoder(8,9, false, Encoder.EncodingType.k4X);
+	// DrivebaseRight.setDistancePerPulse(1/256.00);
+	DrivebaseRight.reset();
+	DrivebaseLeft.reset();
   }
 
   public void disabledInit() {}
@@ -143,7 +147,17 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
     
-    // output data for Encoder DrivebaseRight
+    // output data for Encoder DrivebaseRight and reset
+	
+   
+	int countRight = DrivebaseRight.get();
+	double rawDistanceRight = DrivebaseRight.getRaw();
+	double distanceRight = DrivebaseRight.getDistance();
+	double periodRight = DrivebaseRight.getPeriod();
+	double rateRight = DrivebaseRight.getRate();
+	boolean directionRight = DrivebaseRight.getDirection();
+	boolean stoppedRight = DrivebaseRight.getStopped();
+	
     SmartDashboard.putNumber("Encoder DrivebaseRight: count", DrivebaseRight.get());
     SmartDashboard.putNumber("Encoder DrivebaseRight: rawDistance", DrivebaseRight.getRaw());
     SmartDashboard.putNumber("Encoder DrivebaseRight: distance", DrivebaseRight.getDistance());
@@ -152,7 +166,17 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("Encoder DrivebaseRight: direction", DrivebaseRight.getDirection());
     SmartDashboard.putBoolean("Encoder DrivebaseRight: stopped", DrivebaseRight.getStopped());
     
-    // output data for Encoder DrivebaseLeft
+    // output data for Encoder DrivebaseLeft and reset
+	
+    
+    int countLeft = DrivebaseLeft.get();
+	double rawDistanceLeft = DrivebaseLeft.getRaw();
+	double distanceLeft = DrivebaseLeft.getDistance();
+	double periodLeft = DrivebaseLeft.getPeriod();
+	double rateLeft = DrivebaseLeft.getRate();
+	boolean directionLeft = DrivebaseLeft.getDirection();
+	boolean stoppedLeft = DrivebaseLeft.getStopped();
+	
     SmartDashboard.putNumber("Encoder DrivebaseLeft: count", DrivebaseLeft.get());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: rawDistance", DrivebaseLeft.getRaw());
     SmartDashboard.putNumber("Encoder DrivebaseLeft: distance", DrivebaseLeft.getDistance());
