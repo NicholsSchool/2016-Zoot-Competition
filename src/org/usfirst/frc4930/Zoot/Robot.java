@@ -104,8 +104,8 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putData("Auto Chooser", autoChooser);
     
     // instantiate encoders, not sure about the ports
-	DrivebaseRight = new Encoder(0,1, false, Encoder.EncodingType.k4X);
-	DrivebaseLeft = new Encoder(2,3, false, Encoder.EncodingType.k4X);
+	DrivebaseRight = new Encoder(6,7, false, Encoder.EncodingType.k4X);
+	DrivebaseLeft = new Encoder(8,9, false, Encoder.EncodingType.k4X);
   }
 
   public void disabledInit() {}
