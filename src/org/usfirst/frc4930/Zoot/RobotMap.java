@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
-import edu.wpi.first.wpilibj.interfaces.BuiltInAccelerometer;
+import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
