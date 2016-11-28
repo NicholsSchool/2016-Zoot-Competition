@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.interfaces.BuiltInAccelerometer;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
@@ -39,6 +40,8 @@ public class RobotMap {
   public static Gyro gyro;
 
   public static ZeroablePotentiometer armPot;
+  
+  public static BuiltInAccelerometer accelerometer;
 
   public static void init() {
 
@@ -52,8 +55,10 @@ public class RobotMap {
     armPot = new ZeroablePotentiometer(2, 360);
     
     // Gyro
-    
     gyro = new AnalogGyro(0);
+    
+    // Accelerometer
+    accelerometer = new BuiltInAccelerometer();
 
     // Motor Controllers
     hookDartWinch = new CANTalon(9);
