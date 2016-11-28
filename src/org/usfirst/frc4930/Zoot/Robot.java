@@ -133,6 +133,7 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
     SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
+    System.out.print(RobotMap.gyro.getAngle());
     try {
       cameras.execute();
     } catch (Exception e) {

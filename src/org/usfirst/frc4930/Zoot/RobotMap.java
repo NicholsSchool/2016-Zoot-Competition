@@ -1,10 +1,12 @@
 package org.usfirst.frc4930.Zoot;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 /**
  * Maps the ports on sensors and motor controllers to variable names.
@@ -33,6 +35,8 @@ public class RobotMap {
   public static DigitalInput armLowExtremeSwitch;
   public static DigitalInput hookLowExtremeSwitch;
   public static DigitalInput hookHighExtremeSwitch;
+  
+  public static Gyro gyro;
 
   public static ZeroablePotentiometer armPot;
 
@@ -46,6 +50,10 @@ public class RobotMap {
 
     // Analog Sensors
     armPot = new ZeroablePotentiometer(2, 360);
+    
+    // Gyro
+    
+    gyro = new AnalogGyro(0);
 
     // Motor Controllers
     hookDartWinch = new CANTalon(9);
