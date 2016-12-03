@@ -40,8 +40,6 @@ public class RobotMap {
   public static Gyro gyro;
 
   public static ZeroablePotentiometer armPot;
-  
-  public static BuiltInAccelerometer accelerometer;
 
   public static void init() {
 
@@ -57,9 +55,7 @@ public class RobotMap {
     // Gyro
     gyro = new AnalogGyro(0);
     
-    // Accelerometer
-    accelerometer = new BuiltInAccelerometer();
-
+ 
     // Motor Controllers
     hookDartWinch = new CANTalon(9);
     roller = new CANTalon(10);

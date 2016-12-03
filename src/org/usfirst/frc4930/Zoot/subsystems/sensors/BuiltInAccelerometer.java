@@ -10,34 +10,39 @@ import edu.wpi.first.wpilibj.BuiltInAccelerometer;
  *
  */
 public class BuiltInAccelerometer extends Command {
-	
+
 	public static BuiltInAccelerometer accelerometer;
+	
+	public double[][] accelHistory = new double[3][10];
 
     public BuiltInAccelerometer() {
-
-    }
-
-    
-    protected void initialize() {
     	accelerometer = new BuiltInAccelerometer();
     }
 
-   
-    protected void execute() {
-        SmartDashboard.putNumber("accelerometer: x value", RobotMap.accelerometer.getX());
-        SmartDashboard.putNumber("accelerometer: y value", RobotMap.accelerometer.getY());
-        SmartDashboard.putNumber("accelerometer: z value", RobotMap.accelerometer.getZ());
+    public int xValue() {
+    	return accelerometer.getX();
     }
-
     
-    protected boolean isFinished() {
-        return false;
+    public int yValue() {
+    	return accelerometer.getY();
     }
-
     
-    protected void end() {
+    public int zValue() {
+    	return accelerometer.getZ();
     }
-
-    protected void interrupted() {
+    
+    public double[][] history() {
+    	
+    	while((int)(Timer.get() *100) % 50 == 0 ){
+    		
+    		for(int i = 0; i < accelHistory[0].length;  i++) {
+    			accelHistory[0][i] = this.xValue();
+    			accelHistory[1][i] = this.yValue();
+    			accelHistory[2][i] = this.zValue();
+    		}
+    		
+    		
+    	}
     }
+    
 }
