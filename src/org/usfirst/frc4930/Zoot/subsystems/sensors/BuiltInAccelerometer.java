@@ -1,47 +1,44 @@
 package org.usfirst.frc4930.Zoot.subsystems.sensors;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-import org.usfirst.frc4930.Zoot.RobotMap;
+import java.util.ArrayList;
 
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
+import edu.wpi.first.wpilibj.interfaces.*;
+import edu.wpi.first.wpilibj.Timer;
 
-/**
- *
- */
-public class BuiltInAccelerometer extends Command {
+public class BuiltInAccel extends Subsystem {
 
-	public static BuiltInAccelerometer accelerometer;
+private static Accelerometer accel = new BuiltInAccelerometer();
 
-    public BuiltInAccelerometer() {
-    	accelerometer = new BuiltInAccelerometer();
-    }
+private Timer timer = new Timer();
 
-    public int xValue() {
-    	return accelerometer.getX();
-    }
-    
-    public int yValue() {
-    	return accelerometer.getY();
-    }
-    
-    public int zValue() {
-    	return accelerometer.getZ();
-    }
-    
-    public double[][] accelHistory = new double[3][10];
-    
-    public void history() {
-    	
-    	while((int)(Timer.get() *100) % 50 == 0 ){
-    		
-    		for(int i = 0; i <= 10;  i++) {
-    			accelHistory[0][i] = this.xValue();
-    			accelHistory[1][i] = this.yValue();
-    			accelHistory[2][i] = this.zValue();
-    		}
-    		
-    	}
-    }
-    
+protected void initDefaultCommand() {
+
+	}
+
+public BuiltInAccel() {
+
+	}
+
+public double xValue() {
+	return accel.getX();
+    }
+
+public double yValue() {
+	return accel.getY();
+    }
+
+	public double zValue() {
+		return accel.getZ();
+    }
+	
+	public void history() {
+		
+	ArrayList<Double> xHistory = new ArrayList<Double>();
+	ArrayList<Double> yHistory = new ArrayList<Double>();
+	ArrayList<Double> zHistory = new ArrayList<Double>();
+             
+    }
 }
