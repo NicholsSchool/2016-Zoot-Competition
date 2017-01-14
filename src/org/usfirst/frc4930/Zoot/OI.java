@@ -34,8 +34,8 @@ public class OI {
     joystick1 = new Joystick(1);
     joystick2 = new Joystick(2);
 
-    joystick0Button3 = new JoystickButton(joystick0, 3);
-    joystick0Button3.whenPressed(new OrientationChange());
+//    joystick0Button3 = new JoystickButton(joystick0, 3);
+//    joystick0Button3.whenPressed(new OrientationChange());
 
     joystick1Button2 = new JoystickButton(joystick1, 2);
     joystick1Button2.whileHeld(new Intake());
@@ -58,8 +58,8 @@ public class OI {
     joystick2Button7 = new JoystickButton(joystick2, 7);
     joystick2Button7.whileHeld(new RetractHook());
 
-    joystick2Button10 = new JoystickButton(joystick2, 10);
-    joystick2Button10.whenPressed(new ChangeToShotCam());
+//    joystick2Button10 = new JoystickButton(joystick2, 10);
+//    joystick2Button10.whenPressed(new ChangeToShotCam());
   }
 
   public double getJoystick0() {

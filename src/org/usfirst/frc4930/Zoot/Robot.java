@@ -44,7 +44,6 @@ public class Robot extends IterativeRobot {
   public static Roller roller;
 
   // sensors
-  public static Cameras cameras;
   public static LimitSwitch limitSwitch;
 
   public void robotInit() {
@@ -64,11 +63,6 @@ public class Robot extends IterativeRobot {
 
     // instantiate sensors
     limitSwitch = new LimitSwitch();
-    try {
-      cameras = new Cameras();
-    } catch (Exception e) {
-      System.out.println(e.toString());
-    }
 
     // instantiate autonomous modes
     autoDoNothing = new DoNothing();
@@ -118,11 +112,6 @@ public class Robot extends IterativeRobot {
     if (autoCommand != null) {
       autoCommand.cancel();
     }
-    try {
-      cameras.initialize();
-    } catch (Exception e) {
-      System.out.println(e.toString());
-    }
   }
 
   public void teleopPeriodic() {
@@ -133,11 +122,6 @@ public class Robot extends IterativeRobot {
     SmartDashboard.putBoolean("boulderInPosition", Robot.limitSwitch.boulderInPosition());
     SmartDashboard.putBoolean("hookRetracted", Robot.limitSwitch.hookRetracted());
     SmartDashboard.putBoolean("hookExtended", Robot.limitSwitch.hookExtended());
-    try {
-      cameras.execute();
-    } catch (Exception e) {
-      System.out.println(e.toString());
-    }
   }
 
   public void testPeriodic() {
